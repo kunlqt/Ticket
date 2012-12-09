@@ -1,0 +1,163 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/bghighlight"
+    android:orientation="vertical" >
+
+    <CheckBox
+        android:id="@+id/cbMeter"
+        style="@style/TextHeader"
+        android:text="@string/meter" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/meter_start" />
+
+                    <EditText
+                        android:id="@+id/edtMeterStart"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/start_time" />
+
+                    <TextView
+                        android:id="@+id/tvMeterStartTime"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/gray" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/meter_stop" />
+
+                    <EditText
+                        android:id="@+id/edtMeterStop"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/stop_time" />
+
+                    <TextView
+                        android:id="@+id/tvMeterStopTime"
+                        style="@style/TextInput" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/meter_number" />
+
+                    <EditText
+                        android:id="@+id/edtMeterNumber"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/total_hours" />
+
+                    <EditText
+                        android:id="@+id/edtMeterTotalHours"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/avg_temp" />
+
+                    <EditText
+                        android:id="@+id/edtMeterAVGTemp"
+                        style="@style/TextInput" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llMaskMeter"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/bg_tank_refusal"
+            android:clickable="true" >
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

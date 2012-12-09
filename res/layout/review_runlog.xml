@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <!-- Header -->
+
+    <LinearLayout
+        android:id="@+id/linearHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="4.4"
+        android:background="@drawable/header"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <!-- Main layout -->
+	<FrameLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_weight="1">
+	    <LinearLayout
+	    android:id="@+id/mainRivew"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dip"
+                android:layout_marginTop="3dip"
+                android:gravity="center"
+                android:text="Run Log Review"
+                android:textColor="#779a3d"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/llContainListview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dip" >
+
+                    <ListView
+                        android:id="@+id/listReviewRunlog"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:divider="@null"
+                        android:dividerHeight="25dip"
+               
+                        android:fadingEdge="none"
+                        android:listSelector="@android:color/transparent"
+                        android:scrollingCache="false" 
+                        android:scrollbars="none">
+                    </ListView>
+                    <LinearLayout
+                        android:id="@+id/llContrainFooterRiview" 
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        
+                    </LinearLayout>
+                </LinearLayout>             
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+	</FrameLayout>
+    
+    <!-- Footer -->
+
+    <LinearLayout
+        android:id="@+id/linearHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="4.6"
+        android:background="@drawable/footer"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</LinearLayout>

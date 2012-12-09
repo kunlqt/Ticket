@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="8"
+        android:background="@drawable/header"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/linearMain"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Billing Slip"
+                    android:textColor="#779a3d"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ScrollView
+                    android:id="@+id/scrollView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:cacheColorHint="@null"
+                    android:fadingEdge="none"
+                    android:fillViewport="true"
+                    android:scrollbars="none" >
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:id="@+id/tableRow2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:gravity="center_vertical"
+                                android:text="Date*"
+                                android:textColor="#f47320"
+                                android:textSize="20dip" />
+
+                            <Button
+                                android:id="@+id/edBillingDate"
+                                android:layout_width="250dp"
+                                android:layout_height="fill_parent"
+                                android:layout_marginLeft="5dp"
+                                android:background="@xml/highlight_edittext"
+                                android:inputType="none"
+                                android:padding="10dip" >
+                            </Button>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tableRow3"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:gravity="center_vertical"
+                                android:text="Customer&apos;s Name*"
+                                android:textColor="#f47320"
+                                android:textSize="20dip" />
+
+                            <EditText
+                                android:id="@+id/edBillingCustomerName"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:background="@xml/highlight_edittext"
+                                android:imeOptions="actionNext"
+                                android:nextFocusDown="@+id/edBillingAddress"
+                                android:paddingLeft="10dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tableRow4"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:gravity="center_vertical"
+                                android:text="Billing Address*"
+                                android:textColor="#f47320"
+                                android:textSize="20dip" />
+
+                            <EditText
+                                android:id="@+id/edBillingAddress"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:background="@xml/highlight_edittext"
+                                android:imeOptions="actionNext"
+                                android:nextFocusDown="@+id/edBillinghauledFrom"
+                                android:paddingLeft="10dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tableRow5"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:gravity="center_vertical"
+                                android:text="Hauled From*"
+                                android:textColor="#f47320"
+                                android:textSize="20dip" />
+
+                            <EditText
+                                android:id="@+id/edBillinghauledFrom"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:background="@xml/highlight_edittext"
+                                android:imeOptions="actionNext"
+                                android:nextFocusDown="@+id/edBillingHauledTo"
+                                android:paddingLeft="10dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tableRow3"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:gravity="center_vertical"
+                                android:text="Hauled To*"
+                                android:textColor="#f47320"
+                                android:textSize="20dip" />
+
+                            <EditText
+                                android:id="@+id/edBillingHauledTo"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:background="@xml/highlight_edittext"
+                                android:imeOptions="actionNext"
+                                android:nextFocusDown="@+id/edBillingPurchase"
+                                android:paddingLeft="10dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tableRow4"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:gravity="center_vertical"
+                                android:text="Purchase Order*"
+                                android:textColor="#f47320"
+                                android:textSize="20dip" />
+
+                            <EditText
+                                android:id="@+id/edBillingPurchase"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:background="@xml/highlight_edittext"
+                                android:imeOptions="actionNext"
+                                android:nextFocusDown="@+id/edBillingTruckNo"
+                                android:paddingLeft="10dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tableRow4"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:gravity="center_vertical"
+                                android:text="Truck No*"
+                                android:textColor="#f47320"
+                                android:textSize="20dip" />
+
+                            <EditText
+                                android:id="@+id/edBillingTruckNo"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:background="@xml/highlight_edittext"
+                                android:imeOptions="actionNext"
+                                android:nextFocusDown="@+id/edBillingTrailerNos"
+                                android:paddingLeft="10dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tableRow4"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:gravity="center_vertical"
+                                android:text="Trailer Nos*"
+                                android:textColor="#f47320"
+                                android:textSize="20dip" />
+
+                            <EditText
+                                android:id="@+id/edBillingTrailerNos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:background="@xml/highlight_edittext"
+                                android:imeOptions="actionNext"
+                                android:nextFocusDown="@+id/edBillingRemarks"
+                                android:paddingLeft="10dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tableRow4"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:gravity="center_vertical"
+                                android:text="Remarks*"
+                                android:textColor="#f47320"
+                                android:textSize="20dip" />
+
+                            <EditText
+                                android:id="@+id/edBillingRemarks"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:background="@xml/highlight_edittext"
+                                android:imeOptions="actionNext"
+                                android:nextFocusDown="@+id/edFreshWater1"
+                                android:paddingLeft="10dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tableRow4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Add Commondity"
+                                android:textColor="#f47320"
+                                android:textSize="25dip"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip"
+                            android:background="#f47320" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="3.5" >
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:text="Commodity"
+                                    android:textSize="20dip"
+                                    android:textColor="#fff" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1" >
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:textSize="20dip"
+                                    android:text="H2s"
+                                    android:textColor="#fff" >
+                                </TextView>
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:text="Non"
+                                    android:textSize="20dip"
+                                    android:textColor="#fff" >
+                                </TextView>
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:textSize="20dip"
+                                    android:text="Barrels"
+                                    android:textColor="#fff" >
+                                </TextView>
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:textSize="20dip"
+                                    android:text="Hours"
+                                    android:textColor="#fff" >
+                                </TextView>
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:textSize="20dip"
+                                    android:text="Rate"
+                                    android:textColor="#fff" >
+                                </TextView>
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:text="Amount"
+                                    android:textSize="20dip"
+                                    android:textColor="#fff" >
+                                </TextView>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="3.5" >
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:text="Fresh Water"
+                                    android:textColor="#f47320"
+                                    android:textSize="20dip" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1" >
+
+                                <EditText
+                                    android:id="@+id/edFreshWater1"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edFreshWater2" />
+
+                                <EditText
+                                    android:id="@+id/edFreshWater2"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edFreshWater3" />
+
+                                <EditText
+                                    android:id="@+id/edFreshWater3"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edFreshWater4" />
+
+                                <EditText
+                                    android:id="@+id/edFreshWater4"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edFreshWater5" />
+
+                                <EditText
+                                    android:id="@+id/edFreshWater5"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edFreshWater6" />
+
+                                <EditText
+                                    android:id="@+id/edFreshWater6"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edPitWater1" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="3.5" >
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:text="Pit Water"
+                                    android:textColor="#f47320"
+                                    android:textSize="20dip" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1" >
+
+                                <EditText
+                                    android:id="@+id/edPitWater1"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edPitWater2" />
+
+                                <EditText
+                                    android:id="@+id/edPitWater2"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edPitWater3" />
+
+                                <EditText
+                                    android:id="@+id/edPitWater3"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edPitWater4" />
+
+                                <EditText
+                                    android:id="@+id/edPitWater4"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edPitWater5" />
+
+                                <EditText
+                                    android:id="@+id/edPitWater5"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edPitWater6" />
+
+                                <EditText
+                                    android:id="@+id/edPitWater6"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edProductionW1" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="3.5" >
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:text="Production W"
+                                    android:textColor="#f47320"
+                                    android:textSize="20dip" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1" >
+
+                                <EditText
+                                    android:id="@+id/edProductionW1"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edProductionW2" />
+
+                                <EditText
+                                    android:id="@+id/edProductionW2"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edProductionW3" />
+
+                                <EditText
+                                    android:id="@+id/edProductionW3"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edProductionW4" />
+
+                                <EditText
+                                    android:id="@+id/edProductionW4"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edProductionW5" />
+
+                                <EditText
+                                    android:id="@+id/edProductionW5"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edProductionW6" />
+
+                                <EditText
+                                    android:id="@+id/edProductionW6"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edInvert1" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="3.5" >
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:text="Invert"
+                                    android:textColor="#f47320"
+                                    android:textSize="20dip" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1" >
+
+                                <EditText
+                                    android:id="@+id/edInvert1"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edInvert2" />
+
+                                <EditText
+                                    android:id="@+id/edInvert2"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edInvert3" />
+
+                                <EditText
+                                    android:id="@+id/edInvert3"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edInvert4" />
+
+                                <EditText
+                                    android:id="@+id/edInvert4"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edInvert5" />
+
+                                <EditText
+                                    android:id="@+id/edInvert5"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edInvert6" />
+
+                                <EditText
+                                    android:id="@+id/edInvert6"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edServiceWater1" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="3.5" >
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:text="Service Water"
+                                    android:textColor="#f47320"
+                                    android:textSize="20dip" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1" >
+
+                                <EditText
+                                    android:id="@+id/edServiceWater1"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edServiceWater2" />
+
+                                <EditText
+                                    android:id="@+id/edServiceWater2"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edServiceWater3" />
+
+                                <EditText
+                                    android:id="@+id/edServiceWater3"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edServiceWater4" />
+
+                                <EditText
+                                    android:id="@+id/edServiceWater4"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edServiceWater5" />
+
+                                <EditText
+                                    android:id="@+id/edServiceWater5"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edServiceWater6" />
+
+                                <EditText
+                                    android:id="@+id/edServiceWater6"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edWaterCharge1" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="3.5" >
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:text="Water Charge"
+                                    android:textColor="#f47320"
+                                    android:textSize="20dip" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1" >
+
+                                <EditText
+                                    android:id="@+id/edWaterCharge1"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edWaterCharge2" />
+
+                                <EditText
+                                    android:id="@+id/edWaterCharge2"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edWaterCharge3" />
+
+                                <EditText
+                                    android:id="@+id/edWaterCharge3"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edWaterCharge4" />
+
+                                <EditText
+                                    android:id="@+id/edWaterCharge4"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edWaterCharge5" />
+
+                                <EditText
+                                    android:id="@+id/edWaterCharge5"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edWaterCharge6" />
+
+                                <EditText
+                                    android:id="@+id/edWaterCharge6"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edDisposalCharge1" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="3.5" >
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:text="Disposal Charge"
+                                    android:textColor="#f47320"
+                                    android:textSize="20dip" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1" >
+
+                                <EditText
+                                    android:id="@+id/edDisposalCharge1"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edDisposalCharge2" />
+
+                                <EditText
+                                    android:id="@+id/edDisposalCharge2"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edDisposalCharge3" />
+
+                                <EditText
+                                    android:id="@+id/edDisposalCharge3"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edDisposalCharge4" />
+
+                                <EditText
+                                    android:id="@+id/edDisposalCharge4"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edDisposalCharge5" />
+
+                                <EditText
+                                    android:id="@+id/edDisposalCharge5"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edDisposalCharge6" />
+
+                                <EditText
+                                    android:id="@+id/edDisposalCharge6"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edFuelSurcharge1" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="3.5" >
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:text="Fuel Surcharge"
+                                    android:textColor="#f47320"
+                                    android:textSize="20dip" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1" >
+
+                                <EditText
+                                    android:id="@+id/edFuelSurcharge1"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edFuelSurcharge2" />
+
+                                <EditText
+                                    android:id="@+id/edFuelSurcharge2"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edFuelSurcharge3" />
+
+                                <EditText
+                                    android:id="@+id/edFuelSurcharge3"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edFuelSurcharge4" />
+
+                                <EditText
+                                    android:id="@+id/edFuelSurcharge4"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edFuelSurcharge5" />
+
+                                <EditText
+                                    android:id="@+id/edFuelSurcharge5"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edFuelSurcharge6" />
+
+                                <EditText
+                                    android:id="@+id/edFuelSurcharge6"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edtotalamount" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="3.5" >
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1" >
+
+                                <EditText
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/rectange"
+                                    android:enabled="false"
+                                    android:focusable="false"
+                                    android:gravity="center" />
+
+                                <EditText
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/rectange"
+                                    android:enabled="false"
+                                    android:gravity="center" />
+
+                                <EditText
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/rectange"
+                                    android:enabled="false"
+                                    android:gravity="center" />
+
+                                <EditText
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/rectange"
+                                    android:enabled="false"
+                                    android:gravity="center" />
+
+                                <EditText
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/rectange"
+                                    android:enabled="false"
+                                    android:gravity="center" />
+
+                                <EditText
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/rectange"
+                                    android:enabled="false"
+                                    android:gravity="center" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1" >
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.6" >
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Total Amount"
+                                    android:textColor="#f47320"
+                                    android:textSize="20dip" />
+
+                                <EditText
+                                    android:id="@+id/edtotalamount"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1.92"
+                                    android:background="@xml/highlight_edittext"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edBillingDriverName" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tableRow4"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:gravity="center_vertical"
+                                android:text="Driver Name*"
+                                android:textColor="#f47320"
+                                android:textSize="20dip" />
+
+                            <EditText
+                                android:id="@+id/edBillingDriverName"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:background="@xml/highlight_edittext"
+                                android:imeOptions="actionNext"
+                                android:nextFocusDown="@+id/edBillingDriverNumber"
+                                android:paddingLeft="10dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tableRow4"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:gravity="center_vertical"
+                                android:text="Driver Number*"
+                                android:textColor="#f47320"
+                                android:textSize="20dip" />
+
+                            <EditText
+                                android:id="@+id/edBillingDriverNumber"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:background="@xml/highlight_edittext"
+                                android:imeOptions="actionNext"
+                                android:nextFocusDown="@+id/edBillingAccepted"
+                                android:paddingLeft="10dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tableRow4"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:gravity="center_vertical"
+                                android:text="Accepted*"
+                                android:textColor="#f47320"
+                                android:textSize="20dip" />
+
+                            <EditText
+                                android:id="@+id/edBillingAccepted"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:background="@xml/highlight_edittext"
+                                android:paddingLeft="10dip" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tableRow4"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="8"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/btBillingSave"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@xml/custom_button_orange"
+                    android:text="Save" >
+                </Button>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="12"
+            android:background="@drawable/footer"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

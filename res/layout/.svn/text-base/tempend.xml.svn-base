@@ -1,0 +1,385 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llPlainMarketing"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip" >
+    <!-- UNIT TYPE 1 -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bghighlight"
+        android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="NO.UNITS/TYPE"
+                        android:textColor="#f47320"
+                        android:textSize="20dip" />
+                    <EditText
+                        android:id="@+id/edTicketNo_UnitType1"
+                        android:layout_width="200dp"
+                        android:layout_height="50dp"
+                        android:background="@xml/highlight_edittext"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@+id/edother1"
+                        android:paddingLeft="3dip" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="HM"
+                        android:textColor="#f47320"
+                        android:textSize="20dip" />
+                    <EditText
+                        android:id="@+id/edTicketHM1"
+                        android:layout_width="80dp"
+                        android:layout_height="50dp"
+                        android:background="@xml/highlight_edittext"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@+id/edother1"
+                        android:paddingLeft="3dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="PROPER SHIPPING NAME,HAZARD CLASS,UN/NA NUMBER"
+                android:textColor="#f47320"
+                android:textSize="20dip" />
+            <EditText
+                android:id="@+id/edTicketProper1"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@xml/highlight_edittext"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@+id/edother1"
+                android:paddingLeft="3dip" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="NET BARRELS"
+                android:textColor="#f47320"
+                android:textSize="20dip" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+                <EditText
+                    android:id="@+id/edTicketNetBarrels1"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:background="@xml/highlight_edittext"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <include
+        layout="@layout/tank_refusal"/>
+    <!-- UNIT TYPE 2 -->
+    <!-- <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bghighlight"
+        android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10dp" >
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="NO.UNITS/TYPE"
+                        android:textColor="#f47320"
+                        android:textSize="20dip" />
+                    <EditText
+                        android:id="@+id/edTicketNo_UnitType2"
+                        android:layout_width="200dp"
+                        android:layout_height="50dp"
+                        android:background="@xml/highlight_edittext"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@+id/edother1"
+                        android:paddingLeft="3dip" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="HM"
+                        android:textColor="#f47320"
+                        android:textSize="20dip" />
+                    <EditText
+                        android:id="@+id/edTicketHM2"
+                        android:layout_width="80dp"
+                        android:layout_height="50dp"
+                        android:background="@xml/highlight_edittext"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@+id/edother1"
+                        android:paddingLeft="3dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="PROPER SHIPPING NAME,HAZARD CLASS,UN/NA NUMBER"
+                android:textColor="#f47320"
+                android:textSize="20dip" />
+            <EditText
+                android:id="@+id/edTicketProper2"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@xml/highlight_edittext"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@+id/edother1"
+                android:paddingLeft="3dip" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="NET BARRELS"
+                android:textColor="#f47320"
+                android:textSize="20dip" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+                <EditText
+                    android:id="@+id/edTicketNetBarrels2"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:background="@xml/highlight_edittext"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout> -->
+    <!-- EMERGENCY -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:text="EMERGENCY CONTACT: 1-800-424-9300"
+            android:textColor="#f47320"
+            android:textStyle="bold"
+            android:textSize="25dip" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="GROSS BARRELS"
+                android:textColor="#f47320"
+                android:textSize="20dip" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+                <EditText
+                    android:id="@+id/edTicketGross1"
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:background="@xml/highlight_edittext"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+                <EditText
+                    android:id="@+id/edTicketGross2"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@xml/highlight_edittext"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="NET BARRELS"
+                android:textColor="#f47320"
+                android:textSize="20dip" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+                <EditText
+                    android:id="@+id/edTicketNet1"
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:background="@xml/highlight_edittext"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+                <EditText
+                    android:id="@+id/edTicketNet2"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@xml/highlight_edittext"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="TRUE GVT"
+                android:textColor="#f47320"
+                android:textSize="20dip" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+                <EditText
+                    android:id="@+id/edTicketTrueGVT1"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:background="@xml/highlight_edittext"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+                <EditText
+                    android:id="@+id/edTicketTrueGVT2"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@xml/highlight_edittext"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="REMARKS"
+                android:textColor="#f47320"
+                android:textSize="20dip" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+                <EditText
+                    android:id="@+id/edTicketRemarks"
+                    android:layout_width="fill_parent"
+                    android:layout_height="200dp"
+                    android:background="@xml/highlight_edittext"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <!-- End -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="This is to certify that the herein named materials are properly classified, described, packaged, marked, and labeled and are in proper condition for transportation, according to the applicable regulations of the Department of Transportation"
+            android:textColor="#f47320"
+            android:textSize="20dip" />
+    </LinearLayout>
+</LinearLayout>

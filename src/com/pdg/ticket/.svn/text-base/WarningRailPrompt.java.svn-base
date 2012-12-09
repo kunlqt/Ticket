@@ -1,0 +1,61 @@
+package com.pdg.ticket;
+
+import com.pdg.ticket.R;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.Button;
+
+public class WarningRailPrompt extends Activity implements OnClickListener {
+
+	private Button btYesRailPrompt;
+	private Button btLaterRailPrompt;
+	private int idRunlog;
+	private int ticketType;
+	private int idTicket;
+	private String nameRunlog;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stu
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.warning_railprompt);
+		btYesRailPrompt = (Button) findViewById(R.id.btYesRailPrompt);
+		btLaterRailPrompt = (Button) findViewById(R.id.btLaterRailPrompt);
+		btLaterRailPrompt.setOnClickListener(this);
+		btYesRailPrompt.setOnClickListener(this);
+		idRunlog = getIntent().getExtras().getInt("idRunLog", 0);
+		idTicket = getIntent().getExtras().getInt("idTicket", 0);
+		ticketType = getIntent().getExtras().getInt("ticketType", 0);
+		nameRunlog = getIntent().getExtras().getString("nameRunlog");
+		
+	}
+
+	@Override
+	public void onClick(View v) {
+		if (v == btLaterRailPrompt) {
+			this.finish();
+			Intent intent = new Intent(this,WarningCorrectionPrompt.class);
+			intent.putExtra("idRunLog", idRunlog);
+			intent.putExtra("ticketType", ticketType);
+			intent.putExtra("idTicket", idTicket);
+			
+			startActivity(intent);
+		}
+		if(v==btYesRailPrompt){
+			this.finish();
+
+			Intent intent = new Intent(this,RailTicket.class);
+			intent.putExtra("idRunLog", idRunlog);
+			intent.putExtra("ticketType", ticketType);
+			intent.putExtra("idTicket", idTicket);
+			intent.putExtra("nameRunlog", nameRunlog);
+			startActivity(intent);
+		}
+	}
+
+}

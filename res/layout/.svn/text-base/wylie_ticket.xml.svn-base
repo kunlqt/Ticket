@@ -1,0 +1,1976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="15"
+        android:background="@drawable/header"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/linearMain"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginTop="5dip"
+                    android:text="RUN TICKET - Wylie Byce Trucking"
+                    android:textColor="#779a3d"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ScrollView
+                    android:id="@+id/scrollView1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:scrollbars="none" >
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical" >
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dip"
+                                android:layout_marginTop="5dip"
+                                android:text="Operator"
+                                android:textSize="15dip" />
+
+                            <EditText
+                                android:id="@+id/edWylieOperator"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:background="@xml/highlight_edittext_small"
+                                android:imeOptions="actionNext"
+                                android:nextFocusDown="@+id/edWylieLeaseName"
+                                android:paddingLeft="10dip"
+                                android:paddingTop="20dip" >
+                            </EditText>
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal" >
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="50dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dip"
+                                    android:layout_marginTop="5dip"
+                                    android:text="Lease Name"
+                                    android:textSize="15dip" />
+
+                                <EditText
+                                    android:id="@+id/edWylieLeaseName"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edWylieCounty"
+                                    android:paddingLeft="10dip"
+                                    android:paddingTop="20dip" >
+                                </EditText>
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="50dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dip"
+                                    android:layout_marginTop="5dip"
+                                    android:text="COUNTY"
+                                    android:textSize="15dip" />
+
+                                <EditText
+                                    android:id="@+id/edWylieCounty"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edWylieState"
+                                    android:paddingLeft="10dip"
+                                    android:paddingTop="20dip" >
+                                </EditText>
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="50dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dip"
+                                    android:layout_marginTop="5dip"
+                                    android:text="STATE"
+                                    android:textSize="15dip" />
+
+                                <EditText
+                                    android:id="@+id/edWylieState"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edWylie141"
+                                    android:paddingLeft="10dip"
+                                    android:paddingTop="20dip" >
+                                </EditText>
+                            </FrameLayout>
+                        </LinearLayout>
+                        <!-- LOCATION -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="140dp"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_cam"
+                                    android:orientation="horizontal" >
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical" >
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:text="LOCATION(FERERAL,INDIAN,NEW MEXICO LEASES ONLY)"
+                                            android:textColor="#fff" />
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                            android:background="@xml/rectange"
+                                            android:orientation="horizontal" >
+
+                                            <LinearLayout
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:layout_weight="1"
+                                                android:background="@xml/rectange"
+                                                android:gravity="bottom"
+                                                android:orientation="horizontal" >
+
+                                                <LinearLayout
+                                                    android:layout_width="fill_parent"
+                                                    android:layout_height="fill_parent"
+                                                    android:layout_weight="2"
+                                                    android:gravity="bottom" >
+
+                                                    <TextView
+                                                        android:layout_width="fill_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:text="1/4"
+                                                        android:textColor="#fff" />
+
+                                                    <TextView
+                                                        android:layout_width="fill_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:text="1/4"
+                                                        android:textColor="#fff" />
+
+                                                    <TextView
+                                                        android:layout_width="fill_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:text="UNIT LRT"
+                                                        android:textColor="#fff" />
+                                                </LinearLayout>
+
+                                                <TextView
+                                                    android:layout_width="fill_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="3"
+                                                    android:gravity="center_horizontal"
+                                                    android:text="SECTION"
+                                                    android:textColor="#fff" />
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:layout_weight="1"
+                                                android:background="@xml/rectange"
+                                                android:gravity="bottom"
+                                                android:orientation="horizontal" >
+
+                                                <TextView
+                                                    android:layout_width="fill_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="1.45"
+                                                    android:gravity="center_horizontal"
+                                                    android:text="TOWNSHIP"
+                                                    android:textColor="#fff" />
+
+                                                <TextView
+                                                    android:layout_width="fill_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="3"
+                                                    android:text="DEC"
+                                                    android:textColor="#fff" />
+
+                                                <TextView
+                                                    android:layout_width="fill_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="3"
+                                                    android:text="DIR N/S"
+                                                    android:textColor="#fff" />
+                                            </LinearLayout>
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="2"
+                                        android:background="@xml/rectange"
+                                        android:gravity="bottom"
+                                        android:orientation="horizontal" >
+
+                                        <TextView
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1.45"
+                                            android:gravity="center_horizontal"
+                                            android:text="RANGE"
+                                            android:textColor="#fff" />
+
+                                        <TextView
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="3"
+                                            android:text="DEC"
+                                            android:textColor="#fff" />
+
+                                        <TextView
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="3"
+                                            android:text="DIR N/S"
+                                            android:textColor="#fff" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal" >
+
+                                    <EditText
+                                        android:id="@+id/edWylie141"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylie142" />
+
+                                    <EditText
+                                        android:id="@+id/edWylie142"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylieUnitRLT" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieUnitRLT"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylieSection1" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieSection1"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylieSection2" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieSection2"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylieTownship1" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieTownship1"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        android:nextFocusDown="@+id/edWylieTownship2" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieTownship2"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        android:nextFocusDown="@+id/edWylieTownship3" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieTownship3"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        android:nextFocusDown="@+id/edWylieTownshipDec" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieTownshipDec"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylieDirNS" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieDirNS"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylieRange1" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieRange1"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylieRange2" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieRange2"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylieRange3" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieRange3"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylieDecRange" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieDecRange"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylieDirEW" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieDirEW"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        android:nextFocusDown="@+id/edWylieMerdian1" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="5"
+                                android:background="@xml/rectange"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_cam"
+                                    android:gravity="center"
+                                    android:text="MERDIAN"
+                                    android:textColor="#fff" />
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/rectange"
+                                    android:orientation="horizontal" >
+
+                                    <EditText
+                                        android:id="@+id/edWylieMerdian1"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        android:nextFocusDown="@+id/edWylieMerdian2" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieMerdian2"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:gravity="center"
+                                        android:imeOptions="actionNext"
+                                        android:nextFocusDown="@+id/edWylieFlacNoLeaseNo" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!-- End Location -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:background="@xml/rectange"
+                            android:orientation="horizontal" >
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="50dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dip"
+                                    android:layout_marginTop="5dip"
+                                    android:text="FLAC NO/LEASE NO"
+                                    android:textSize="15dip" />
+
+                                <EditText
+                                    android:id="@+id/edWylieFlacNoLeaseNo"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:imeOptions="actionNext"
+                                    
+                                    android:maxLength="6"
+                                    android:nextFocusDown="@+id/edWylieDistrictNo"
+                                    android:paddingLeft="10dip"
+                                    android:paddingTop="20dip" >
+                                </EditText>
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="50dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dip"
+                                    android:layout_marginTop="5dip"
+                                    android:text="DISTRICT NO"
+                                    android:textSize="15dip" />
+
+                                <EditText
+                                    android:id="@+id/edWylieDistrictNo"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:imeOptions="actionNext"
+                                    
+                                    android:nextFocusDown="@+id/edWylieFedaralIndianNo"
+                                    android:paddingLeft="10dip"
+                                    android:paddingTop="20dip" >
+                                </EditText>
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="50dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dip"
+                                    android:layout_marginTop="5dip"
+                                    android:text="FEDERAL INDIAN LEASE NO"
+                                    android:textSize="15dip" />
+
+                                <EditText
+                                    android:id="@+id/edWylieFedaralIndianNo"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:imeOptions="actionNext"
+                                    
+                                    android:nextFocusDown="@+id/edWylieTicketNo"
+                                    android:paddingLeft="10dip"
+                                    android:paddingTop="20dip" >
+                                </EditText>
+                            </FrameLayout>
+                        </LinearLayout>
+                        <!-- 1 -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="60dp"
+                            android:background="@xml/rectange"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical" >
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal" >
+
+                                        <TextView
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:text="Date" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:orientation="horizontal" >
+
+                                        <Button
+                                            android:id="@+id/edWylieDate"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                            android:background="@xml/highlight_edittext_small"
+                                            android:gravity="center" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1" >
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="0.7"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dip"
+                                        android:layout_marginTop="5dip"
+                                        android:text="TICKET NO"
+                                        android:textSize="15dip" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieTicketNo"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:maxLength="7"
+                                        android:nextFocusDown="@+id/edWylieTankNoNgNo" >
+                                    </EditText>
+                                </FrameLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dip"
+                                        android:layout_marginTop="5dip"
+                                        android:text="TANK NO./NG NO"
+                                        android:textSize="15dip" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieTankNoNgNo"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylieTankSize"
+                                        android:paddingLeft="10dip"
+                                        android:paddingTop="20dip" >
+                                    </EditText>
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="2"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dip"
+                                        android:layout_marginTop="5dip"
+                                        android:text="TANK SIZE"
+                                        android:textSize="15dip" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieTankSize"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylie1stOilFt"
+                                        android:paddingLeft="10dip"
+                                        android:paddingTop="20dip" >
+                                    </EditText>
+                                </FrameLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!-- 1 -->
+                        <!-- OIL LEVEL -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="180dp"
+                            android:background="@xml/rectange2"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="6.3"
+                                    android:background="@drawable/bg_cam"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/rectange"
+                                        android:gravity="center"
+                                        android:text="GA"
+                                        android:textColor="#fff" />
+
+                                    <TextView
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/rectange"
+                                        android:gravity="center"
+                                        android:text="1st"
+                                        android:textColor="#fff" />
+
+                                    <TextView
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:background="@xml/rectange"
+                                        android:gravity="center"
+                                        android:text="2nd"
+                                        android:textColor="#fff" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal" >
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical" >
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/bg_cam"
+                                            android:orientation="vertical" >
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center_horizontal"
+                                                android:gravity="center"
+                                                android:text="OIL LEVEL"
+                                                android:textColor="#fff" />
+
+                                            <LinearLayout
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:layout_weight="1"
+                                                android:orientation="horizontal" >
+
+                                                <TextView
+                                                    android:layout_width="fill_parent"
+                                                    android:layout_height="fill_parent"
+                                                    android:layout_weight="1"
+                                                    android:background="@xml/rectange"
+                                                    android:gravity="center"
+                                                    android:text="FT"
+                                                    android:textColor="#fff" />
+
+                                                <TextView
+                                                    android:layout_width="fill_parent"
+                                                    android:layout_height="fill_parent"
+                                                    android:layout_weight="1"
+                                                    android:background="@xml/rectange"
+                                                    android:gravity="center"
+                                                    android:text="IN"
+                                                    android:textColor="#fff" />
+
+                                                <TextView
+                                                    android:layout_width="fill_parent"
+                                                    android:layout_height="fill_parent"
+                                                    android:layout_weight="1"
+                                                    android:background="@xml/rectange"
+                                                    android:gravity="center"
+                                                    android:text="1/4In"
+                                                    android:textColor="#fff" />
+                                            </LinearLayout>
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                            android:orientation="horizontal" >
+
+                                            <EditText
+                                                android:id="@+id/edWylie1stOilFt"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:layout_weight="1"
+                                                android:background="@xml/highlight_edittext_small"
+                                                android:gravity="center"
+                                                android:imeOptions="actionNext"
+                                                
+                                                android:nextFocusDown="@+id/edWylie1stOilIn" />
+
+                                            <EditText
+                                                android:id="@+id/edWylie1stOilIn"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:layout_weight="1"
+                                                android:background="@xml/highlight_edittext_small"
+                                                android:gravity="center"
+                                                android:imeOptions="actionNext"
+                                                
+                                                android:nextFocusDown="@+id/edWylie1stOil14In" />
+
+                                            <EditText
+                                                android:id="@+id/edWylie1stOil14In"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:layout_weight="1"
+                                                android:background="@xml/highlight_edittext_small"
+                                                android:gravity="center"
+                                                android:imeOptions="actionNext"
+                                                
+                                                android:nextFocusDown="@+id/edWylie1stOilTem" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                            android:orientation="horizontal" >
+
+                                            <EditText
+                                                android:id="@+id/edWylie2ndOilFt"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:layout_weight="1"
+                                                android:background="@xml/highlight_edittext_small"
+                                                android:gravity="center"
+                                                android:imeOptions="actionNext"
+                                                
+                                                android:nextFocusDown="@+id/edWylie2ndOilIn" />
+
+                                            <EditText
+                                                android:id="@+id/edWylie2ndOilIn"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:layout_weight="1"
+                                                android:background="@xml/highlight_edittext_small"
+                                                android:gravity="center"
+                                                android:imeOptions="actionNext"
+                                                
+                                                android:nextFocusDown="@+id/edWylie2ndOil14In" />
+
+                                            <EditText
+                                                android:id="@+id/edWylie2ndOil14In"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:layout_weight="1"
+                                                android:background="@xml/highlight_edittext_small"
+                                                android:gravity="center"
+                                                android:imeOptions="actionNext"
+                                                
+                                                android:nextFocusDown="@+id/edWylie2ndOilTem" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="3.5"
+                                        android:background="@xml/rectange"
+                                        android:orientation="vertical" >
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/bg_cam"
+                                            android:orientation="vertical" >
+
+                                            <TextView
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:layout_weight="1"
+                                                android:background="@xml/rectange"
+                                                android:gravity="center"
+                                                android:text="TEMP"
+                                                android:textColor="#fff" />
+                                        </LinearLayout>
+
+                                        <EditText
+                                            android:id="@+id/edWylie1stOilTem"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                            android:background="@xml/highlight_edittext_small"
+                                            android:gravity="center"
+                                            android:imeOptions="actionNext"
+                                            
+                                            android:nextFocusDown="@+id/edWylie1stBswFt" />
+
+                                        <EditText
+                                            android:id="@+id/edWylie2ndOilTem"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                            android:background="@xml/highlight_edittext_small"
+                                            android:gravity="center"
+                                            android:imeOptions="actionNext"
+                                            
+                                            android:nextFocusDown="@+id/edWylie2ndBswFt" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="5"
+                                    android:background="@xml/rectange"
+                                    android:orientation="vertical" >
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="5"
+                                        android:background="@drawable/bg_cam"
+                                        android:orientation="vertical" >
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:background="@null"
+                                            android:gravity="center"
+                                            android:text="BSW"
+                                            android:textColor="#fff" />
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                            android:background="@xml/rectange"
+                                            android:orientation="horizontal" >
+
+                                            <TextView
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:layout_weight="1"
+                                                android:background="@xml/rectange"
+                                                android:gravity="center"
+                                                android:text="FT"
+                                                android:textColor="#fff" />
+
+                                            <TextView
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:layout_weight="1"
+                                                android:background="@xml/rectange"
+                                                android:gravity="center"
+                                                android:text="IN"
+                                                android:textColor="#fff" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="5"
+                                        android:background="@xml/rectange" >
+
+                                        <EditText
+                                            android:id="@+id/edWylie1stBswFt"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                            android:background="@xml/highlight_edittext_small"
+                                            android:gravity="center"
+                                            android:imeOptions="actionNext"
+                                            
+                                            android:nextFocusDown="@+id/edWylie1stBswIn" />
+
+                                        <EditText
+                                            android:id="@+id/edWylie1stBswIn"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                            android:background="@xml/highlight_edittext_small"
+                                            android:gravity="center"
+                                            android:imeOptions="actionNext"
+                                            
+                                            android:nextFocusDown="@+id/edWylie2ndOilFt" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="5"
+                                        android:background="@xml/rectange" >
+
+                                        <EditText
+                                            android:id="@+id/edWylie2ndBswFt"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                            android:background="@xml/highlight_edittext_small"
+                                            android:gravity="center"
+                                            android:imeOptions="actionNext"
+                                            
+                                            android:nextFocusDown="@+id/edWylie2ndBswIn" />
+
+                                        <EditText
+                                            android:id="@+id/edWylie2ndBswIn"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                            android:background="@xml/highlight_edittext_small"
+                                            android:gravity="center"
+                                            android:imeOptions="actionNext"
+                                            
+                                            android:nextFocusDown="@+id/edWylieOilBarrels" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="6"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dip"
+                                        android:layout_marginTop="5dip"
+                                        android:text="EST BARRELS"
+                                        android:textSize="15dip" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieOilBarrels"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:imeOptions="actionNext"
+                                        android:nextFocusDown="@+id/edWylieObservedGty"
+                                        android:paddingLeft="10dip"
+                                        android:paddingTop="20dip" >
+                                    </EditText>
+                                </FrameLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!-- End OIL LEVEL -->
+                        <!-- 2 -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="60dp"
+                            android:background="@xml/rectange"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="5dip"
+                                        android:text="OBSERVED GTY and TEMP" />
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:orientation="horizontal" >
+
+                                        <EditText
+                                            android:id="@+id/edWylieObservedGty"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                            android:background="@xml/highlight_edittext_small"
+                                            android:gravity="center"
+                                            android:imeOptions="actionNext"
+                                            android:nextFocusDown="@+id/edWylieObservedTemp" />
+
+                                        <EditText
+                                            android:id="@+id/edWylieObservedTemp"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                            android:background="@xml/highlight_edittext_small"
+                                            android:gravity="center"
+                                            android:imeOptions="actionNext"
+                                            android:nextFocusDown="@+id/edWylieBsw10" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1" >
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="0.8"
+                                    android:background="@xml/rectange"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="5dip"
+                                        android:text="BS and W" />
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="right"
+                                        android:orientation="horizontal" >
+
+                                        <EditText
+                                            android:id="@+id/edWylieBsw10"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                            android:background="@null"
+                                            android:imeOptions="actionNext"
+                                            android:nextFocusDown="@+id/edWylieOilTruckBy"
+                                            android:paddingLeft="10dip" >
+                                        </EditText>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="fill_parent"
+                                            android:layout_marginRight="20dp"
+                                            android:text="/10%"
+                                            android:textSize="18sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="4"
+                                android:background="@xml/rectange"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dip"
+                                    android:layout_marginTop="5dip"
+                                    android:text="OIL TRUCK BY"
+                                    android:textSize="15dip" />
+
+                                <EditText
+                                    android:id="@+id/edWylieOilTruckBy"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edWylieOilTruckedTo"
+                                    android:paddingLeft="10dip"
+                                    android:paddingTop="20dip" >
+                                </EditText>
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <!-- 2 -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="60dp"
+                            android:background="@xml/rectange"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dip"
+                                        android:layout_marginTop="5dip"
+                                        android:text="OIL TRUCKED TO"
+                                        android:textSize="15dip" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieOilTruckedTo"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:imeOptions="actionNext"
+                                        android:nextFocusDown="@+id/edWylieTruckNo"
+                                        android:paddingLeft="10dip"
+                                        android:paddingTop="20dip" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1.5"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dip"
+                                        android:layout_marginTop="5dip"
+                                        android:text="TRUCK NO"
+                                        android:textSize="15dip" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieTruckNo"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylieTrailerNo"
+                                        android:paddingLeft="10dip"
+                                        android:paddingTop="20dip" >
+                                    </EditText>
+                                </FrameLayout>
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="4"
+                                android:background="@xml/rectange"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dip"
+                                    android:layout_marginTop="5dip"
+                                    android:text="TRAILER NO"
+                                    android:textSize="15dip" />
+
+                                <EditText
+                                    android:id="@+id/edWylieTrailerNo"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:imeOptions="actionNext"
+                                    
+                                    android:nextFocusDown="@+id/edWylieTurnOnMBI"
+                                    android:paddingLeft="10dip"
+                                    android:paddingTop="20dip" >
+                                </EditText>
+                            </FrameLayout>
+                        </LinearLayout>
+                        <!-- 3 -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="100dp"
+                            android:background="@xml/rectange"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="10"
+                                    android:background="@drawable/bg_cam"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="TURNED ON"
+                                        android:textColor="#fff" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1.5"
+                                    android:background="@xml/rectange"
+                                    android:orientation="vertical" >
+
+                                    <FrameLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="4"
+                                        android:background="@xml/rectange"
+                                        android:orientation="vertical" >
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dip"
+                                            android:layout_marginTop="5dip"
+                                            android:text="FOR MBI REB.SIGNATURE"
+                                            android:textSize="15dip" />
+
+                                        <EditText
+                                            android:id="@+id/edWylieTurnOnMBI"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:background="@xml/highlight_edittext_small"
+                                            android:imeOptions="actionNext"
+                                            
+                                            android:nextFocusDown="@+id/edWylieTurnOnTime"
+                                            android:paddingLeft="10dip"
+                                            android:paddingTop="20dip" >
+                                        </EditText>
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="4"
+                                        android:background="@xml/rectange"
+                                        android:orientation="vertical" >
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dip"
+                                            android:layout_marginTop="5dip"
+                                            android:text="SIGNATURE OF WITNESS(OR WAIVER NO)"
+                                            android:textSize="15dip" />
+
+                                        <EditText
+                                            android:id="@+id/edWylieTurnOnWitness"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:background="@xml/highlight_edittext_small"
+                                            android:imeOptions="actionNext"
+                                            
+                                            android:nextFocusDown="@+id/edWylieTurnOnsealOff"
+                                            android:paddingLeft="10dip"
+                                            android:paddingTop="20dip" >
+                                        </EditText>
+                                    </FrameLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="4"
+                                android:background="@xml/rectange"
+                                android:orientation="vertical" >
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="4"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dip"
+                                        android:layout_marginTop="5dip"
+                                        android:text="TIME"
+                                        android:textSize="15dip" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieTurnOnTime"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylieTurnOnWitness"
+                                        android:paddingLeft="10dip"
+                                        android:paddingTop="20dip" >
+                                    </EditText>
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="4"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dip"
+                                        android:layout_marginTop="5dip"
+                                        android:text="OFF SEAL"
+                                        android:textSize="15dip" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieTurnOnsealOff"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylieTurnOffMBI"
+                                        android:paddingLeft="10dip"
+                                        android:paddingTop="20dip" >
+                                    </EditText>
+                                </FrameLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- 4 -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="100dp"
+                            android:background="@xml/rectange"
+                            android:orientation="horizontal"
+                            android:visibility="gone" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="10"
+                                    android:background="@drawable/bg_cam"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="TURNED OFF"
+                                        android:textColor="#fff" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1.5"
+                                    android:background="@xml/rectange"
+                                    android:orientation="vertical" >
+
+                                    <FrameLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="4"
+                                        android:orientation="vertical" >
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dip"
+                                            android:layout_marginTop="5dip"
+                                            android:text="FOR MBI REB.SIGNATURE"
+                                            android:textSize="15dip" />
+
+                                        <EditText
+                                            android:id="@+id/edWylieTurnOffMBI"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:background="@xml/highlight_edittext_small"
+                                            android:imeOptions="actionNext"
+                                            
+                                            android:nextFocusDown="@+id/edWylieTurnOffTime"
+                                            android:paddingLeft="10dip"
+                                            android:paddingTop="20dip" >
+                                        </EditText>
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="4"
+                                        android:orientation="vertical" >
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dip"
+                                            android:layout_marginTop="5dip"
+                                            android:text="SIGNATURE OF WITNESS(OR WAIVER NO)"
+                                            android:textSize="15dip" />
+
+                                        <EditText
+                                            android:id="@+id/edWylieTurnOffWitness"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:background="@xml/highlight_edittext_small"
+                                            android:imeOptions="actionNext"
+                                            
+                                            android:nextFocusDown="@+id/edWylieTurnOffSealOn"
+                                            android:paddingLeft="10dip"
+                                            android:paddingTop="20dip" >
+                                        </EditText>
+                                    </FrameLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="4"
+                                android:background="@xml/rectange"
+                                android:orientation="vertical" >
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="4"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dip"
+                                        android:layout_marginTop="5dip"
+                                        android:text="TIME"
+                                        android:textSize="15dip" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieTurnOffTime"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylieTurnOffWitness"
+                                        android:paddingLeft="10dip"
+                                        android:paddingTop="20dip" >
+                                    </EditText>
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="4"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dip"
+                                        android:layout_marginTop="5dip"
+                                        android:text="ON SEAL"
+                                        android:textSize="15dip" />
+
+                                    <EditText
+                                        android:id="@+id/edWylieTurnOffSealOn"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:imeOptions="actionNext"
+                                        
+                                        android:nextFocusDown="@+id/edWylieUnitType1"
+                                        android:paddingLeft="10dip"
+                                        android:paddingTop="20dip" >
+                                    </EditText>
+                                </FrameLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- 5 -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/bg_cam"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="5" >
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:text="NO UNIT TYPE"
+                                    android:textColor="#fff" />
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1.7"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:text="HMX"
+                                    android:textColor="#fff" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1" >
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:paddingLeft="5dip"
+                                    android:text="PROPER SHIPPING NAME HAZARD CLASS, UN/NA NUMBER"
+                                    android:textColor="#fff" />
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="4"
+                                    android:background="@xml/rectange"
+                                    android:gravity="center"
+                                    android:text="NET BARRELS"
+                                    android:textColor="#fff" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!-- 6 -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/rectange"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="5" >
+
+                                <EditText
+                                    android:id="@+id/edWylieUnitType1"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    
+                                    android:nextFocusDown="@+id/edWylieHMX1" />
+
+                                <EditText
+                                    android:id="@+id/edWylieHMX1"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1.7"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    
+                                    android:nextFocusDown="@+id/edWyliePorPer1" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1" >
+
+                                <EditText
+                                    android:id="@+id/edWyliePorPer1"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edWylieNetBarre1" />
+
+                                <EditText
+                                    android:id="@+id/edWylieNetBarre1"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="4"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edWylieUnitType2" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!-- 7 -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/rectange"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="5" >
+
+                                <EditText
+                                    android:id="@+id/edWylieUnitType2"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    
+                                    android:nextFocusDown="@+id/edWylieHMX2" />
+
+                                <EditText
+                                    android:id="@+id/edWylieHMX2"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1.7"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    
+                                    android:nextFocusDown="@+id/edWyliePorPer2" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1" >
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dip"
+                                        android:layout_marginTop="5dip"
+                                        android:text="PETROLEUM CRUDE OIL 3 ,UN 1267 ,II(CRUDE OIL)"
+                                        android:textSize="15dip" />
+
+                                    <EditText
+                                        android:id="@+id/edWyliePorPer2"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:background="@xml/highlight_edittext_small"
+                                        android:imeOptions="actionNext"
+                                        android:nextFocusDown="@+id/edWylieNetBarre2"
+                                        android:paddingLeft="10dip"
+                                        android:paddingTop="20dip" />
+                                </FrameLayout>
+
+                                <EditText
+                                    android:id="@+id/edWylieNetBarre2"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="4"
+                                    android:background="@xml/highlight_edittext_small"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edWylieRemark" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- 8 -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/bg_cam"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/tvEmergency_contact"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:gravity="center_vertical"
+                                android:text="EMERGENCY CONTACT :-701-263-1509"
+                                android:textColor="#fff" />
+                        </LinearLayout>
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:baselineAligned="false"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dip"
+                                android:layout_marginTop="5dip"
+                                android:text="REMARK"
+                                android:textSize="15dip" />
+
+                            <EditText
+                                android:id="@+id/edWylieRemark"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:background="@xml/highlight_edittext_small"
+                                android:gravity="top|left"
+                                android:inputType="textMultiLine"
+                                android:lines="5"
+                                android:maxLines="7"
+                                android:paddingLeft="10dip"
+                                android:paddingTop="20dip" >
+                            </EditText>
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dip"
+                                android:paddingTop="3dip"
+                                android:text="This is certify that herein named materials are properly classified" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal" >
+
+                            <Button
+                                android:id="@+id/btSaveWylie"
+                                android:layout_width="100dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@xml/custom_button_orange"
+                                android:text="SAVE" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="20"
+            android:background="@drawable/footer"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

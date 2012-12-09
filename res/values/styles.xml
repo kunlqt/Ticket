@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Dangnv -->
+    <style name="TextHeader">
+        <item name="android:textColor">#f47320</item>
+        <item name="android:textSize">@dimen/font_size_text_header</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextTitle">
+        <item name="android:textColor">#f47320</item>
+        <item name="android:textSize">@dimen/font_size_text_title</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TextInput">
+        <item name="android:background">@xml/highlight_edittext</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:paddingLeft">3dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingRight">3dp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/font_size_text_input</item>
+        <item name="android:imeOptions">actionNext</item>
+    </style>
+
+</resources>

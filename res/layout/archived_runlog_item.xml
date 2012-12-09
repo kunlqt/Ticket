@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/tvArchivedNumber"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@xml/rectange"
+                android:gravity="center_vertical"
+                android:paddingLeft="5px"
+                android:paddingRight="5px"
+                android:text="Number"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#a39e9e"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvArchivedDate"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@xml/rectange"
+                android:gravity="center_vertical"
+                android:paddingLeft="5px"
+                android:paddingRight="5px"
+                android:text="Date"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#a39e9e"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="7"
+            android:background="@xml/rectange" >
+
+            <Button
+                android:id="@+id/btArchivedView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@null"
+                android:gravity="center"
+                android:text="View"
+                android:textColor="#f47320"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

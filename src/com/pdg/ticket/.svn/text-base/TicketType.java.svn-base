@@ -1,0 +1,142 @@
+package com.pdg.ticket;
+
+import java.util.ArrayList;
+
+import com.pdg.ticket.adapter.WylieTicket;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+public class TicketType extends Activity implements OnClickListener {
+
+	private Button btPlains;
+	private Button btSierra;
+	private Button btTesoro;
+	private Button btWyLie;
+	private int idRunlog;
+	private int ticketType;
+	private String nameRunlog;
+	
+	private static final int requestCodeGoNewTicketType=1;
+
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.ticket_type);
+		btPlains = (Button) findViewById(R.id.btPlains);
+		btSierra = (Button) findViewById(R.id.btSierra);
+		btTesoro = (Button) findViewById(R.id.btTesoro);
+		btWyLie = (Button) findViewById(R.id.btWylie);
+		btPlains.setOnClickListener(this);
+		btSierra.setOnClickListener(this);
+		btTesoro.setOnClickListener(this);
+		btWyLie.setOnClickListener(this);
+		idRunlog=getIntent().getExtras().getInt("idRunlog", 0);
+		nameRunlog=getIntent().getExtras().getString("nameRunlog");
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		if (v == btPlains) {
+			ticketType=1;
+			Intent intent = new Intent(TicketType.this,PlainsTicket.class);
+			intent.putExtra("idRunLog", idRunlog);
+			intent.putExtra("ticketType", ticketType);
+			intent.putExtra("nameRunlog", nameRunlog);
+			new ClickButton(this, intent).execute();
+		}
+		if (v == btSierra) {
+			ticketType=2;
+			Intent intent = new Intent(TicketType.this,HighSierraTicket.class);
+			intent.putExtra("idRunLog", idRunlog);
+			intent.putExtra("ticketType", ticketType);
+			intent.putExtra("nameRunlog", nameRunlog);
+			new ClickButton(this, intent).execute();
+		}
+		if (v == btTesoro) {
+			ticketType=3;
+			Intent intent = new Intent(TicketType.this,TesoroTicket.class);
+			intent.putExtra("idRunLog", idRunlog);
+			intent.putExtra("ticketType", ticketType);
+			intent.putExtra("nameRunlog", nameRunlog);
+			new ClickButton(this, intent).execute();;
+
+		}
+		if (v == btWyLie) {
+			ticketType=4;
+			Intent intent = new Intent(TicketType.this,com.pdg.ticket.WylieTicket.class);
+			intent.putExtra("idRunLog", idRunlog);
+			intent.putExtra("ticketType", ticketType);
+			intent.putExtra("nameRunlog", nameRunlog);
+			new ClickButton(this, intent).execute();
+		}
+	}
+public class ClickButton extends AsyncTask<Void, Void, Boolean> {
+    	
+    	private Context mContext;
+		private AlertDialog dialog;   	
+		Intent intent;
+		public ClickButton(Context context,Intent intent) {
+			// TODO Auto-generated constructor stub
+			mContext=context;
+			this.intent = intent;
+		}
+		@Override
+    	protected void onPreExecute() {
+    		dialog = new ProgressDialog(mContext);
+    		dialog.setCancelable(true);
+    		dialog.setMessage("Loading...");    		
+    	    dialog.show();
+    		
+    	}
+
+    	@Override
+    	protected Boolean doInBackground(Void... arg0) {
+    		try {
+					startActivityForResult(intent, requestCodeGoNewTicketType);
+					return true;
+    			
+    		} catch (Exception e) {
+    			return false;
+    		}
+    		
+    		
+    	}
+    	@Override
+    	protected void onPostExecute(Boolean result) {  
+    		if(dialog.isShowing())
+            {
+               dialog.dismiss();
+            }           
+    	}
+	}
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		
+		
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		switch (requestCode) {
+		case requestCodeGoNewTicketType:
+			Log.d("KUNLQT", "ON ACTIVITY RESULT");
+			setResult(Activity.RESULT_OK);
+			this.finish();
+			break;
+
+		default:
+			break;
+		}
+	}
+}

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/adapter
+END
+ArchiviedTicketAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/adapter/ArchiviedTicketAdapter.java
+END
+Utility.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/adapter/Utility.java
+END
+TicketReviewAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/TicketEnd/!svn/ver/3/TicketSVN/src/com/pdg/ticket/adapter/TicketReviewAdapter.java
+END
+UnfinishTicketAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/TicketEnd/!svn/ver/3/TicketSVN/src/com/pdg/ticket/adapter/UnfinishTicketAdapter.java
+END
+ModelTicket.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/adapter/ModelTicket.java
+END
+ModelCommodity.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/adapter/ModelCommodity.java
+END
+ModelCorrectionTicket.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/adapter/ModelCorrectionTicket.java
+END
+TicketAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/TicketEnd/!svn/ver/3/TicketSVN/src/com/pdg/ticket/adapter/TicketAdapter.java
+END
+ArchievedTicketListAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/adapter/ArchievedTicketListAdapter.java
+END
+WylieTicket.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/adapter/WylieTicket.java
+END

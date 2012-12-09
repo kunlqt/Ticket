@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<EditText android:text="Track 1" android:focusable="false" android:editable="false" android:cursorVisible="false" android:id="@+id/EditText01" android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+<EditText android:text="Track 2" android:focusable="false" android:editable="false" android:cursorVisible="false" android:id="@+id/EditText02" android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+<EditText android:text="Track 3" android:focusable="false" android:editable="false" android:cursorVisible="false" android:id="@+id/EditText03" android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+<LinearLayout android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+>
+<Spinner android:id="@+id/Spinner01" android:layout_weight="1" android:layout_width="fill_parent" android:layout_height="wrap_content"></Spinner>
+<Button android:text="Read MSR" android:id="@+id/Button02" android:layout_weight="1" android:layout_width="fill_parent" android:layout_height="wrap_content"></Button>
+
+</LinearLayout>
+</LinearLayout>

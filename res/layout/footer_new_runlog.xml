@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Select &apos;New Ticket&apos; to create your first ticket" />
+
+    <Button
+        android:id="@+id/btNewTicket"
+        android:layout_width="150px"
+        android:layout_height="50px"
+        android:layout_gravity="right"
+        android:background="@xml/custom_button_orange"
+        android:text="New Ticket" />
+<!--  Dangnv - Remove Billing 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:text="STEP 3: Billing Slip"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvNewRunlogBilling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Select &apos;Enter Billing Slip&apos; to fill out a billing ticket for this set" />
+
+    <Button
+        android:id="@+id/btBilling1"
+        android:layout_width="200px"
+        android:layout_height="50px"
+        android:layout_gravity="right"
+        android:background="@xml/custom_button_orange"
+        android:text="Enter Billing Slip" />
+         -->
+
+    <RelativeLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:gravity="bottom"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btNewBack"
+            android:layout_width="150px"
+            android:layout_height="50px"
+            android:layout_gravity="left"
+            android:background="@xml/custom_button_orange"
+            android:text="Back" />
+
+        <Button
+            android:id="@+id/btNewReview"
+            android:layout_width="150px"
+            android:layout_height="50px"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@xml/custom_button_orange"
+            android:text="Review" />
+    </RelativeLayout>
+
+</LinearLayout>

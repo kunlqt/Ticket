@@ -1,0 +1,540 @@
+package com.pdg.ticket;
+
+import java.io.File;
+
+import java.io.FileOutputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.pdg.ticket.Global.GlobalValue;
+import com.pdg.ticket.adapter.ModelCorrectionTicket;
+import com.pdg.ticket.adapter.TicketAdapter;
+import com.pdg.ticket.adapter.TicketReviewAdapter;
+import com.pdg.ticket.adapter.Utility;
+import com.pdg.ticket.model.ConfirmedRunlogObj;
+import com.pdg.ticket.service.Domain;
+import com.pdg.ticket.service.LoadTicket;
+import com.pdg.ticket.service.ServiceClient;
+import com.pdg.ticket.service.ServiceRequest;
+
+import com.pdg.ticket.utils.CreatePdfUtils;
+import com.pdg.ticket.utils.DatabaseHelper;
+import com.pdg.ticket.utils.Mail;
+import com.pdg.ticket.utils.Utils;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Environment;
+import android.provider.LiveFolders;
+import android.util.Log;
+import android.util.TypedValue;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.MeasureSpec;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.Toast;
+
+public class ReviewRunlog extends Activity {
+
+	private int idRunLog;
+
+	/* MrPhuoc Begin */
+	private String url = Domain.SERVICES_URL + "get_runlog?id=";
+	private String LOAD_BILLING_URL = Domain.SERVICES_URL + "get_runlog_billing/";
+	private List<ModelCorrectionTicket> list;
+	private List<ConfirmedRunlogObj> listConfirmed;
+	private ArrayAdapter<ModelCorrectionTicket> listAdapterTicket;
+	private AlertDialog dialog;
+	private ListView listView;
+	private LinearLayout llContrainFooter;
+	private View footer;
+	public DatabaseHelper myDbHelper;
+	private LinearLayout llContainListview;
+	private static SharedPreferences prefsConfirmedBilling;
+	private Boolean isConfirmedBilling;
+	private ImageButton imgBnConfirmedBilling;
+	private Button btReviewBilling;
+	private static final int requestcodeReviewBilling = 40;
+	private Button btSubmit;
+	private LinearLayout mainReview;
+	private CreatePdfUtils createPdfUtil;
+
+	/* MrPhuoc End */
+
+	public static enum typeConfirmed {
+		confirmedRunTicket, confirmedRail, confirmedCorrect,
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.review_runlog);
+		dialog = new ProgressDialog(this);
+		LayoutInflater inflator = (LayoutInflater) this
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+		footer = inflator.inflate(R.layout.footer_review_runlog, null);
+		imgBnConfirmedBilling = (ImageButton) footer
+				.findViewById(R.id.imgBtRivewConfirmedBilling);
+		btReviewBilling = (Button) footer
+				.findViewById(R.id.btReviewRunlogReviewBilling);
+		btSubmit = (Button) footer.findViewById(R.id.btSubmit);
+		btSubmit.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				if (checkForSubmit()) {
+					new UpdateRunlogTask().execute();
+				} else {
+					Toast.makeText(
+							ReviewRunlog.this,
+							"Please review and confirm all forms before you submit",
+							Toast.LENGTH_SHORT).show();
+				}
+
+			}
+		});
+
+		btReviewBilling.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(ReviewRunlog.this,
+						BillingSlipTicket.class);
+				intent.putExtra("idRunlog", idRunLog);
+				intent.putExtra("callFromReview", true);
+				new ClickButton(ReviewRunlog.this, intent).execute();
+
+			}
+		});
+		;
+
+		llContrainFooter = (LinearLayout) findViewById(R.id.llContrainFooterRiview);
+		listView = (ListView) findViewById(R.id.listReviewRunlog);
+		llContainListview = (LinearLayout) findViewById(R.id.llContainListview);
+		myDbHelper = new DatabaseHelper(ReviewRunlog.this);
+		prefsConfirmedBilling = getSharedPreferences("remember", MODE_PRIVATE);
+
+		try {
+			myDbHelper.openDataBase();
+			idRunLog = this.getIntent().getExtras().getInt("idRunLog", 0);
+			if (prefsConfirmedBilling != null) {
+				isConfirmedBilling = prefsConfirmedBilling.getBoolean(""
+						+ idRunLog, false);
+				if (isConfirmedBilling) {
+					imgBnConfirmedBilling.setImageDrawable(this.getResources()
+							.getDrawable(R.drawable.check_mark));
+				}
+			}
+			url = url + idRunLog;
+			new LoadRunLogTask().execute();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		mainReview = (LinearLayout) findViewById(R.id.mainRivew);
+		listView.setDrawingCacheEnabled(true);
+
+	}
+
+	private static File getOutputMediaFile(int type) {
+		// To be safe, you should check that the SDCard is mounted
+		// using Environment.getExternalStorageState() before doing this.
+
+		File mediaStorageDir = new File(
+				Environment
+						.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
+				"MyCameraApp");
+		// This location works best if you want the created images to be shared
+		// between applications and persist after your app has been uninstalled.
+
+		// Create the storage directory if it does not exist
+		if (!mediaStorageDir.exists()) {
+			if (!mediaStorageDir.mkdirs()) {
+				Log.d("MyCameraApp", "failed to create directory");
+				return null;
+			}
+		}
+
+		// Create a media file name
+		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss")
+				.format(new Date());
+		File mediaFile;
+		if (type == 1) {
+			mediaFile = new File(mediaStorageDir.getPath() + File.separator
+					+ "IMG_" + timeStamp + ".jpg");
+		} else if (type == 2) {
+			mediaFile = new File(mediaStorageDir.getPath() + File.separator
+					+ "VID_" + timeStamp + ".mp4");
+		} else {
+			return null;
+		}
+
+		return mediaFile;
+	}
+
+	private class LoadRunLogTask extends AsyncTask<Void, Void, Void> {
+		private String name;
+		private String resultLoadBilling;
+
+		@Override
+		protected Void doInBackground(Void... params) {
+			try {
+				LoadTicket arrayTicket = new LoadTicket(url);
+				list = arrayTicket.getArrayTicket();
+				listConfirmed = myDbHelper.getListTicketConfirmed(idRunLog);
+				synListTicketAndListConfirmed();
+				name = arrayTicket.getName();
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		@Override
+		protected void onPreExecute() {
+			dialog.setMessage("Loading...");
+			dialog.show();
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+			try {
+				listAdapterTicket = new TicketReviewAdapter(ReviewRunlog.this,
+						list, idRunLog, isConfirmedBilling);
+				if (list == null || list.size() == 0) {
+					listView.setVisibility(View.GONE);
+					llContrainFooter.addView(footer,
+							new LinearLayout.LayoutParams(
+									LayoutParams.FILL_PARENT,
+									LayoutParams.WRAP_CONTENT));
+
+				} else
+					listView.addFooterView(footer);
+				listView.setAdapter(listAdapterTicket);
+
+			} catch (NullPointerException e) {
+				// TODO: handle exception
+			}
+
+			if (dialog.isShowing())
+				dialog.dismiss();
+		}
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		switch (requestCode) {
+		case TicketReviewAdapter.requestCodeReviewTicket:
+			if (resultCode == Activity.RESULT_OK) {
+				int position = data.getExtras().getInt("position");
+				((TicketReviewAdapter) listAdapterTicket)
+						.refreshAfterConfirmed(
+								typeConfirmed.confirmedRunTicket, position);
+			}
+			break;
+		case TicketReviewAdapter.requestCodeReviewRail:
+			if (resultCode == Activity.RESULT_OK) {
+				int position = data.getExtras().getInt("position");
+				((TicketReviewAdapter) listAdapterTicket)
+						.refreshAfterConfirmed(typeConfirmed.confirmedRail,
+								position);
+			}
+			break;
+		case TicketReviewAdapter.requestCodeReviewCorrection:
+			if (resultCode == Activity.RESULT_OK) {
+				int position = data.getExtras().getInt("position");
+				((TicketReviewAdapter) listAdapterTicket)
+						.refreshAfterConfirmed(typeConfirmed.confirmedCorrect,
+								position);
+			}
+			break;
+		case requestcodeReviewBilling:
+			if (resultCode == Activity.RESULT_OK) {
+				SaveConfirmedBilling(idRunLog, true);
+			}
+			break;
+		default:
+			break;
+		}
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		myDbHelper.close();
+	}
+
+	private void synListTicketAndListConfirmed() {
+		if (listConfirmed == null || listConfirmed.size() == 0) {
+			return;
+		}
+		for (int i = 0; i < list.size(); i++) {
+			for (int j = 0; j < listConfirmed.size(); j++) {
+				if (Integer.parseInt(list.get(i).getId()) == listConfirmed.get(
+						j).getIdTicket()) {
+					list.get(i).setIdConfirmed(listConfirmed.get(j).getId());
+					list.get(i).setConfirmedTicket(
+							listConfirmed.get(j).isComfirmedRunTicket());
+					list.get(i).setConfirmedRail(
+							listConfirmed.get(j).isComfirmedRail());
+					list.get(i).setConfirmedCorrect(
+							listConfirmed.get(j).isCorrection());
+					break;
+				}
+			}
+		}
+	}
+
+	private ListView createListView(Context context) {
+		ListView l = new ListView(context);
+		l.setScrollingCacheEnabled(false);
+		l.setScrollbarFadingEnabled(false);
+		l.setVerticalScrollBarEnabled(false);
+		l.setVerticalFadingEdgeEnabled(false);
+		l.setDivider(getResources().getDrawable(android.R.color.transparent));
+		Resources r = getResources();
+		float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 25,
+				r.getDisplayMetrics());
+		l.setDividerHeight((int) px);
+		return l;
+	}
+
+	private String loadData(final String url) {
+		String s = null;
+		Log.d("KUNLQT", "LOAD DATA:" + url);
+		// TODO Auto-generated method stub
+		try {
+			s = ServiceClient.loadManySerialized(url);
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+		return s;
+	}
+
+	private void SaveConfirmedBilling(int idRunlog, boolean isConfirmed) {
+		SharedPreferences.Editor editor = prefsConfirmedBilling.edit();
+		editor.putBoolean("" + idRunlog, isConfirmed);
+		editor.commit();
+		imgBnConfirmedBilling.setImageDrawable(this.getResources().getDrawable(
+				R.drawable.check_mark));
+		isConfirmedBilling=true;
+	}
+
+	public class ClickButton extends AsyncTask<Void, Void, Boolean> {
+
+		private Context mContext;
+		private ProgressDialog dialog;
+		Intent intent;
+		private int requestCode;
+
+		public ClickButton(Context context, Intent intent) {
+			// TODO Auto-generated constructor stub
+			mContext = context;
+			this.intent = intent;
+		}
+
+		@Override
+		protected void onPreExecute() {
+			dialog = new ProgressDialog(mContext);
+			dialog.setCancelable(true);
+			dialog.setMessage("Loading...");
+			dialog.show();
+
+		}
+
+		@Override
+		protected Boolean doInBackground(Void... arg0) {
+			try {
+				startActivityForResult(intent, requestcodeReviewBilling);
+				return true;
+			} catch (Exception e) {
+
+				return false;
+			}
+
+		}
+
+		@Override
+		protected void onPostExecute(Boolean result) {
+			if (dialog.isShowing()) {
+				dialog.dismiss();
+			}
+		}
+	}
+
+	private JSONObject createJsonRunlog() {
+		JSONObject rlJson = new JSONObject();
+		try {
+			rlJson.put("id", idRunLog);
+			rlJson.put("complete", true);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return rlJson;
+
+	}
+
+	private String UpdateCompleteInRunlog() {
+		String dataRL = ServiceRequest.postData("save_runlog",
+				createJsonRunlog(), "runlog");
+		return dataRL;
+
+	}
+
+	private class UpdateRunlogTask extends AsyncTask<Void, Void, Void> {
+		private String resultUpdate;
+
+		@Override
+		protected Void doInBackground(Void... params) {
+			try {
+				resultUpdate = UpdateCompleteInRunlog();
+				//createPdfUtil = new CreatePdfUtils(list, ReviewRunlog.this);
+				//createPdfUtil.CreatePdfFile();
+				//Mail m = new Mail("tickets@awtymaps.com", "Ls?9\"^7#i!@w4*/uN`nrFK`ZM\\EAdunJ");
+				//String[] toArr = { "tickettest@awtymaps.com" };
+				//m.setTo(toArr);
+				//m.setFrom("ticketaplication");
+				//m.setSubject("RUN LOG - AWTY Tickets - Wylie Bice Trucking");
+				//DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+				//Date date = new Date();
+				//String body="Date: "+dateFormat.format(date)+"\n Driver #:"+GlobalValue.dataObj.getDriverGuagerNo();
+				//m.setBody(body);
+				//try {
+				//	m.addAttachment(createPdfUtil.getFilePath()
+					//		.getAbsolutePath());
+					//if (m.send()) {
+					//	Log.d("KUNLQT", "Send email success");
+					//} else {
+					//	Log.d("KUNLQT", "Send email not success");
+				//	}
+				//} catch (Exception e) {
+				//	Log.e("MailApp", "Could not send email", e);
+			//	}
+			//	Log.d("KUNLQT", "UPDATE RESULT:" + resultUpdate);
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		@Override
+		protected void onPreExecute() {
+			dialog.setMessage("saving...");
+			dialog.show();
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+			try {
+				JSONObject json = new JSONObject(resultUpdate);
+				if (json != null && json.has("status")) {
+					if (json.getBoolean("status")) {
+						Toast.makeText(ReviewRunlog.this, "Submited!",
+								Toast.LENGTH_SHORT).show();
+						ReviewRunlog.this.setResult(Activity.RESULT_OK);
+						ReviewRunlog.this.finish();
+					} else {
+						Toast.makeText(ReviewRunlog.this, "Submit fail!",
+								Toast.LENGTH_SHORT).show();
+					}
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+
+			if (dialog.isShowing())
+				dialog.dismiss();
+		}
+	}
+
+	private class sendMail extends AsyncTask<Void, Void, Void> {
+		private String resultUpdate;
+
+		@Override
+		protected Void doInBackground(Void... params) {
+			try {
+
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		@Override
+		protected void onPreExecute() {
+			dialog.setMessage("saving...");
+			dialog.show();
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+
+			if (dialog.isShowing())
+				dialog.dismiss();
+		}
+	}
+
+	private Boolean checkForSubmit() {
+		for (int i = 0; i < list.size(); i++) {
+			ModelCorrectionTicket mt=list.get(i);
+			Log.d("KUNLQT", "ticket:"+mt.isConfirmedTicket());
+			Log.d("KUNLQT", "isRail:"+mt.isRail());
+			Log.d("KUNLQT", "confirmedRail:"+mt.isConfirmedRail());
+			Log.d("KUNLQT", "isCorrect:"+mt.isCorrection());
+			Log.d("KUNLQT", "confirmedCorrect:"+mt.isConfirmedCorrect());
+			
+			if (!mt.isConfirmedTicket())
+				return false;
+			
+			if (mt.isRail()) {
+				if (!mt.isConfirmedRail())
+					return false;
+			}
+			
+			if (mt.isCorrection()) {
+				if (!mt.isConfirmedCorrect())
+					return false;
+			}
+		}
+		if (!isConfirmedBilling)
+			return false;
+		return true;
+	}
+}

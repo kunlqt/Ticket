@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_dialoguelayout"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#6c6c6c"
+        android:text="Search by Name"
+        android:textSize="20dip" />
+
+    <EditText
+        android:id="@+id/edSearchByName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:padding="4dip" >
+
+        <requestFocus />
+    </EditText>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="#6c6c6c"
+            android:text="Search by Date Range"
+            android:textSize="25dip" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/edDateRange1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@xml/rectange"
+                android:textColor="#6c6c6c"
+                android:hint="mm/dd/yy"
+                android:padding="4dip" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+               android:textColor="#6c6c6c"
+                android:layout_marginTop="5dp"
+                android:text="-"
+                android:textSize="40dip" />
+
+            <Button
+                android:id="@+id/edDateRange2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@xml/rectange"
+                android:textColor="#6c6c6c"
+                android:hint="mm/dd/yy"
+                android:padding="4dip" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btSearchArchivedTicket"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@xml/custom_button_orange"
+            android:text="Search"
+            android:textColor="#f47320" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <!-- 1 ST -->
+
+    <LinearLayout
+        android:id="@+id/temp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bghighlight"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/TextHeader"
+            android:text="@string/_1st" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/level" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/ed1STLevelFeet"
+                        style="@style/TextInput"
+                        android:layout_weight="1"
+                        android:hint="@string/feet"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/ed1STLevelInches"
+                        style="@style/TextInput"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:hint="@string/inches" />
+
+                    <EditText
+                        android:id="@+id/ed1STLevel14In"
+                        style="@style/TextInput"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:hint="@string/_14in"
+                        android:inputType="number" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/temp" />
+
+                <EditText
+                    android:id="@+id/ed1STTemp"
+                    style="@style/TextInput" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/bbls" />
+
+                <EditText
+                    android:id="@+id/ed1STBBLS"
+                    style="@style/TextInput"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/bsw" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/ed1STSWFeet"
+                        style="@style/TextInput"
+                        android:layout_weight="1"
+                        android:hint="@string/feet"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/ed1STSWInches"
+                        style="@style/TextInput"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:hint="@string/inches"
+                        android:inputType="number" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 2nd -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bghighlight"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/TextHeader"
+            android:text="@string/_2nd" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/level" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/ed2STLevelFeet"
+                        style="@style/TextInput"
+                        android:layout_weight="1"
+                        android:hint="@string/feet"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/ed2STLevelInches"
+                        style="@style/TextInput"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:hint="@string/inches"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/ed2STLevel14In"
+                        style="@style/TextInput"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:hint="@string/_14in"
+                        android:inputType="number" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/temp" />
+
+                <EditText
+                    android:id="@+id/ed2STTemp"
+                    style="@style/TextInput" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/bbls" />
+
+                <EditText
+                    android:id="@+id/ed2STBBLS"
+                    style="@style/TextInput"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/bsw" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/ed2STSWFeet"
+                        style="@style/TextInput"
+                        android:layout_weight="1"
+                        android:hint="@string/feet"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/ed2STSWInches"
+                        style="@style/TextInput"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:hint="@string/inches"
+                        android:inputType="number" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    
+    <include layout="@layout/meter_layout"/>
+    <!-- EST - BARRENT -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/TextTitle"
+                android:text="@string/est_barrels" />
+
+            <EditText
+                android:id="@+id/edTicketSTEst_Barrels"
+                style="@style/TextInput" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/TextTitle"
+                android:text="@string/obs_gty" />
+
+            <EditText
+                android:id="@+id/edTicketObservedGty"
+                style="@style/TextInput" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/TextTitle"
+                android:text="@string/obs_temp" />
+
+            <EditText
+                android:id="@+id/edTicketObservedTemp"
+                style="@style/TextInput" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/TextTitle"
+                android:text="@string/bsw_percent" />
+
+            <EditText
+                android:id="@+id/edTicketBSW"
+                style="@style/TextInput" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/TextTitle"
+            android:text="@string/trucked_by" />
+
+        <EditText
+            android:id="@+id/edTicketTruckBy"
+            style="@style/TextInput"
+            android:text="AARMAC" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/TextTitle"
+            android:text="@string/trucked_to" />
+
+        <Spinner
+            android:id="@+id/spTicketTruckTO"
+            style="@style/TextInput"
+            android:background="@drawable/spinner" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/TextTitle"
+                android:text="@string/truck_no" />
+
+            <EditText
+                android:id="@+id/edTicketTRuckNumber"
+                style="@style/TextInput" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/TextTitle"
+                android:text="@string/trainler_no" />
+
+            <EditText
+                android:id="@+id/edTicketTrailerNumber"
+                style="@style/TextInput" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

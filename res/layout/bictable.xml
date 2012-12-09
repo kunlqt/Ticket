@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+     <TableLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="5dp" >
+
+                                <TableRow
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@drawable/textviewbackground"
+                                    android:orientation="horizontal" >
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1" >
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                             >
+
+                                            <TextView
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:text="Commodity"
+                                                android:gravity="center"
+                                                android:textSize="14dip" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="2"
+                                            >
+
+                                            <TextView
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:text="H2S"
+                                                android:gravity="center"
+                                                android:textSize="14dip" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="2"
+                                           >
+
+                                            <TextView
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:text="Non"
+                                                android:gravity="center"
+                                                android:textSize="14dip" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_weight="1" >
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                             >
+
+                                            <TextView
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:text="Barrels"
+                                                android:gravity="center"
+                                                android:textSize="14dip" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                           >
+
+                                            <TextView
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:text="Hours"
+                                                android:gravity="center"
+                                                android:textSize="14dip" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                             >
+
+                                            <TextView
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:text="Rate"
+                                                android:gravity="center"
+                                                android:textSize="14dip" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="1"
+                                           >
+
+                                            <TextView
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="fill_parent"
+                                                android:text="Amount"
+                                                android:gravity="center"
+                                                android:textSize="14dip" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </TableRow>
+</TableLayout>
+</LinearLayout>

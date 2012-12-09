@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+		<ListView android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:id="@android:id/list">
+		</ListView>
+		<!--  
+		<TextView android:text="표시할 항목이 없습니다."
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent" android:id="@android:id/empty">
+		</TextView>
+		-->
+		<EditText android:text="@+id/EditText01" 
+		android:id="@+id/EditText01" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content">
+		</EditText>
+</LinearLayout>

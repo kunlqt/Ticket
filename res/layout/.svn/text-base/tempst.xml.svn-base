@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <!-- 1 ST -->
+
+    <LinearLayout
+        android:id="@+id/temp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bghighlight"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="1 St"
+            android:textColor="#f47320"
+            android:textSize="25dip"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="LEVEL"
+                    android:textColor="#f47320"
+                    android:textSize="20dip" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/ed1STLevelFeet"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:background="@xml/highlight_edittext"
+                        android:hint="FEET"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:nextFocusDown="@+id/edother1"
+                        android:paddingLeft="3dip" />
+
+                    <EditText
+                        android:id="@+id/ed1STLevelInches"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@xml/highlight_edittext"
+                        android:hint="INCHES"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:nextFocusDown="@+id/edother1"
+                        android:paddingLeft="3dip" />
+
+                    <EditText
+                        android:id="@+id/ed1STLevel14In"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:background="@xml/highlight_edittext"
+                        android:hint="1/4 IN"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:nextFocusDown="@+id/edother1"
+                        android:paddingLeft="3dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="TEMP"
+                    android:textColor="#f47320"
+                    android:textSize="20dip" />
+
+                <EditText
+                    android:id="@+id/ed1STTemp"
+                    android:layout_width="235dp"
+                    android:layout_height="50dp"
+                    android:background="@xml/highlight_edittext"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="BBLS"
+                    android:textColor="#f47320"
+                    android:textSize="20dip" />
+
+                <EditText
+                    android:id="@+id/ed1STBBLS"
+                    android:layout_width="235dp"
+                    android:layout_height="50dp"
+                    android:background="@xml/highlight_edittext"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="S W"
+                android:textColor="#f47320"
+                android:textSize="20dip" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <EditText
+                    android:id="@+id/ed1STSWFeet"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:background="@xml/highlight_edittext"
+                    android:hint="FEET"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+
+                <EditText
+                    android:id="@+id/ed1STSWInches"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@xml/highlight_edittext"
+                    android:hint="INCHES"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <!-- 2St -->
+
+    <LinearLayout
+        android:id="@+id/temp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bghighlight"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="2 St"
+            android:textColor="#f47320"
+            android:textSize="25dip"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="LEVEL"
+                    android:textColor="#f47320"
+                    android:textSize="20dip" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/ed2STLevelFeet"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:background="@xml/highlight_edittext"
+                        android:hint="FEET"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:nextFocusDown="@+id/edother1"
+                        android:paddingLeft="3dip" />
+
+                    <EditText
+                        android:id="@+id/ed2STLevelInches"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@xml/highlight_edittext"
+                        android:hint="INCHES"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:nextFocusDown="@+id/edother1"
+                        android:paddingLeft="3dip" />
+
+                    <EditText
+                        android:id="@+id/ed2STLevel14In"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:background="@xml/highlight_edittext"
+                        android:hint="1/4 IN"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:nextFocusDown="@+id/edother1"
+                        android:paddingLeft="3dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="TEMP"
+                    android:textColor="#f47320"
+                    android:textSize="20dip" />
+
+                <EditText
+                    android:id="@+id/ed2STTemp"
+                    android:layout_width="235dp"
+                    android:layout_height="50dp"
+                    android:background="@xml/highlight_edittext"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="BBLS"
+                    android:textColor="#f47320"
+                    android:textSize="20dip" />
+
+                <EditText
+                    android:id="@+id/ed2STBBLS"
+                    android:layout_width="235dp"
+                    android:layout_height="50dp"
+                    android:background="@xml/highlight_edittext"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="BS W"
+                android:textColor="#f47320"
+                android:textSize="20dip" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <EditText
+                    android:id="@+id/ed2STSWFeet"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:background="@xml/highlight_edittext"
+                    android:hint="FEET"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+
+                <EditText
+                    android:id="@+id/ed2STSWInches"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@xml/highlight_edittext"
+                    android:hint="INCHES"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <!-- EST - BARRENT -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="EST.BARRELS"
+                android:textColor="#f47320"
+                android:textSize="20dip" />
+
+            <EditText
+                android:id="@+id/edTicketSTEst_Barrels"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@xml/highlight_edittext"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@+id/edother1"
+                android:paddingLeft="3dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="OBSERVED GTY"
+                    android:textColor="#f47320"
+                    android:textSize="20dip" />
+
+                <EditText
+                    android:id="@+id/edTicketObservedGty"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:background="@xml/highlight_edittext"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="OBSERVED TEMP"
+                    android:textColor="#f47320"
+                    android:textSize="20dip" />
+
+                <EditText
+                    android:id="@+id/edTicketObservedTemp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:background="@xml/highlight_edittext"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@+id/edother1"
+                    android:paddingLeft="3dip" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="BS W %"
+                android:textColor="#f47320"
+                android:textSize="20dip" />
+
+            <EditText
+                android:id="@+id/edTicketBSW"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@xml/highlight_edittext"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@+id/edother1"
+                android:paddingLeft="3dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="TRUCKED BY"
+                android:textColor="#f47320"
+                android:textSize="20dip" />
+
+            <EditText
+                android:id="@+id/edTicketTruckBy"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@xml/highlight_edittext"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@+id/edother1"
+                android:paddingLeft="3dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="TRUCKED TO"
+                android:textColor="#f47320"
+                android:textSize="20dip" />
+
+            <EditText
+                android:id="@+id/edTicketTruckTO"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@xml/highlight_edittext"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@+id/edother1"
+                android:paddingLeft="3dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="TRUCK NUMBER"
+                android:textColor="#f47320"
+                android:textSize="20dip" />
+
+            <EditText
+                android:id="@+id/edTicketTRuckNumber"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@xml/highlight_edittext"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@+id/edother1"
+                android:paddingLeft="3dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="TRAILER NUMBER"
+                android:textColor="#f47320"
+                android:textSize="20dip" />
+
+            <EditText
+                android:id="@+id/edTicketTrailerNumber"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@xml/highlight_edittext"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@+id/edother1"
+                android:paddingLeft="3dip" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

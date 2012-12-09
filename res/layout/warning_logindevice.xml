@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_dialoguelayout"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="30dp" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvLoginwarning"
+        android:textColor="#6c6c6c" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btYesLogin"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@xml/custom_button_orange"
+            android:text="Yes"
+            android:textColor="#f47320" />
+
+        <Button
+            android:id="@+id/btLaterLogin"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@xml/custom_button_orange"
+            android:text="Later"
+            android:textColor="#f47320" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">Brother Print Sdk Demo</string>
+
+<string name="setting_printer">プリンター設定</string>
+<string name="setting_graphic">グラフィック設定</string>
+<string name="setting_alignment">マージン設定</string>
+<string name="setting_PJ">PJ設定</string>
+<string name="setting_CustomInfo">RJ設定</string>
+
+<string name="mainMenuTitle_label">メインメニュー</string>
+<string name="bluetoothSettingsButton_label">Bluetooth設定</string>
+<string name="printerSettingsButton_label">Printer設定</string>
+<string name="selectedFile_label">ファイルを選択してください。</string>
+<string name="fileSelectButton_label">選択</string>
+<string name="printButton_label">印刷</string>
+<string name="exitButton_label">終了</string>
+
+<string name="destinationName_title">印刷先選択</string>
+<string name="destinationName_text">印刷先を選択してください。</string>
+<string name="destinationName_default">印刷先を選択してください。</string>
+
+<string name="setting_label">設定</string>
+<string name="about_label">About</string>
+<string name="about_title">Brother Print Sdk Demo</string>
+<string name="about_text">Ver.2.0.1\n© 2012 Brother Industries, Ltd.\n</string>
+<string name="ok_label">OK</string>
+
+<string name="fileListTitle_label">ファイルリスト</string>
+<string name="netPrinterListTitle_label">ネットプリンター</string>
+
+<string name="progressDialogTitle_printing">印刷中・・・</string>
+<string name="progressDialogMessage_printing">しばらくお待ちください。</string>
+<string name="progressDialogMessage_preparingConnection">接続の準備をしています。</string>
+<string name="progressDialogMessage_specifyingPrinter">プリンターを特定しています。</string>
+<string name="progressDialogMessage_processingImage">画像を処理しています。</string>
+<string name="progressDialogMessage_createData">データ作成中。</string>
+<string name="progressDialogMessage_sendingData">印刷データを送信しています。</string>
+<string name="progressDialogMessage_dataSent">データを送信しました。</string>
+<string name="progressDialogMessage_startPrint">ページ印刷中。</string>
+<string name="progressDialogMessage_printed">印刷を終了しました。</string>
+<string name="progressDialogMessage_CreateSocketFailed">ソケットの作成に失敗しました。</string>
+<string name="progressDialogMessage_ConnectSocketFailed">ソケットの接続に失敗しました。</string>
+<string name="progressDialogMessage_GetOutputStreamFailed">Output Stream の取得に失敗しました。</string>
+<string name="progressDialogMessage_GetInputStreamFailed">Input Stream の取得に失敗しました。</string>
+<string name="progressDialogMessage_CloseSocketFailed">ソケットの切断に失敗しました。</string>
+<string name="progressDialogMessage_CloseConnection">通信終了。</string>
+<string name="progressDialogMessage_SetPaper">紙をセットしてください。</string>
+<string name="progressDialogMessage_CoolingStart">クーリング開始。</string>
+<string name="progressDialogMessage_CoolingEnd">クーリング完了。</string>
+
+<string name="progressDialogMessage_sendingTemplateData">ファイルを転送しています。</string>
+
+<string name="ErrorMessage_ERROR_NONE">成功しました。</string>
+
+<string name="alertDialogTitle_Error">エラー</string>
+<string name="alertDialogMessage_printFailed">印刷に失敗しました。</string>
+<string name="alertDialogMessage_runtimeError">実行時エラーが発生しました。</string>
+<string name="printer_title">プリンターモデル</string><string name="printer_value">プリンターモデルを選択して下さい。</string>
+
+<string-array name="printer">
+<item>MW-140BT</item><item>MW-145BT</item><item>MW-260</item>
+<item>PJ-560</item><item>PJ-562</item><item>PJ-563</item>
+<item>PJ-662</item><item>PJ-663</item><item>RJ-4030</item><item>RJ-4040</item>
+</string-array>
+<string-array name="printerValues">
+<item>MW_140BT</item><item>MW_145BT</item><item>MW_260</item>
+<item>PJ_560</item><item>PJ_562</item><item>PJ_563</item>
+<item>PJ_662</item><item>PJ_663</item><item>RJ_4030</item><item>RJ_4040</item>
+</string-array>
+
+<string name="port_title">ポート</string>
+<string name="port_value">ポートを選択してください。</string>
+<string-array name="port"><item>Bluetooth</item>
+</string-array><string-array name="portValues"><item>BLUETOOTH</item></string-array>
+<string-array name="port_NET"><item>WiFi</item>
+</string-array><string-array name="portValues_NET"><item>NET</item></string-array>
+
+<string name="address_title">IPアドレス</string>
+<string name="address_value">IPアドレスを設定してください。</string>
+<string name="macAddress_title">MACアドレス</string>
+<string name="macAddress_value">MACアドレスを設定してください。</string>
+
+<string name="paperSize_title">用紙サイズ</string>
+<string name="paperSize_value">用紙サイズを選択してください。</string>
+<string-array name="paperSize_MW"><item>A7</item></string-array>
+<string-array name="paperSizeValues_MW"><item>A7</item></string-array>
+<string-array name="paperSize_MW145BT"><item>A7</item></string-array>
+<string-array name="paperSizeValues_MW145BT"><item>A7</item></string-array>
+<string-array name="paperSize_MW260"><item>A6</item></string-array>
+<string-array name="paperSizeValues_MW260"><item>A6</item></string-array>
+<string-array name="paperSize_PJ"><item>A4</item><item>Letter</item><item>Legal</item><item>Custom</item></string-array>
+<string-array name="paperSizeValues_PJ"><item>A4</item><item>LETTER</item><item>LEGAL</item><item>CUSTOM</item></string-array>
+<string-array name="paperSize_RJ"><item>Custom</item></string-array>
+<string-array name="paperSizeValues_RJ"><item>CUSTOM</item></string-array>
+
+<string name="orientation_title">用紙方向</string>
+<string name="orientation_value">用紙方向を選択してください。</string>
+<string-array name="orientation"><item>縦</item><item>横</item></string-array>
+<string-array name="orientationValues"><item>PORTRAIT</item><item>LANDSCAPE</item></string-array>
+<string name="numberOfCopies_title">印刷部数</string>
+<string name="numberOfCopies_value">印刷部数を設定してください。</string>
+<string name="halfToning_title">ハーフトーン</string>
+<string name="halfToning_value">ハーフトーンの種類を選択して下さい。</string>
+<string-array name="halfToning"><item>単純２値</item><item>パターンディザ</item><item>誤差拡散</item></string-array>
+<string-array name="halfToningValues"><item>THRESHOLD</item><item>PATTERNDITHER</item><item>ERRORDIFFUSION</item></string-array>
+<string name="fitToPage_title">印刷サイズ</string>
+<string name="fitToPage_value">印刷サイズを選択して下さい。</string>
+<string-array name="fitToPage"><item>オリジナルサイズ</item><item>ページに合わせる</item></string-array>
+<string-array name="fitToPageValues"><item>ORIGINAL</item><item>FIT_TO_PAGE</item>
+</string-array>
+<string-array name="isCarbon">
+    <item>はい</item>
+    <item>いいえ</item>
+</string-array>
+<string-array name="isCarbonValues">
+    <item>true</item>
+    <item>false</item>
+</string-array>
+<string name="isCarbon_title">複写紙</string>
+<string name="isCarbon_value">複写紙を設定してください。</string>
+<string name="pjDensity_title">PJ印字濃度</string>
+<string name="pjDensity_value">PJ印字濃度を設定してください。</string>
+<string-array name="pjDensityValues">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+    <item>6</item>
+    <item>7</item>
+    <item>8</item>
+    <item>9</item>
+    <item>10</item>
+</string-array>
+<string name="feedMode_title">排紙方式</string>
+<string name="feedMode_value">排紙方式を設定してください。</string>
+<string-array name="feedMode">
+    <item>排紙なし（ロール）</item>
+    <item>固定サイズ排紙（ロール）</item>
+    <item>一ページ排紙（カット紙）</item>
+    <item>一ページ排紙（マークつきロール）</item>
+</string-array>
+<string-array name="feedModeValues">
+    <item>PJ_FEED_MODE_FREE</item>
+    <item>PJ_FEED_MODE_FIXEDPAGE</item>
+    <item>PJ_FEED_MODE_ENDOFPAGE</item>
+    <item>PJ_FEED_MODE_ENDOFPAGERETRACT</item>
+</string-array>
+<string name="align_title">横アラインメント</string>
+<string name="align_value">横アラインメントを設定してください。</string>
+<string-array name="align">
+	<item>左寄せ</item>
+	<item>中寄せ</item>
+	<item>右寄せ</item>
+</string-array>
+<string-array name="alignValues">
+	<item>LEFT</item>
+	<item>CENTER</item>
+	<item>RIGHT</item>
+</string-array>
+<string name="valign_title">縦アラインメント</string>
+<string name="valign_value">縦アラインメントを設定してください。</string>
+<string-array name="valign">
+	<item>上寄せ</item>
+	<item>中寄せ</item>
+	<item>下寄せ</item>
+</string-array>
+<string-array name="valignValues">
+	<item>TOP</item>
+	<item>MIDDLE</item>
+	<item>BOTTOM</item>
+</string-array>
+<string name="leftMargin_title">左マージン値</string>
+<string name="leftMargin_value">左マージン値を設定してください。 </string>
+<string name="topMargin_title">上マージン値</string>
+<string name="topMargin_value">上マージン値を設定してください。 </string>
+<string name="customPaperWidth_title">カスタマイズ紙の幅</string>
+<string name="customPaperWidth_value">カスタマイズ紙の幅を指定してください。 </string>
+<string name="customPaperLength_title">カスタマイズ紙の長</string>
+<string name="customPaperLength_value">カスタマイズ紙の長を指定してください。</string>
+<string name="customSetting_title">RJ カスタマイズ用紙設定</string>
+<string name="customSetting_value">カスタマイズ用紙をを指定してください。</string>
+<string name="customFeed_title">排紙量設定</string>
+<string name="customFeed_value">排紙量を設定してください。</string>
+<string name="rjDensity_title">RJ印字濃度</string>
+<string name="rjDensity_value">RJ印字濃度を設定してください。</string>
+<string-array name="rjDensityValues">
+    <item>-5</item>
+    <item>-4</item>
+    <item>-3</item>
+    <item>-2</item>
+    <item>-1</item>
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+</string-array>
+</resources>

@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:fillViewport="true"
+    android:padding="5dp"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/water_ticket"
+            android:textColor="#779a3d"
+            android:textSize="35dip"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/TextHeader"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="@string/ticket_number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="456-43-0987"
+            android:textColor="@android:color/black"
+            android:textSize="32sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/rig_name" />
+
+                <EditText
+                    android:id="@+id/edtRigName"
+                    style="@style/TextInput"
+                    android:layout_width="200dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/rig_number" />
+
+                <EditText
+                    android:id="@+id/edtRigNumber"
+                    style="@style/TextInput"
+                    android:layout_width="100dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/TextTitle"
+                android:text="@string/ordered_by" />
+
+            <EditText
+                android:id="@+id/edtOrderedBy"
+                style="@style/TextInput"
+                android:layout_width="fill_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/TextTitle"
+                android:text="@string/date" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                style="@style/TextInput"
+                android:layout_width="150dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/customer_name" />
+
+                <Spinner
+                    android:id="@+id/spCustomerName"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/spinner" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/code" />
+
+                <EditText
+                    android:id="@+id/edtCustomerCode"
+                    style="@style/TextInput"
+                    android:layout_width="100dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/TextTitle"
+                android:text="@string/billing_address" />
+
+            <EditText
+                android:id="@+id/edtBillingAddress"
+                style="@style/TextInput"
+                android:layout_width="fill_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/hauled_from" />
+
+                <EditText
+                    android:id="@+id/edtHauledFrom"
+                    style="@style/TextInput"
+                    android:layout_width="fill_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/code" />
+
+                <EditText
+                    android:id="@+id/edtHauledFromCode"
+                    style="@style/TextInput"
+                    android:layout_width="100dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/hauled_to" />
+
+                <Spinner
+                    android:id="@+id/edtHauledTo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/spinner" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/code" />
+
+                <EditText
+                    android:id="@+id/edtHauledToCode"
+                    style="@style/TextInput"
+                    android:layout_width="100dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/afe_number" />
+
+                <EditText
+                    android:id="@+id/edtAFENumber"
+                    style="@style/TextInput"
+                    android:layout_width="fill_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/po_number" />
+
+                <EditText
+                    android:id="@+id/edtPONumber"
+                    style="@style/TextInput"
+                    android:layout_width="fill_parent" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/jsa_number" />
+
+                <EditText
+                    android:id="@+id/edtJSA"
+                    style="@style/TextInput"
+                    android:layout_width="fill_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/truck" />
+
+                <EditText
+                    android:id="@+id/edtTruck"
+                    style="@style/TextInput"
+                    android:layout_width="fill_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/trailer_number" />
+
+                <EditText
+                    android:id="@+id/edtTrailer"
+                    style="@style/TextInput"
+                    android:layout_width="fill_parent" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bghighlight"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/open"
+                android:textColor="#f47320"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingLeft="10dp" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/level" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/edtOpenLevelForm01"
+                        style="@style/TextInput"
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:hint="@string/feet" />
+
+                    <EditText
+                        android:id="@+id/edtOpenLevelForm02"
+                        style="@style/TextInput"
+                        android:layout_width="fill_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:hint="@string/inches" />
+
+                    <EditText
+                        android:id="@+id/edtOpenLevelForm03"
+                        style="@style/TextInput"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="10dp" />
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="2dp"
+                        android:text="@string/right_separator"
+                        android:textSize="32sp" />
+
+                    <EditText
+                        android:id="@+id/edtOpenLevelForm04"
+                        style="@style/TextInput"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="5dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/start_time" />
+
+                    <TextView
+                        android:id="@+id/tvOpenStartTime"
+                        style="@style/TextInput"
+                        android:layout_width="fill_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/load_start_time" />
+
+                    <TextView
+                        android:id="@+id/tvOpenLoadStartTime"
+                        style="@style/TextInput"
+                        android:layout_width="fill_parent" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bghighlight"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/closed"
+                android:textColor="#f47320"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingLeft="10dp" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/level" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/edtClosedLevelForm01"
+                        style="@style/TextInput"
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:hint="@string/feet" />
+
+                    <EditText
+                        android:id="@+id/edtClosedLevelForm02"
+                        style="@style/TextInput"
+                        android:layout_width="fill_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:hint="@string/inches" />
+
+                    <EditText
+                        android:id="@+id/edtClosedLevelForm03"
+                        style="@style/TextInput"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="10dp" />
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="2dp"
+                        android:text="@string/right_separator"
+                        android:textSize="32sp" />
+
+                    <EditText
+                        android:id="@+id/edtClosedLevelForm04"
+                        style="@style/TextInput"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="5dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/stop_time" />
+
+                    <TextView
+                        android:id="@+id/tvClosedStopTime"
+                        style="@style/TextInput"
+                        android:layout_width="fill_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/unload_end_time" />
+
+                    <TextView
+                        android:id="@+id/tvClosedUnloadEndTime"
+                        style="@style/TextInput"
+                        android:layout_width="fill_parent" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp" >
+
+            <TextView
+                style="@style/TextTitle"
+                android:text="@string/remarks" />
+
+            <EditText
+                android:id="@+id/edtRemarks"
+                style="@style/TextInput"
+                android:layout_height="100dp"
+                android:inputType="textMultiLine" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bghighlight"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/TextTitle"
+                android:text="@string/commodity" />
+
+            <Spinner
+                android:id="@+id/spCommodity"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/spinner"
+                android:paddingLeft="3dp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/h2s" />
+
+                    <EditText
+                        android:id="@+id/edtH2S"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/production" />
+
+                    <EditText
+                        android:id="@+id/edtNON"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/barrels" />
+
+                    <EditText
+                        android:id="@+id/edtBarrels"
+                        style="@style/TextInput" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/hours" />
+
+                    <EditText
+                        android:id="@+id/edtHours"
+                        style="@style/TextInput"
+                        android:inputType="numberDecimal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/rate" />
+
+                    <EditText
+                        android:id="@+id/edtRate"
+                        style="@style/TextInput"
+                        android:inputType="numberDecimal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/amount" />
+
+                    <EditText
+                        android:id="@+id/edtAmount"
+                        style="@style/TextInput" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvTotalAmounts"
+                style="@style/TextTitle"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/total_amount" />
+
+            <EditText
+                android:id="@+id/edtTotalAmount"
+                style="@style/TextInput"
+                android:layout_width="200dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvTotalAmounts"
+                android:ems="10" >
+            </EditText>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/driver_name" />
+
+                <EditText
+                    android:id="@+id/edtDriverName"
+                    style="@style/TextInput" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/driver_number" />
+
+                <EditText
+                    android:id="@+id/edtDriverNumber"
+                    style="@style/TextInput" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp" >
+
+            <TextView
+                style="@style/TextTitle"
+                android:text="@string/accepted" />
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="150dp" >
+
+                <ImageView
+                    android:id="@+id/imgAccepted"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/background_dialoguelayout"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:scaleType="fitXY" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="86dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@xml/custom_button_orange"
+            android:text="@string/save" />
+    </LinearLayout>
+
+</ScrollView>

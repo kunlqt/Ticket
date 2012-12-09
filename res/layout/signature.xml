@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="300dp"
+    android:background="#ffffff"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btaccept"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@xml/custom_button_orange"
+            android:text="Accept" />
+
+        <Button
+            android:id="@+id/btclear"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@xml/custom_button_orange"
+            android:text="Clear" />
+
+        <Button
+            android:id="@+id/btcancel"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@xml/custom_button_orange"
+            android:text="Cancel" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutSignature"
+        android:layout_width="fill_parent"
+        android:layout_height="160dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/background_dialoguelayout"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tvSignhere"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:hint="SIGN HERE"
+            android:textColor="#ffffff"
+            android:focusable="false"
+            android:textSize="32dip"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</LinearLayout>

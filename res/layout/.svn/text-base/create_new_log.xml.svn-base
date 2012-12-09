@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="8"
+        android:background="@drawable/header"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/linearMain"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/txtCaptionRL"
+                android:layout_marginTop="5dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Create Run Log"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#779a3d" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical" >
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dip" >
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="STEP 1: Name Run Log"
+                            android:textColor="#5a5a5a"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edCreateNewLog"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rectange_orange"
+                            android:padding="10px"/>
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="STEP 2: Create Tickets"
+                            android:textColor="#5a5a5a"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="5" >
+
+                                <TextView
+                                    android:id="@+id/tvNumber"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:textSize="18sp"
+                                    android:layout_weight="1"
+                                   android:background="@xml/rectangle_solid"
+                                   android:gravity="center_vertical"
+                                   android:paddingLeft="5dip"
+                                    android:text="Number"
+                                    android:textColor="#ffffff" />
+
+                                <TextView
+                                    android:id="@+id/tvDate"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:textSize="18sp"
+                                    android:layout_weight="1"
+                                    android:background="@xml/rectangle_solid"
+                                     android:paddingLeft="5dip"
+                                    android:gravity="center_vertical"
+                                    android:text="Date"
+                                    android:textColor="#ffffff" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="6" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1.2" >
+
+                                    <Button
+                                        android:id="@+id/btTicketOption"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:background="@xml/rectangle_solid"
+                                        android:textSize="18sp"
+                                        android:gravity="center"
+                                        android:text="Option"
+                                        android:textColor="#ffffff" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1.5" >
+
+                                    <TextView
+                                        android:id="@+id/imgBtTicketC"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:background="@xml/rectangle_solid"
+                                        android:gravity="center"
+                                        android:textSize="18sp"
+                                        android:text="C"
+                                        android:textColor="#ffffff" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1.5" >
+
+                                    <TextView
+                                        android:id="@+id/imgBtTicketR"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:background="@xml/rectangle_solid"
+                                        android:text="R"
+                                        android:textSize="18sp"
+                                        android:gravity="center"
+                                        android:textColor="#ffffff" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1.5" >
+
+                                    <TextView
+                                        android:id="@+id/imgBtTicketDelete"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:background="@xml/rectangle_solid"
+                                        android:textColor="#ffffff" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+						<LinearLayout
+						    android:id="@+id/llNewLogContrainListView" 
+						    android:layout_width="fill_parent"
+						    android:layout_height="wrap_content">
+						   
+						</LinearLayout>
+                        <ListView
+                            android:id="@+id/listTicket"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollingCache="false"
+							android:fadingEdge="none"
+							android:divider="@null"
+							android:listSelector="@android:color/transparent"
+							android:scrollbars="none"
+							android:visibility="gone">
+                        </ListView>
+						<LinearLayout 
+						    android:id="@+id/llFooter"
+						    android:layout_width="fill_parent"
+						    android:layout_height="200dip">
+						    
+						</LinearLayout>
+                        
+                    </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="12"
+            android:background="@drawable/footer"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

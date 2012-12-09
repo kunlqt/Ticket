@@ -1,0 +1,201 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llPlainMarketing"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical" >
+
+    <!-- UNIT TYPE 1 -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bghighlight"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp" >
+
+            <TextView
+                style="@style/TextTitle"
+                android:text="@string/proper_shipping_name" />
+
+            <EditText
+                android:id="@+id/edTicketProper1"
+                style="@style/TextInput"
+                android:text="UN1267 PETROLEUM CRUDE OIL 3 PG II" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/no_units_type" />
+
+                <EditText
+                    android:id="@+id/edTicketNo_UnitType1"
+                    style="@style/TextInput" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/hm" />
+
+                <EditText
+                    android:id="@+id/edTicketHM1"
+                    style="@style/TextInput" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/net_barrels" />
+
+                <EditText
+                    android:id="@+id/edTicketNetBarrels1"
+                    style="@style/TextInput" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Tank Refusal -->
+
+    <include layout="@layout/tank_refusal" />
+
+    <!-- EMERGENCY -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/TextHeader"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:text="@string/emergency_contact"
+            android:textSize="28sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/gross_barrels" />
+
+                <EditText
+                    android:id="@+id/edTicketGross1"
+                    style="@style/TextInput" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/net_barrels" />
+
+                <EditText
+                    android:id="@+id/edTicketNet1"
+                    style="@style/TextInput" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/true_gvt" />
+
+                <EditText
+                    android:id="@+id/edTicketTrueGVT1"
+                    style="@style/TextInput" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            style="@style/TextTitle"
+            android:layout_marginTop="20dp"
+            android:text="@string/common_remarks" />
+
+        <Spinner
+            android:id="@+id/spCommonRemarks"
+            style="@style/TextInput"
+            android:background="@drawable/spinner" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp" >
+
+            <TextView
+                style="@style/TextTitle"
+                android:text="@string/remarks" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <EditText
+                    android:id="@+id/edTicketRemarks"
+                    style="@style/TextInput"
+                    android:layout_width="fill_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <!-- End -->
+
+    <TextView
+        style="@style/TextTitle"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/ticket_note" />
+
+</LinearLayout>

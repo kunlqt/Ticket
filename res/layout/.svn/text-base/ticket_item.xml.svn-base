@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="#fff"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="5" >
+
+            <TextView
+                android:id="@+id/tvNumber"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:background="@xml/rectange"
+                android:gravity="center_vertical"
+                android:paddingLeft="4dip"
+                android:text=""
+                android:textColor="#6c6c6c" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:background="@xml/rectange"
+                android:gravity="center_vertical"
+                android:paddingLeft="4dip"
+                android:text=""
+                android:textColor="#6c6c6c" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@xml/rectange"
+            android:layout_weight="6" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.2" >
+
+                <Button
+                    android:id="@+id/btTicketOption"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:textSize="18sp"
+                    android:background="@xml/rectange"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="4dip"
+                    android:text="Option"
+                    android:textColor="#f47320" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.5" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:layout_weight="1.5" 
+                     android:background="@xml/rectange">
+
+                    <ImageButton
+                        android:id="@+id/imgBtTicketC"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.5" 
+                android:gravity="center"
+                 android:background="@xml/rectange"   >
+
+                <ImageButton
+                    android:id="@+id/imgBtTicketR"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+					android:background="@null"/>
+            </LinearLayout>
+
+            <LinearLayout
+               android:id="@+id/llDeleteTicket"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.5" 
+                android:gravity="center"
+                android:padding="2dip"
+                 android:background="@xml/rectange">
+
+                <Button
+                    android:id="@+id/imgBtTicketDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+					android:background="@drawable/x_button"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

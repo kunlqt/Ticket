@@ -1,0 +1,254 @@
+package com.pdg.ticket.adapter;
+
+import java.util.List;
+
+
+import org.json.JSONObject;
+
+import com.pdg.ticket.ArchivedOption;
+import com.pdg.ticket.NewRunLog;
+import com.pdg.ticket.R;
+import com.pdg.ticket.TicketCorrectionNotice;
+import com.pdg.ticket.TicketOption;
+import com.pdg.ticket.service.Domain;
+//import com.pdg.ticket.adapter.UnfinishTicketAdapter.postTask;
+import com.pdg.ticket.service.ServiceClient;
+import com.pdg.ticket.utils.Utils;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+
+import android.os.AsyncTask;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class TicketAdapter extends ArrayAdapter<ModelCorrectionTicket> {
+	private List<ModelCorrectionTicket> list;
+	private Context conActivity;
+	public AlertDialog dialog;
+	//ViewHolder viewHolder;
+	public boolean status;
+	private int idRunLog = 0;
+	public String url= Domain.SERVICES_URL + "delete_ticket?id=";
+	private static final int requestCodeGoTicketOption=1;
+	private LayoutInflater mInflater;
+	public static enum setForWhatActivity{
+		setForNewRunlogActivity,
+		setForArchivedTicketSetActivity,
+	}
+	
+	private setForWhatActivity what;
+	
+	
+	public TicketAdapter(Context conActivity, List<ModelCorrectionTicket> list, int idRunLog,setForWhatActivity what) {
+
+		// TODO Auto-generated constructor stub
+		super(conActivity, R.layout.ticket_item, list);
+		this.list = list;
+		this.conActivity = conActivity;
+		this.idRunLog = idRunLog;
+		dialog = new ProgressDialog(conActivity);
+		this.mInflater=LayoutInflater.from(conActivity);
+		this.what=what;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		ModelCorrectionTicket mt=list.get(position);
+		ViewHolder viewHolder = null;
+		//if (rowView == null) {
+			
+			convertView = mInflater.inflate(R.layout.ticket_item,
+					null);
+			viewHolder = new ViewHolder();
+			viewHolder.tvNumber = (TextView)convertView.findViewById(R.id.tvNumber);	
+			viewHolder.tvDate 	=(TextView)convertView.findViewById(R.id.tvDate);
+
+			viewHolder.btOption = (Button) convertView.findViewById(R.id.btTicketOption);
+			viewHolder.btOption.setTag(mt);
+			
+			viewHolder.imgBtC = (ImageButton) convertView.findViewById(R.id.imgBtTicketC);			
+			viewHolder.imgBtR = (ImageButton) convertView.findViewById(R.id.imgBtTicketR);		
+			
+			viewHolder.imgBtDelete = (Button) convertView.findViewById(R.id.imgBtTicketDelete);
+			viewHolder.imgBtDelete.setTag(mt);
+			
+			viewHolder.llDelete=(LinearLayout)convertView.findViewById(R.id.llDeleteTicket);
+			if (what==setForWhatActivity.setForArchivedTicketSetActivity) {
+				viewHolder.llDelete.setVisibility(View.GONE);
+			}
+
+		
+	    Utils.CheckNullandSettextView(mt.getNumber(), viewHolder.tvNumber);
+	    viewHolder.tvDate.setText(Utils.ConvertDateFormats(list.get(position).getDate()));
+	    
+		if(mt.isCorrection()){
+			viewHolder.imgBtC.setImageDrawable(conActivity.getResources().getDrawable(R.drawable.check_mark));
+		}
+	
+		if(mt.isRail()){
+			viewHolder.imgBtR.setImageDrawable(conActivity.getResources().getDrawable(R.drawable.check_mark));
+		}
+
+		viewHolder.btOption.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if (what==setForWhatActivity.setForNewRunlogActivity) {
+					ModelCorrectionTicket mt = (ModelCorrectionTicket) v.getTag();
+					Log.d("KUNLQT", "IDRUNTA:" + idRunLog);
+					Intent intent = new Intent(conActivity, TicketOption.class);
+					intent.putExtra("idRunLog", idRunLog);
+					intent.putExtra("idTicket", Integer.valueOf(mt.getId()));
+					intent.putExtra("ticketType", mt.getType());
+					intent.putExtra("position",list.indexOf(mt));
+					intent.putExtra("picture", mt.getUrlPicture());
+					((Activity)conActivity).startActivityForResult(intent,requestCodeGoTicketOption);
+				}else{
+					ModelCorrectionTicket mt = (ModelCorrectionTicket) v.getTag();
+					Log.d("KUNLQT", "IDRUNTA:" + idRunLog);
+					Intent intent = new Intent(conActivity, ArchivedOption.class);
+					intent.putExtra("idRunLog", idRunLog);
+					intent.putExtra("idTicket", Integer.valueOf(mt.getId()));
+					intent.putExtra("ticketType", mt.getType());
+					intent.putExtra("position",list.indexOf(mt));
+					intent.putExtra("picture", mt.getUrlPicture());
+					conActivity.startActivity(intent);
+				}
+			}
+		});
+		viewHolder.imgBtDelete.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				ModelTicket mt = (ModelTicket) v.getTag();
+				System.out.println("delete id=="+mt.getId());
+				createDialog("", "Are you sure you want to delete this run log?",mt).show();
+				// TODO Auto-generated method stub
+
+			}
+		});
+		return convertView;
+	}
+
+	static class ViewHolder {
+
+		private Button imgBtDelete;
+		private ImageButton imgBtC;
+		private ImageButton imgBtR;
+		private Button btOption;
+		private TextView tvNumber;
+		private TextView tvDate;
+		private LinearLayout llDelete;
+
+	}
+	@Override
+	public int getItemViewType(int position) {
+		// TODO Auto-generated method stub
+		return super.getItemViewType(position);
+	}
+
+	@Override
+	public int getCount() {
+		return list != null ? list.size() : 0;
+	}
+
+	@Override
+	public ModelCorrectionTicket getItem(int position) {
+		// TODO Auto-generated method stub
+		return list.get(position);
+	}
+
+	@Override
+	public long getItemId(int position) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	public  AlertDialog createDialog(String title,String message,final ModelTicket mt)
+	{
+		AlertDialog builder=new AlertDialog.Builder(conActivity)
+		.setTitle(title)
+		.setMessage(message)
+		.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				
+				// TODO Auto-generated method stub
+				dialog.cancel();
+				new postTask(mt).execute();
+			}
+		})
+		.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				dialog.cancel();
+			}
+		})
+		.create();
+		return builder;
+	}
+	
+	private class postTask extends AsyncTask<Void, Void, Void> {
+	
+		private JSONObject jsonObj;
+		String result=null;
+		ModelTicket mt;
+		public postTask(ModelTicket mt){
+			
+			this.mt=mt;
+		}
+		@Override
+		protected Void doInBackground(Void... params) {
+			try {
+				String s = ServiceClient.loadManySerialized(url+mt.getId());
+				System.out.println(s);
+				if (s != null && !s.equals("")) {
+					jsonObj = new JSONObject(s);
+					status=jsonObj.getBoolean("status");
+				}else status=false;
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		@Override
+		protected void onPreExecute() {
+			dialog.setMessage("Deleting...");
+			dialog.show();
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+			if(dialog.isShowing())
+			dialog.dismiss();
+			if (status) {
+				list.remove(mt);
+				notifyDataSetChanged();
+				Toast.makeText(conActivity, "Success!", Toast.LENGTH_SHORT).show();
+			}else{
+				Toast.makeText(conActivity, "Not success!", Toast.LENGTH_SHORT).show();
+			}
+			
+			
+		}
+	}
+}

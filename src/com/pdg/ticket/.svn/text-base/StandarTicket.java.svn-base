@@ -1,0 +1,2179 @@
+package com.pdg.ticket;
+
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntity;
+import org.apache.http.entity.mime.content.ByteArrayBody;
+import org.apache.http.entity.mime.content.StringBody;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.app.TimePickerDialog;
+import android.app.TimePickerDialog.OnTimeSetListener;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Environment;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.view.GestureDetector;
+import android.view.GestureDetector.OnDoubleTapListener;
+import android.view.GestureDetector.OnGestureListener;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
+
+import com.citizen.jpos.printer.CMPPrint;
+import com.citizen.jpos.printer.ESCPOSPrinter;
+import com.pdg.ticket.Global.GlobalValue;
+import com.pdg.ticket.citizen.BluetoothConnectMenu;
+import com.pdg.ticket.citizen.CitizenPrinter;
+import com.pdg.ticket.service.Domain;
+import com.pdg.ticket.service.ServiceClient;
+import com.pdg.ticket.service.ServiceRequest;
+import com.pdg.ticket.signa.CreateSignature;
+import com.pdg.ticket.utils.DatabaseHelper;
+import com.pdg.ticket.utils.Utils;
+import com.pdg.ticket.witged.AlternativeDateSlider;
+import com.pdg.ticket.witged.DateSlider;
+
+public class StandarTicket extends Activity implements OnClickListener,
+		OnGestureListener, OnDoubleTapListener {
+	public static ImageView signature1;
+
+	public static boolean isSig1 = true;
+
+	public static boolean opSig1 = true;
+
+	public static ImageView signature2;
+
+	public static boolean isSig2 = true;
+
+	public static boolean opSig2 = true;
+
+	public static ImageView signature3;
+
+	public static boolean isSig3 = true;
+
+	public static boolean opSig3 = true;
+
+	public static ImageView signature4;
+
+	public static boolean isSig4 = true;
+
+	public static boolean opSig4 = true;
+
+	ArrayList<String> arrayValue;
+
+	public static final int REQUEST_CODE_TO_BLUETOOTH_CONNECT = 110;
+
+	// -------------------------------
+	private EditText edTicketNumber;
+
+	private EditText edTicketDate;
+
+	private EditText edticketOperator;
+
+	private Spinner spOperator;
+
+	private EditText edTicketLeaseName;
+
+	private EditText edTicketState;
+
+	private EditText edTicketCountry;
+
+	private EditText edLocation141;
+
+	private EditText edLocation142;
+
+	private EditText edLocationUnitLTR;
+
+	private EditText edLocationSection;
+
+	private EditText edLocationTowship1;
+
+	private EditText edLocationTowship2;
+
+	private EditText edLocationTowship3;
+
+	private EditText edLocationTowDec;
+
+	private EditText edLocationTowDirNS;
+
+	private EditText edLocationRange1;
+
+	private EditText edLocationRange2;
+
+	private EditText edLocationRange3;
+
+	private EditText edLocationRanDec;
+
+	private EditText edLocationRanDirNS;
+
+	private EditText edLocationMeridian1;
+
+	private EditText edLocationMeridian2;
+
+	private EditText edTicketFlacNo;
+
+	private EditText edTicketDistrictNo;
+
+	private EditText edTicketFederalNo;
+
+	// private EditText edTicketTankType;
+	private EditText edtCustomer;
+	private Spinner spCustomer;
+
+	private EditText edTicketTankNo;
+
+	private EditText edTicketTankSize;
+
+	private EditText ed1STLevelFeet;
+
+	private EditText ed1STLevelInches;
+
+	private EditText ed1STLevel14In;
+
+	private EditText ed1STTemp;
+
+	private EditText ed1STSWFeet;
+
+	private EditText ed1STSWInches;
+
+	private EditText ed2STLevelFeet;
+
+	private EditText ed2STLevelInches;
+
+	private EditText ed2STLevel14In;
+
+	private EditText ed2STTemp;
+
+	private EditText ed2STSWFeet;
+
+	private EditText ed2STSWInches;
+
+	private EditText edTicketSTEst_Barrels;
+
+	private EditText edTicketObservedGty;
+
+	private EditText edTicketObservedTemp;
+
+	private EditText edTicketBSW;
+
+	private EditText edTicketTruckBy;
+
+	private EditText edTicketTruckTO;
+
+	private EditText edTicketTRuckNumber;
+
+	private EditText edTicketTrailerNumber;
+
+	private EditText edTicketNo_UnitType1;
+
+	private EditText edTicketHM1;
+
+	private EditText edTicketProper1;
+
+	private EditText edTicketNetBarrels1;
+
+	// private EditText edTicketNo_UnitType2;
+
+	// private EditText edTicketHM2;
+
+	// private EditText edTicketProper2;
+
+	// private EditText edTicketNetBarrels2;
+
+	// Tank Confusal
+	private View llTankConfusalContent;
+
+	private CheckBox cbTankConfusal;
+
+	private EditText edTicketGross1;
+
+	private EditText edTicketGross2;
+
+	private EditText edTicketNet1;
+
+	private EditText edTicketNet2;
+
+	private EditText edTicketTrueGVT1;
+
+	private EditText edTicketTrueGVT2;
+
+	private EditText edTicketRemarks;
+
+	private EditText ed1STBBLS;
+
+	private EditText ed2STBBLS;
+
+	private TextView tvTurnOnTime;
+
+	private EditText edTurnOnOffSeal;
+
+	private TextView edShupOffTime;
+
+	private EditText edShupOffSeal;
+
+	private EditText edShupOffDate;
+
+	private int idRunlog;
+
+	private int idTicket;
+
+	private boolean callFromTicketOption;
+
+	private boolean callFromArchivedTicketSetForPrint;
+
+	private String nameRunlog;
+
+	private boolean callFromReview;
+
+	private boolean callFromArchivedTicketSet;
+
+	private int position;
+
+	private DatabaseHelper dataHelper;
+
+	private boolean isFirstTicket;
+
+	private String URL_LOAD_TICKET = Domain.SERVICES_URL + "run_ticket?id=";
+
+	private Button btTicketSave;
+
+	private AlertDialog dialog;
+
+	public int idTicketType = 0;
+
+	private int type;
+
+	private int ticket_id;
+
+	protected int tankType = 0;
+
+	protected int tankSize = 0;
+
+	private GestureDetector detector;
+
+	private String tankTypeValue;
+
+	private String tankSizeValue;
+
+	// TIME DIALOG
+	private static final int TIME_DIALOG_ID = 999;
+
+	private boolean isTimeTurnOn = true;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.standardticket);
+		dialog = new ProgressDialog(this);
+
+		signature1 = (ImageView) findViewById(R.id.signature1);
+		signature2 = (ImageView) findViewById(R.id.signature2);
+		signature3 = (ImageView) findViewById(R.id.signature3);
+		signature4 = (ImageView) findViewById(R.id.signature4);
+		signature1.setOnClickListener(this);
+		signature2.setOnClickListener(this);
+		signature3.setOnClickListener(this);
+		signature4.setOnClickListener(this);
+
+		isSig1 = true;
+		isSig2 = true;
+		isSig3 = true;
+		isSig4 = true;
+
+		// ---------------
+		edTicketNumber = (EditText) findViewById(R.id.edTicketNumber);
+		edTicketDate = (EditText) findViewById(R.id.edTicketDate);
+		edticketOperator = (EditText) findViewById(R.id.edticketOperator);
+		spOperator = (Spinner) findViewById(R.id.spOperation);
+		edTicketLeaseName = (EditText) findViewById(R.id.edTicketLeaseName);
+		edTicketState = (EditText) findViewById(R.id.edTicketState);
+		edTicketCountry = (EditText) findViewById(R.id.edTicketCountry);
+		edLocation141 = (EditText) findViewById(R.id.edLocation141);
+		edLocation142 = (EditText) findViewById(R.id.edLocation142);
+		edLocationUnitLTR = (EditText) findViewById(R.id.edLocationUnitLTR);
+		edLocationSection = (EditText) findViewById(R.id.edLocationSection);
+		edLocationTowship1 = (EditText) findViewById(R.id.edLocationTowship1);
+		edLocationTowship2 = (EditText) findViewById(R.id.edLocationTowship2);
+		edLocationTowship3 = (EditText) findViewById(R.id.edLocationTowship3);
+		edLocationTowDec = (EditText) findViewById(R.id.edLocationTowDec);
+		edLocationTowDirNS = (EditText) findViewById(R.id.edLocationTowDirNS);
+		edLocationRange1 = (EditText) findViewById(R.id.edLocationRange1);
+		edLocationRange2 = (EditText) findViewById(R.id.edLocationRange2);
+		edLocationRange3 = (EditText) findViewById(R.id.edLocationRange3);
+		edLocationRanDec = (EditText) findViewById(R.id.edLocationRanDec);
+		edLocationRanDirNS = (EditText) findViewById(R.id.edLocationRanDirNS);
+		edLocationMeridian1 = (EditText) findViewById(R.id.edLocationMeridian1);
+		edLocationMeridian2 = (EditText) findViewById(R.id.edLocationMeridian2);
+		edTicketFlacNo = (EditText) findViewById(R.id.edTicketFlacNo);
+		edTicketDistrictNo = (EditText) findViewById(R.id.edTicketDistrictNo);
+		edTicketFederalNo = (EditText) findViewById(R.id.edTicketFederalNo);
+
+		// edTicketTankType = (EditText) findViewById(R.id.edTicketTankType);
+		edtCustomer = (EditText) findViewById(R.id.edtCustomer);
+		spCustomer = (Spinner) findViewById(R.id.spCustomer);
+
+		edTicketTankNo = (EditText) findViewById(R.id.edTicketTankNo);
+		edTicketTankSize = (EditText) findViewById(R.id.edTicketTankSize);
+		ed1STLevelFeet = (EditText) findViewById(R.id.ed1STLevelFeet);
+		ed1STLevelInches = (EditText) findViewById(R.id.ed1STLevelInches);
+		ed1STLevel14In = (EditText) findViewById(R.id.ed1STLevel14In);
+		ed1STTemp = (EditText) findViewById(R.id.ed1STTemp);
+		ed1STSWFeet = (EditText) findViewById(R.id.ed1STSWFeet);
+		ed1STSWInches = (EditText) findViewById(R.id.ed1STSWInches);
+		ed2STLevelFeet = (EditText) findViewById(R.id.ed2STLevelFeet);
+		ed2STLevelInches = (EditText) findViewById(R.id.ed2STLevelInches);
+		ed2STLevel14In = (EditText) findViewById(R.id.ed2STLevel14In);
+		ed2STTemp = (EditText) findViewById(R.id.ed2STTemp);
+		ed2STSWFeet = (EditText) findViewById(R.id.ed2STSWFeet);
+		ed2STSWInches = (EditText) findViewById(R.id.ed2STSWInches);
+		edTicketSTEst_Barrels = (EditText) findViewById(R.id.edTicketSTEst_Barrels);
+		edTicketObservedGty = (EditText) findViewById(R.id.edTicketObservedGty);
+		edTicketObservedTemp = (EditText) findViewById(R.id.edTicketObservedTemp);
+		edTicketBSW = (EditText) findViewById(R.id.edTicketBSW);
+		edTicketTruckBy = (EditText) findViewById(R.id.edTicketTruckBy);
+		edTicketTruckTO = (EditText) findViewById(R.id.edTicketTruckTO);
+		edTicketTRuckNumber = (EditText) findViewById(R.id.edTicketTRuckNumber);
+		edTicketTrailerNumber = (EditText) findViewById(R.id.edTicketTrailerNumber);
+		edTicketNo_UnitType1 = (EditText) findViewById(R.id.edTicketNo_UnitType1);
+		edTicketHM1 = (EditText) findViewById(R.id.edTicketHM1);
+		edTicketProper1 = (EditText) findViewById(R.id.edTicketProper1);
+		edTicketNetBarrels1 = (EditText) findViewById(R.id.edTicketNetBarrels1);
+		// edTicketNo_UnitType2 = (EditText)
+		// findViewById(R.id.edTicketNo_UnitType2);
+		// edTicketHM2 = (EditText) findViewById(R.id.edTicketHM2);
+		// edTicketProper2 = (EditText) findViewById(R.id.edTicketProper2);
+		// edTicketNetBarrels2 = (EditText)
+		// findViewById(R.id.edTicketNetBarrels2);
+
+		// Tank Confusal
+		llTankConfusalContent = findViewById(R.id.llTankRefusalContent);
+		cbTankConfusal = (CheckBox) findViewById(R.id.cbTankRefusal);
+		if (cbTankConfusal.isChecked()) {
+		}
+
+		edTicketGross1 = (EditText) findViewById(R.id.edTicketGross1);
+		edTicketGross2 = (EditText) findViewById(R.id.edTicketGross2);
+		edTicketNet1 = (EditText) findViewById(R.id.edTicketNet1);
+		edTicketNet2 = (EditText) findViewById(R.id.edTicketNet2);
+		edTicketTrueGVT1 = (EditText) findViewById(R.id.edTicketTrueGVT1);
+		edTicketTrueGVT2 = (EditText) findViewById(R.id.edTicketTrueGVT2);
+		edTicketRemarks = (EditText) findViewById(R.id.edTicketRemarks);
+		ed1STBBLS = (EditText) findViewById(R.id.ed1STBBLS);
+		ed2STBBLS = (EditText) findViewById(R.id.ed2STBBLS);
+		tvTurnOnTime = (TextView) findViewById(R.id.edTicketTurnedOnTime);
+		tvTurnOnTime.setOnClickListener(this);
+		edTurnOnOffSeal = (EditText) findViewById(R.id.edTicketTurnedOnOffseal);
+		edShupOffTime = (TextView) findViewById(R.id.edTicketShupOffTime);
+		edShupOffTime.setOnClickListener(this);
+		edShupOffSeal = (EditText) findViewById(R.id.edTicketShupOffOnseal);
+		edShupOffDate = (EditText) findViewById(R.id.edTicketShupOffDate);
+
+		edTicketDate.setFocusable(false);
+
+		// ---------------------
+		btTicketSave = (Button) findViewById(R.id.btStandarSave);
+
+		detector = new GestureDetector(this, this);
+
+		btTicketSave.setOnClickListener(this);
+
+		final GestureDetector gestureDetector = new GestureDetector(
+				new GestureDetector.SimpleOnGestureListener() {
+					public boolean onDoubleTap(MotionEvent e) {
+						showDatePicker();
+						return true;
+					}
+				});
+		final GestureDetector gestureDetector2 = new GestureDetector(
+				new GestureDetector.SimpleOnGestureListener() {
+					public boolean onDoubleTap(MotionEvent e) {
+						showDatePickerst();
+						return true;
+					}
+				});
+		edTicketDate.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				showDatePicker();
+
+			}
+		});
+		edTicketDate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if (hasFocus)
+					showDatePicker();
+
+			}
+		});
+		// edTicketDate.setOnTouchListener(new OnTouchListener() {
+		//
+		// @Override
+		// public boolean onTouch(View v, MotionEvent event) {
+		// // TODO Auto-generated method stub
+		// return gestureDetector.onTouchEvent(event);
+		// }
+		// });
+
+		edShupOffDate.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				showDatePickerst();
+
+			}
+		});
+		edShupOffDate
+				.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+					@Override
+					public void onFocusChange(View v, boolean hasFocus) {
+						// TODO Auto-generated method stub
+						if (hasFocus)
+							showDatePickerst();
+
+					}
+				});
+		// edShupOffDate.setOnTouchListener(new OnTouchListener() {
+		//
+		// @Override
+		// public boolean onTouch(View v, MotionEvent event) {
+		// // TODO Auto-generated method stub
+		// return gestureDetector2.onTouchEvent(event);
+		// }
+		// });
+
+		// ---------------------
+		changeText(ed1STLevelFeet);
+		changeText(ed1STLevelInches);
+		changeText(ed1STLevel14In);
+		// changeText(ed1STSWFeet);
+		// changeText(ed1STSWInches);
+		changeText(ed2STLevelFeet);
+		changeText(ed2STLevelInches);
+		changeText(ed2STLevel14In);
+		// changeText(ed2STSWFeet);
+		// changeText(ed2STSWInches);
+
+		// ----------------------
+		try {
+			idRunlog = getIntent().getExtras().getInt("idRunLog", 0);
+			type = getIntent().getExtras().getInt("ticketType", 0);
+			idTicket = getIntent().getExtras().getInt("idTicket", 0);
+			callFromTicketOption = getIntent().getExtras().getBoolean(
+					"callFromTicketOption", false);
+			nameRunlog = getIntent().getExtras().getString("nameRunlog");
+
+			callFromReview = getIntent().getExtras().getBoolean(
+					"callFromReview", false);
+			callFromArchivedTicketSet = this.getIntent().getExtras()
+					.getBoolean("callFromArchivedTicketSet", false);
+			callFromArchivedTicketSetForPrint = this.getIntent().getExtras()
+					.getBoolean("callFromArchivedTicketSetForPrint", false);
+			position = this.getIntent().getExtras().getInt("position", -1);
+			dataHelper = new DatabaseHelper(this);
+
+		} catch (Exception ex) {
+
+		}
+
+		Log.d("KUNLQT", "idRunlog:" + idRunlog);
+		Log.d("KUNLQT", "idTicket:" + idTicket);
+
+		Log.d("PHUOCNV", "idTicket:" + idTicket);
+
+		if (idRunlog == 0)
+			isFirstTicket = true;
+
+		if (idTicket != 0) {
+			URL_LOAD_TICKET = URL_LOAD_TICKET + idTicket;
+			new LoadTicketTask().execute();
+		} else {
+			this.autoPopulatingData();
+		}
+		if (callFromReview) {
+			btTicketSave.setText("Confirm");
+			this.setOffControl();
+		}
+		if (callFromArchivedTicketSet) {
+			btTicketSave.setText("Back");
+			this.setOffControl();
+		}
+		if (callFromArchivedTicketSetForPrint) {
+			btTicketSave.setText("Print");
+			this.setOffControl();
+		}
+		// commobox
+		// spTankType = (Spinner) findViewById(R.id.spTankType);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+				this, R.array.tanktype,
+				android.R.layout.simple_dropdown_item_1line);
+		adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+
+		/**
+		 * Remove Tank Type
+		 */
+		// spTankType.setAdapter(adapter);
+		// spTankType.setOnItemSelectedListener(new
+		// AdapterView.OnItemSelectedListener() {
+		// @Override
+		// public void onNothingSelected(AdapterView<?> arg0) {
+		// // TODO Auto-generated method stub
+		// }
+		//
+		// @Override
+		// public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
+		// long arg3) {
+		// // TODO Auto-generated method stub
+		// tankType = arg2;
+		// tankSize = 0;
+		// if (tankType == 0) {
+		// spTankSize.setClickable(true);
+		// ArrayAdapter<CharSequence> adapter2 =
+		// ArrayAdapter.createFromResource(
+		// StandarTicket.this, R.array.tanksize,
+		// android.R.layout.simple_dropdown_item_1line);
+		// adapter2.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+		// spTankSize.setAdapter(adapter2);
+		// } else {
+		// spTankSize.setClickable(false);
+		//
+		// ArrayAdapter<CharSequence> adapter2 =
+		// ArrayAdapter.createFromResource(
+		// StandarTicket.this, R.array.tanksize2,
+		// android.R.layout.simple_dropdown_item_1line);
+		// adapter2.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+		// spTankSize.setAdapter(adapter2);
+		// }
+		//
+		// autoBarrels(tankType, tankSize);
+		//
+		// }
+		//
+		// });
+		spTankSize = (Spinner) findViewById(R.id.spTankSide);
+		ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(
+				this, R.array.tanksize,
+				android.R.layout.simple_dropdown_item_1line);
+		adapter2.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+		spTankSize.setAdapter(adapter2);
+		spTankSize
+				.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+					@Override
+					public void onNothingSelected(AdapterView<?> arg0) {
+						// TODO Auto-generated method stub
+					}
+
+					@Override
+					public void onItemSelected(AdapterView<?> arg0, View arg1,
+							int arg2, long arg3) {
+						// TODO Auto-generated method stub
+						System.out.println("this is side :arg2" + arg2);
+						tankSize = arg2;
+						autoBarrels(tankType, tankSize);
+					}
+
+				});
+
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		bindOperator();
+		bindCustomers();
+	}
+
+	// ---change text
+	private void changeText(EditText editText) {
+		editText.addTextChangedListener(new TextWatcher() {
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before,
+					int count) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub
+				autoBarrels(tankType, tankSize);
+
+			}
+		});
+	}
+
+	private void showDatePicker() {
+		Calendar c = Calendar.getInstance();
+		new AlternativeDateSlider(this, mDateSetListener, c).show();
+	}
+
+	private DateSlider.OnDateSetListener mDateSetListener = new DateSlider.OnDateSetListener() {
+		public void onDateSet(DateSlider view, Calendar selectedDate) {
+			// update the dateText view with the corresponding date
+			edTicketDate.setText(String.format("%tY/%tm/%te", selectedDate,
+					selectedDate, selectedDate));
+		}
+	};
+
+	private void showDatePickerst() {
+		Calendar c = Calendar.getInstance();
+		new AlternativeDateSlider(this, mDateSetListenerst, c).show();
+	}
+
+	private DateSlider.OnDateSetListener mDateSetListenerst = new DateSlider.OnDateSetListener() {
+		public void onDateSet(DateSlider view, Calendar selectedDate) {
+			// update the dateText view with the corresponding date
+			edShupOffDate.setText(String.format("%tY/%tm/%te", selectedDate,
+					selectedDate, selectedDate));
+		}
+	};
+
+	// private Spinner spTankType;
+
+	private Spinner spTankSize;
+
+	private SharedPreferences prefsRememberCredentials;
+
+	private JSONObject createJsonTicket(int idTicket) {
+		JSONObject plainsTicketJson = new JSONObject();
+		try {
+			plainsTicketJson.put("id", idTicket);
+			plainsTicketJson.put("runlog_id", idRunlog);
+			plainsTicketJson.put("type", type);
+			plainsTicketJson.put("number", edTicketNumber.getText().toString());
+			if (idTicket == 0) {
+				plainsTicketJson.put("correction", false);
+				plainsTicketJson.put("rail", false);
+				plainsTicketJson.put("picture", "");
+			}
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return plainsTicketJson;
+
+	}
+
+	private JSONObject createJsonRunlog() {
+		JSONObject rlJson = new JSONObject();
+		try {
+			rlJson.put("id", 0);
+			rlJson.put("user_id", Login.idUser);
+			rlJson.put("name", nameRunlog);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return rlJson;
+
+	}
+
+	private JSONObject createJsonTypeTicketNumber(int idTicket,
+			int idTicketType, String number) {
+		JSONObject StanderTicketJson = new JSONObject();
+		try {
+			StanderTicketJson.put("id", idTicketType);
+			StanderTicketJson.put("ticket_id", idTicket);
+			StanderTicketJson.put("number", number);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return StanderTicketJson;
+	}
+
+	private JSONObject createJsonTypeTicket(int idTicket, int idTicketType) {
+		JSONObject StanderTicketJson = new JSONObject();
+		try {
+			StanderTicketJson.put("id", idTicketType);
+			StanderTicketJson.put("ticket_id", idTicket);
+			// StanderTicketJson
+			// .put("number", getTicketNumber(String.valueOf(ticket_id)));
+			StanderTicketJson.put("date", edTicketDate.getText().toString());
+			StanderTicketJson.put("operator", edticketOperator.getText()
+					.toString());
+			StanderTicketJson.put("leasename", edTicketLeaseName.getText()
+					.toString());
+			StanderTicketJson.put("state", edTicketState.getText().toString());
+			StanderTicketJson.put("country", edTicketCountry.getText()
+					.toString());
+			StanderTicketJson.put("location141", edLocation141.getText()
+					.toString());
+			StanderTicketJson.put("location142", edLocation142.getText()
+					.toString());
+			StanderTicketJson.put("locationunitltr", edLocationUnitLTR
+					.getText().toString());
+			StanderTicketJson.put("locationsection", edLocationSection
+					.getText().toString());
+			StanderTicketJson.put("locationtowship1", edLocationTowship1
+					.getText().toString());
+			StanderTicketJson.put("locationtowship2", edLocationTowship2
+					.getText().toString());
+			StanderTicketJson.put("locationtowship3", edLocationTowship3
+					.getText().toString());
+			StanderTicketJson.put("locationtowdec", edLocationTowDec.getText()
+					.toString());
+			StanderTicketJson.put("locationtowdirns", edLocationTowDirNS
+					.getText().toString());
+			StanderTicketJson.put("locationrange1", edLocationRange1.getText()
+					.toString());
+			StanderTicketJson.put("locationrange2", edLocationRange2.getText()
+					.toString());
+			StanderTicketJson.put("locationrange3", edLocationRange3.getText()
+					.toString());
+			StanderTicketJson.put("locationrandec", edLocationRanDec.getText()
+					.toString());
+			StanderTicketJson.put("locationrandirns", edLocationRanDirNS
+					.getText().toString());
+			StanderTicketJson.put("locationmeridian1", edLocationMeridian1
+					.getText().toString());
+			StanderTicketJson.put("locationmeridian2", edLocationMeridian2
+					.getText().toString());
+			StanderTicketJson
+					.put("flacno", edTicketFlacNo.getText().toString());
+			StanderTicketJson.put("districtno", edTicketDistrictNo.getText()
+					.toString());
+			StanderTicketJson.put("federano", edTicketFederalNo.getText()
+					.toString());
+			if (tankType == 0) {
+				StanderTicketJson.put("tanktype", "Round Bottom Tank");
+			} else
+				StanderTicketJson.put("tanktype", "Cone Bottom Tank");
+
+			StanderTicketJson
+					.put("tankno", edTicketTankNo.getText().toString());
+
+			switch (tankSize) {
+			case 0:
+				StanderTicketJson.put("tanksize", "210 Barrel");
+				break;
+			case 1:
+				StanderTicketJson.put("tanksize", "300 Barrel");
+				break;
+			case 2:
+				StanderTicketJson.put("tanksize", "400 Barrel");
+				break;
+			case 3:
+				StanderTicketJson.put("tanksize", "500 Barrel");
+				break;
+			default:
+				break;
+			}
+
+			StanderTicketJson.put("1stlevelfeet", ed1STLevelFeet.getText()
+					.toString());
+			StanderTicketJson.put("1stlevelinches", ed1STLevelInches.getText()
+					.toString());
+			StanderTicketJson.put("1stlevel14in", ed1STLevel14In.getText()
+					.toString());
+			StanderTicketJson.put("1sttemp", ed1STTemp.getText().toString());
+			StanderTicketJson
+					.put("1stswfeet", ed1STSWFeet.getText().toString());
+			StanderTicketJson.put("1stswinches", ed1STSWInches.getText()
+					.toString());
+			StanderTicketJson.put("2stlevelfeet", ed2STLevelFeet.getText()
+					.toString());
+			StanderTicketJson.put("2stlevelinches", ed2STLevelInches.getText()
+					.toString());
+			StanderTicketJson.put("2stlevel14in", ed2STLevel14In.getText()
+					.toString());
+			StanderTicketJson.put("2sttemp", ed2STTemp.getText().toString());
+			StanderTicketJson
+					.put("2stswfeet", ed2STSWFeet.getText().toString());
+			StanderTicketJson.put("2stswinches", ed2STSWInches.getText()
+					.toString());
+			StanderTicketJson.put("estbarrels", edTicketSTEst_Barrels.getText()
+					.toString());
+			StanderTicketJson.put("observedgty", edTicketObservedGty.getText()
+					.toString());
+			StanderTicketJson.put("observedtemp", edTicketObservedTemp
+					.getText().toString());
+			StanderTicketJson.put("bsw", edTicketBSW.getText().toString());
+			StanderTicketJson.put("truckby", edTicketTruckBy.getText()
+					.toString());
+			StanderTicketJson.put("truckto", edTicketTruckTO.getText()
+					.toString());
+			StanderTicketJson.put("trucknumber", edTicketTRuckNumber.getText()
+					.toString());
+			StanderTicketJson.put("trailernumber", edTicketTrailerNumber
+					.getText().toString());
+			StanderTicketJson.put("nounittype1", edTicketNo_UnitType1.getText()
+					.toString());
+			StanderTicketJson.put("hm1", edTicketHM1.getText().toString());
+			StanderTicketJson.put("proper1", edTicketProper1.getText()
+					.toString());
+			StanderTicketJson.put("netbarrels1", edTicketNetBarrels1.getText()
+					.toString());
+			// StanderTicketJson.put("nounittype2",
+			// edTicketNo_UnitType2.getText().toString());
+			// StanderTicketJson.put("hm2", edTicketHM2.getText().toString());
+			// StanderTicketJson.put("proper2",
+			// edTicketProper2.getText().toString());
+			// StanderTicketJson.put("netbarrels2",
+			// edTicketNetBarrels2.getText().toString());
+			StanderTicketJson
+					.put("gross1", edTicketGross1.getText().toString());
+			StanderTicketJson
+					.put("gross2", edTicketGross2.getText().toString());
+			StanderTicketJson.put("net1", edTicketNet1.getText().toString());
+			StanderTicketJson.put("net2", edTicketNet2.getText().toString());
+			StanderTicketJson.put("truegvt1", edTicketTrueGVT1.getText()
+					.toString());
+			StanderTicketJson.put("truegvt2", edTicketTrueGVT2.getText()
+					.toString());
+			StanderTicketJson.put("remarks", edTicketRemarks.getText()
+					.toString());
+			StanderTicketJson.put("1stbbls", ed1STBBLS.getText().toString());
+			StanderTicketJson.put("2stbbls", ed2STBBLS.getText().toString());
+			StanderTicketJson.put("TurnOnTime", tvTurnOnTime.getText()
+					.toString());
+			StanderTicketJson.put("TurnOnOffSeal", edTurnOnOffSeal.getText()
+					.toString());
+			StanderTicketJson.put("ShupOffTime", edShupOffTime.getText()
+					.toString());
+			StanderTicketJson.put("ShupOffSeal", edShupOffSeal.getText()
+					.toString());
+			StanderTicketJson.put("ShupOffDate", edShupOffDate.getText()
+					.toString());
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return StanderTicketJson;
+	}
+
+	// Auto Barrels
+	private void autoBarrels(int type, int size) {
+		float bbls1 = 0;
+		float bbls2 = 0;
+		int lvFee1, lvInches1, lv141, swFeet1, swInches1;
+		int lvFee2, lvInches2, lv142, swFeet2, swInches2;
+		try {
+			lvFee1 = Integer.parseInt(ed1STLevelFeet.getText().toString());
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			lvFee1 = 0;
+		}
+		try {
+			lvInches1 = Integer.parseInt(ed1STLevelInches.getText().toString());
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			lvInches1 = 0;
+		}
+		try {
+			lv141 = Integer.parseInt(ed1STLevel14In.getText().toString());
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			lv141 = 0;
+		}
+		try {
+			// swFeet1=Integer.parseInt(ed1STSWFeet.getText().toString());
+			swFeet1 = 0;
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			swFeet1 = 0;
+		}
+		try {
+			// swInches1=Integer.parseInt(ed1STSWInches.getText().toString());
+			swInches1 = 0;
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			swInches1 = 0;
+		}
+		try {
+			lvFee2 = Integer.parseInt(ed2STLevelFeet.getText().toString());
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			lvFee2 = 0;
+		}
+		try {
+			lvInches2 = Integer.parseInt(ed2STLevelInches.getText().toString());
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			lvInches2 = 0;
+		}
+		try {
+			lv142 = Integer.parseInt(ed2STLevel14In.getText().toString());
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			lv142 = 0;
+		}
+		try {
+			// swFeet2=Integer.parseInt(ed2STSWFeet.getText().toString());
+			swFeet2 = 0;
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			swFeet2 = 0;
+		}
+		try {
+			// swInches2=Integer.parseInt(ed2STSWInches.getText().toString());
+			swInches2 = 0;
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			swInches2 = 0;
+		}
+
+		float inches = GlobalValue.tankSize[GlobalValue.tankType[type][size]][1];
+		float feet = GlobalValue.tankSize[GlobalValue.tankType[type][size]][0];
+
+		bbls1 = bbls(inches, feet, lvFee1, lvInches1, lv141, swFeet1, swInches1);
+		bbls2 = bbls(inches, feet, lvFee2, lvInches2, lv142, swFeet2, swInches2);
+
+		ed1STBBLS.setText(bbls1 + "");
+		ed2STBBLS.setText(bbls2 + "");
+		edTicketSTEst_Barrels.setText(Math.abs(bbls1 - bbls2) + "");
+
+	}
+
+	private float bbls(float inches, float feet, int lvFeet, int lvIn,
+			int lv14, int swFeet, int swIn) {
+		float bbls1, bbls2;
+		bbls1 = feet * lvFeet + inches * lvIn * 4 + lv14 * inches;
+		bbls2 = feet * swFeet + inches * 4 * swIn;
+		return (bbls1 - bbls2);
+	}
+
+	// Define TicketNumber
+	private String getTicketNumber(String idTicket) {
+		NumberFormat formatter = new DecimalFormat("00000");
+		NumberFormat formatter1 = new DecimalFormat("00");
+
+		NumberFormat formatter2 = new DecimalFormat("000");
+
+		prefsRememberCredentials = getSharedPreferences("remember",
+				MODE_PRIVATE);
+		String dv = prefsRememberCredentials.getString("idDevice", "0");
+		if (dv.length() > 3) {
+			dv = dv.substring(0, 3);
+		}
+		String cp = prefsRememberCredentials.getString("idCompany", "0");
+		if (cp.length() > 2) {
+			cp = cp.substring(0, 2);
+		}
+		String us = prefsRememberCredentials.getString("idUser", "0");
+		if (idTicket.length() > 5) {
+			idTicket = idTicket.substring(0, 4);
+		}
+		System.out.println("this ticket num ber :" + idTicket + "   " + "  "
+				+ dv + "  " + cp);
+		String number = formatter1.format(Integer.parseInt(cp)) + dv
+				+ formatter.format(Integer.parseInt(idTicket));
+
+		return number;
+	}
+
+	private class postTicketTask extends AsyncTask<Void, Void, Void> {
+
+		@Override
+		protected Void doInBackground(Void... params) {
+			try {
+
+				if (idRunlog == 0) {
+					String dataRL = ServiceRequest.postData("save_runlog",
+							createJsonRunlog(), "runlog");// postData.CreateRunlog(Login.idUser,
+															// "");
+					JSONObject jsonObj = new JSONObject(dataRL);
+					if (jsonObj.has("status")) {
+						if (jsonObj.getString("status").equals("true")) {
+							if (jsonObj.has("id"))
+								idRunlog = jsonObj.getInt("id");
+						}
+					}
+					Log.d("KUNLQT", "ID rl:" + idRunlog);
+				}
+
+				String dataTK = ServiceRequest.postData("save_ticket",
+						createJsonTicket(idTicket), "ticket");
+				Log.d("KUNLQT", "Ticket data :" + dataTK);
+
+				JSONObject jsonTK = new JSONObject(dataTK);
+				if (jsonTK.has("status")) {
+					if (jsonTK.getString("status").equals("true")) {
+						if (jsonTK.has("id")) {
+							ticket_id = jsonTK.getInt("id");
+							String numberTicket = getTicketNumber(String
+									.valueOf(ticket_id));
+							UpdateTicketNumber(numberTicket, ticket_id);
+							String data2 = ServiceRequest.postData(
+									"save_ticket_type",
+									createJsonTypeTicket(ticket_id,
+											idTicketType), "tickettype");
+
+							Log.d("KUNLQT",
+									"json type ticket :"
+											+ createJsonTypeTicket(ticket_id,
+													idTicketType));
+							Log.d("KUNLQT", "ticket type :" + data2);
+							JSONObject jsonTKT = new JSONObject(data2);
+							if (jsonTKT.has("status")) {
+								String results = "{status:" + "true" + "}";
+								if (jsonTKT.getString("status").equals("true")) {
+									if (!isSig1 && opSig1) {
+										String sig1 = executeMultipartPost(
+												signature1, 1, ticket_id);
+										results = UpdateRailInRunlog(sig1,
+												ticket_id);
+									}
+									if (!isSig2 && opSig2) {
+										String sig2 = executeMultipartPost(
+												signature2, 2, ticket_id);
+										results = UpdateRailInRunlog(sig2,
+												ticket_id);
+
+									}
+									if (!isSig3 && opSig3) {
+										String sig3 = executeMultipartPost(
+												signature3, 3, ticket_id);
+										results = UpdateRailInRunlog(sig3,
+												ticket_id);
+
+									}
+									if (!isSig4 && opSig4) {
+										String sig4 = executeMultipartPost(
+												signature4, 4, ticket_id);
+										results = UpdateRailInRunlog(sig4,
+												ticket_id);
+
+									}
+									JSONObject jsonSig = new JSONObject(results);
+									if (jsonSig.has("status")) {
+										if (jsonSig.getString("status").equals(
+												"true")) {
+											/*
+											 * Save data of this ticket fo
+											 * populate
+											 */
+											try {
+												dataHelper.openDataBase();
+												getDataForAutoPopulating();
+												GlobalValue.dataObj
+														.setIdRunlog(idRunlog
+																+ "");
+												dataHelper
+														.addNewAutoPopulatingObj(GlobalValue.dataObj);
+												dataHelper.close();
+											} catch (Exception e) {
+												dataHelper.close();
+												// TODO: handle exception
+											}
+											/* End save data */
+
+											if (idTicket == 0) {
+												setResult(Activity.RESULT_OK);
+												StandarTicket.this.finish();
+												Intent intent = new Intent(
+														StandarTicket.this,
+														WarningRailPrompt.class);
+												intent.putExtra("idRunLog",
+														idRunlog);
+												intent.putExtra("idTicket",
+														ticket_id);
+												intent.putExtra("nameRunlog",
+														nameRunlog);
+												startActivity(intent);
+											}
+											if (callFromTicketOption) {
+												Intent intent = new Intent(
+														StandarTicket.this,
+														TicketOption.class);
+												intent.putExtra(
+														"idRunLogFromTicketType",
+														idRunlog);
+												setResult(Activity.RESULT_OK,
+														intent);
+												StandarTicket.this.finish();
+											}
+										}
+									}
+
+								}
+
+							} else {
+
+								Log.d("PHUOCNV", "POST FAIL");
+							}
+						}
+					}
+				} else {
+					System.out.println("Null");
+				}
+
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		@Override
+		protected void onPreExecute() {
+			try {
+				dialog.setMessage("Saving...");
+				dialog.show();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+			try {
+				if (dialog.isShowing())
+					dialog.dismiss();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+
+		}
+
+	}
+
+	private class LoadTicketTask extends AsyncTask<Void, Void, Void> {
+		private String name;
+
+		String reult;
+
+		@Override
+		protected Void doInBackground(Void... params) {
+			try {
+				// load ticket
+				reult = LoadData();
+				Log.d("KUNLQT", "RESULT Review :" + reult);
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		@Override
+		protected void onPreExecute() {
+			dialog.setMessage("Loading...");
+			Log.d("KUNLQT", "LOADING");
+			dialog.show();
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+			JSONObject jsonOBJ;
+			try {
+				jsonOBJ = new JSONObject(reult);
+				Log.d("KUNLQT", "onPostExecute result:" + jsonOBJ.toString());
+				if (jsonOBJ.getBoolean("status")) {
+					JSONObject ticketType = jsonOBJ
+							.getJSONObject("ticket_type");
+					idTicketType = ticketType.getInt("id");
+					Log.d("KUNLQT", "idTicketType:" + idTicketType
+							+ "  nhannx  " + ticketType.getString("number"));
+					// /----------------------------
+					Utils.CheckNullandSettex(ticketType.getString("number"),
+							edTicketNumber);
+					Utils.CheckNullandSettex(ticketType.getString("date"),
+							edTicketDate);
+					Utils.CheckNullandSettex(ticketType.getString("operator"),
+							edticketOperator);
+					Utils.CheckNullandSettex(ticketType.getString("leasename"),
+							edTicketLeaseName);
+					Utils.CheckNullandSettex(ticketType.getString("state"),
+							edTicketState);
+					Utils.CheckNullandSettex(ticketType.getString("country"),
+							edTicketCountry);
+					Utils.CheckNullandSettex(
+							ticketType.getString("location141"), edLocation141);
+					Utils.CheckNullandSettex(
+							ticketType.getString("location142"), edLocation142);
+					Utils.CheckNullandSettex(
+							ticketType.getString("locationunitltr"),
+							edLocationUnitLTR);
+					Utils.CheckNullandSettex(
+							ticketType.getString("locationsection"),
+							edLocationSection);
+					Utils.CheckNullandSettex(
+							ticketType.getString("locationtowship1"),
+							edLocationTowship1);
+					Utils.CheckNullandSettex(
+							ticketType.getString("locationtowship2"),
+							edLocationTowship2);
+					Utils.CheckNullandSettex(
+							ticketType.getString("locationtowship3"),
+							edLocationTowship3);
+					Utils.CheckNullandSettex(
+							ticketType.getString("locationtowdec"),
+							edLocationTowDec);
+					Utils.CheckNullandSettex(
+							ticketType.getString("locationtowdirns"),
+							edLocationTowDirNS);
+					Utils.CheckNullandSettex(
+							ticketType.getString("locationrange1"),
+							edLocationRange1);
+					Utils.CheckNullandSettex(
+							ticketType.getString("locationrange2"),
+							edLocationRange2);
+					Utils.CheckNullandSettex(
+							ticketType.getString("locationrange3"),
+							edLocationRange3);
+					Utils.CheckNullandSettex(
+							ticketType.getString("locationrandec"),
+							edLocationRanDec);
+					Utils.CheckNullandSettex(
+							ticketType.getString("locationrandirns"),
+							edLocationRanDirNS);
+					Utils.CheckNullandSettex(
+							ticketType.getString("locationmeridian1"),
+							edLocationMeridian1);
+					Utils.CheckNullandSettex(
+							ticketType.getString("locationmeridian2"),
+							edLocationMeridian2);
+					Utils.CheckNullandSettex(ticketType.getString("flacno"),
+							edTicketFlacNo);
+					Utils.CheckNullandSettex(
+							ticketType.getString("districtno"),
+							edTicketDistrictNo);
+					Utils.CheckNullandSettex(ticketType.getString("federano"),
+							edTicketFederalNo);
+
+					tankTypeValue = new String(ticketType.getString("tanktype"));
+					Utils.CheckNullandSettex(ticketType.getString("tankno"),
+							edTicketTankNo);
+					tankSizeValue = new String(ticketType.getString("tanksize"));
+					Utils.CheckNullandSettex(
+							ticketType.getString("1stlevelfeet"),
+							ed1STLevelFeet);
+					Utils.CheckNullandSettex(
+							ticketType.getString("1stlevelinches"),
+							ed1STLevelInches);
+					Utils.CheckNullandSettex(
+							ticketType.getString("1stlevel14in"),
+							ed1STLevel14In);
+					Utils.CheckNullandSettex(ticketType.getString("1sttemp"),
+							ed1STTemp);
+					Utils.CheckNullandSettex(ticketType.getString("1stswfeet"),
+							ed1STSWFeet);
+					Utils.CheckNullandSettex(
+							ticketType.getString("1stswinches"), ed1STSWInches);
+					Utils.CheckNullandSettex(
+							ticketType.getString("2stlevelfeet"),
+							ed2STLevelFeet);
+					Utils.CheckNullandSettex(
+							ticketType.getString("2stlevelinches"),
+							ed2STLevelInches);
+					Utils.CheckNullandSettex(
+							ticketType.getString("2stlevel14in"),
+							ed2STLevel14In);
+					Utils.CheckNullandSettex(ticketType.getString("2sttemp"),
+							ed2STTemp);
+					Utils.CheckNullandSettex(ticketType.getString("2stswfeet"),
+							ed2STSWFeet);
+					Utils.CheckNullandSettex(
+							ticketType.getString("2stswinches"), ed2STSWInches);
+					Utils.CheckNullandSettex(
+							ticketType.getString("estbarrels"),
+							edTicketSTEst_Barrels);
+					Utils.CheckNullandSettex(
+							ticketType.getString("observedgty"),
+							edTicketObservedGty);
+					Utils.CheckNullandSettex(
+							ticketType.getString("observedtemp"),
+							edTicketObservedTemp);
+					Utils.CheckNullandSettex(ticketType.getString("bsw"),
+							edTicketBSW);
+					Utils.CheckNullandSettex(ticketType.getString("truckby"),
+							edTicketTruckBy);
+					Utils.CheckNullandSettex(ticketType.getString("truckto"),
+							edTicketTruckTO);
+					Utils.CheckNullandSettex(
+							ticketType.getString("trucknumber"),
+							edTicketTRuckNumber);
+					Utils.CheckNullandSettex(
+							ticketType.getString("trailernumber"),
+							edTicketTrailerNumber);
+					Utils.CheckNullandSettex(
+							ticketType.getString("nounittype1"),
+							edTicketNo_UnitType1);
+					Utils.CheckNullandSettex(ticketType.getString("hm1"),
+							edTicketHM1);
+					Utils.CheckNullandSettex(ticketType.getString("proper1"),
+							edTicketProper1);
+					Utils.CheckNullandSettex(
+							ticketType.getString("netbarrels1"),
+							edTicketNetBarrels1);
+					// Utils.CheckNullandSettex(ticketType.getString("nounittype2"),
+					// edTicketNo_UnitType2);
+					// Utils.CheckNullandSettex(ticketType.getString("hm2"),
+					// edTicketHM2);
+					// Utils.CheckNullandSettex(ticketType.getString("proper2"),
+					// edTicketProper2);
+					// Utils.CheckNullandSettex(ticketType.getString("netbarrels2"),
+					// edTicketNetBarrels2);
+					Utils.CheckNullandSettex(ticketType.getString("gross1"),
+							edTicketGross1);
+					Utils.CheckNullandSettex(ticketType.getString("gross2"),
+							edTicketGross2);
+					Utils.CheckNullandSettex(ticketType.getString("net1"),
+							edTicketNet1);
+					Utils.CheckNullandSettex(ticketType.getString("net2"),
+							edTicketNet2);
+					Utils.CheckNullandSettex(ticketType.getString("truegvt1"),
+							edTicketTrueGVT1);
+					Utils.CheckNullandSettex(ticketType.getString("truegvt2"),
+							edTicketTrueGVT2);
+					Utils.CheckNullandSettex(ticketType.getString("remarks"),
+							edTicketRemarks);
+					Utils.CheckNullandSettex(
+							ticketType.getString("TurnOnTime"), tvTurnOnTime);
+					Utils.CheckNullandSettex(
+							ticketType.getString("TurnOnOffSeal"),
+							edTurnOnOffSeal);
+					Utils.CheckNullandSettex(
+							ticketType.getString("ShupOffTime"), edShupOffTime);
+					Utils.CheckNullandSettex(
+							ticketType.getString("ShupOffSeal"), edShupOffSeal);
+					Utils.CheckNullandSettex(
+							ticketType.getString("ShupOffDate"), edShupOffDate);
+
+					// Utils.CheckNullandSettex(ticketType.getString("1stbbls"),
+					// ed1STBBLS);
+					// Utils.CheckNullandSettex(ticketType.getString("2stbbls"),
+					// ed2STBBLS);
+					try {
+						System.out
+								.println("SIGN :" + jsonOBJ.getString("sig1"));
+						System.out.println(jsonOBJ.getString("sig2"));
+
+						System.out.println(jsonOBJ.getString("sig3"));
+
+						System.out.println(jsonOBJ.getString("sig4"));
+						if (jsonOBJ.getString("sig1") != "null") {
+							if (callFromTicketOption)
+								opSig1 = false;
+							isSig1 = false;
+							signature1
+									.setImageDrawable(LoadImageFromWebOperations(jsonOBJ
+											.getString("sig1")));
+							generatePathFileSignature(signature1, 1);
+						}
+						if (jsonOBJ.getString("sig2") != "null") {
+							if (callFromTicketOption)
+								opSig2 = false;
+							isSig2 = false;
+							signature2
+									.setImageDrawable(LoadImageFromWebOperations(jsonOBJ
+											.getString("sig2")));
+							generatePathFileSignature(signature2, 2);
+						}
+						if (jsonOBJ.getString("sig3") != "null") {
+							if (callFromTicketOption)
+								opSig3 = false;
+							isSig3 = false;
+							signature3
+									.setImageDrawable(LoadImageFromWebOperations(jsonOBJ
+											.getString("sig3")));
+							generatePathFileSignature(signature3, 3);
+						}
+						if (jsonOBJ.getString("sig4") != "null") {
+							if (callFromTicketOption)
+								opSig4 = false;
+							isSig4 = false;
+							signature4
+									.setImageDrawable(LoadImageFromWebOperations(jsonOBJ
+											.getString("sig4")));
+							generatePathFileSignature(signature4, 4);
+						}
+					} catch (NullPointerException e) {
+						// TODO: handle exception
+					}
+
+				}
+
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if (dialog.isShowing())
+				dialog.dismiss();
+		}
+	}
+
+	private void generatePathFileSignature(View view, int oder) {
+		File mediaStorageDir = new File(
+				Environment
+						.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
+				"TicketSignature");
+		// This location works best if you want the created images to be shared
+		// between applications and persist after your app has been uninstalled.
+
+		// Create the storage directory if it does not exist
+		if (!mediaStorageDir.exists()) {
+			if (!mediaStorageDir.mkdirs()) {
+				Log.d("MyCameraApp", "failed to create directory");
+				return;
+			}
+		}
+
+		// Create a media file name
+		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss")
+				.format(new Date());
+		File mediaFile = new File(mediaStorageDir.getPath() + File.separator
+				+ "signature" + oder + ".jpg");
+		view.buildDrawingCache();
+		view.setDrawingCacheEnabled(true);
+		view.buildDrawingCache(true);
+		Bitmap bm = Bitmap.createBitmap(view.getDrawingCache());
+		ByteArrayOutputStream bos = new ByteArrayOutputStream();
+		bm.compress(Bitmap.CompressFormat.JPEG, 50, bos);
+		byte[] data = bos.toByteArray();
+		FileOutputStream fos;
+		try {
+			fos = new FileOutputStream(mediaFile);
+			fos.write(data);
+			fos.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	private String LoadData() {
+		String result = null;
+		try {
+			Log.d("KUNLQT", "LOADDATAAAAAAAA");
+			result = ServiceClient.loadManySerialized(URL_LOAD_TICKET);
+			Log.d("KUNLQT", "LOADDATAAAAAAAA" + result);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return result;
+
+	}
+
+	private void setOffControl() {
+
+		edTicketNumber.setFocusable(false);
+		edTicketDate.setFocusable(false);
+		edticketOperator.setFocusable(false);
+		edTicketLeaseName.setFocusable(false);
+		edTicketState.setFocusable(false);
+		edTicketCountry.setFocusable(false);
+		edLocation141.setFocusable(false);
+		edLocation142.setFocusable(false);
+		edLocationUnitLTR.setFocusable(false);
+		edLocationSection.setFocusable(false);
+		edLocationTowship1.setFocusable(false);
+		edLocationTowship2.setFocusable(false);
+		edLocationTowship3.setFocusable(false);
+		edLocationTowDec.setFocusable(false);
+		edLocationTowDirNS.setFocusable(false);
+		edLocationRange1.setFocusable(false);
+		edLocationRange2.setFocusable(false);
+		edLocationRange3.setFocusable(false);
+		edLocationRanDec.setFocusable(false);
+		edLocationRanDirNS.setFocusable(false);
+		edLocationMeridian1.setFocusable(false);
+		edLocationMeridian2.setFocusable(false);
+		edTicketFlacNo.setFocusable(false);
+		edTicketDistrictNo.setFocusable(false);
+		edTicketFederalNo.setFocusable(false);
+		// edTicketTankType.setFocusable(false);
+		edTicketTankNo.setFocusable(false);
+		edTicketTankSize.setFocusable(false);
+		ed1STLevelFeet.setFocusable(false);
+		ed1STLevelInches.setFocusable(false);
+		ed1STLevel14In.setFocusable(false);
+		ed1STTemp.setFocusable(false);
+		ed1STSWFeet.setFocusable(false);
+		ed1STSWInches.setFocusable(false);
+		ed2STLevelFeet.setFocusable(false);
+		ed2STLevelInches.setFocusable(false);
+		ed2STLevel14In.setFocusable(false);
+		ed2STTemp.setFocusable(false);
+		ed2STSWFeet.setFocusable(false);
+		ed2STSWInches.setFocusable(false);
+		edTicketSTEst_Barrels.setFocusable(false);
+		edTicketObservedGty.setFocusable(false);
+		edTicketObservedTemp.setFocusable(false);
+		edTicketBSW.setFocusable(false);
+		edTicketTruckBy.setFocusable(false);
+		edTicketTruckTO.setFocusable(false);
+		edTicketTRuckNumber.setFocusable(false);
+		edTicketTrailerNumber.setFocusable(false);
+		edTicketNo_UnitType1.setFocusable(false);
+		edTicketHM1.setFocusable(false);
+		edTicketProper1.setFocusable(false);
+		edTicketNetBarrels1.setFocusable(false);
+		// edTicketNo_UnitType2.setFocusable(false);
+		// edTicketHM2.setFocusable(false);
+		// edTicketProper2.setFocusable(false);
+		// edTicketNetBarrels2.setFocusable(false);
+		edTicketGross1.setFocusable(false);
+		edTicketGross2.setFocusable(false);
+		edTicketNet1.setFocusable(false);
+		edTicketNet2.setFocusable(false);
+		edTicketTrueGVT1.setFocusable(false);
+		edTicketTrueGVT2.setFocusable(false);
+		edTicketRemarks.setFocusable(false);
+		ed1STBBLS.setFocusable(false);
+		ed2STBBLS.setFocusable(false);
+		tvTurnOnTime.setFocusable(false);
+		edTurnOnOffSeal.setFocusable(false);
+		edShupOffTime.setFocusable(false);
+		edShupOffSeal.setFocusable(false);
+		edShupOffDate.setFocusable(false);
+	}
+
+	private void getDataForAutoPopulating() {
+		GlobalValue.dataObj.setCounty(edTicketCountry.getText().toString());
+		GlobalValue.dataObj.setDate(edTicketDate.getText().toString());
+		GlobalValue.dataObj.setOperator(edticketOperator.getText().toString());
+		GlobalValue.dataObj
+				.setLeaseName(edTicketLeaseName.getText().toString());
+		GlobalValue.dataObj.setState(edTicketState.getText().toString());
+		GlobalValue.dataObj.setTrailerNo(edTicketTrailerNumber.getText()
+				.toString());
+		GlobalValue.dataObj
+				.setTruckNo(edTicketTRuckNumber.getText().toString());
+		GlobalValue.dataObj.setLeaseNo(edTicketFlacNo.getText().toString());
+
+		GlobalValue.dataObj.setTicketNoPlainMarketing(edTicketNumber.getText()
+				.toString());
+		GlobalValue.dataObj.setTankNoPlainMarketing(edTicketTankNo.getText()
+				.toString());
+		GlobalValue.dataObj
+				.setTruckNo(edTicketTRuckNumber.getText().toString());
+		GlobalValue.dataObj.setTrailerNo(edTicketTrailerNumber.getText()
+				.toString());
+
+	}
+
+	private void autoPopulatingData() {
+		edticketOperator.setText(GlobalValue.dataObj.getOperator());
+		edTicketLeaseName.setText(GlobalValue.dataObj.getLeaseName());
+		edTicketNumber.setText(GlobalValue.dataObj.getTicketNoPlainMarketing());
+		edTicketTankNo.setText(GlobalValue.dataObj.getTankNoPlainMarketing());
+		// chua set date
+		edTicketTRuckNumber.setText(GlobalValue.dataObj.getTruckNo());
+		edTicketTrailerNumber.setText(GlobalValue.dataObj.getTrailerNo());
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.signature1:
+			if (isSig1) {
+				Intent intent = new Intent(this, CreateSignature.class);
+				intent.putExtra("sig", 1);
+				startActivity(intent);
+			}
+			break;
+		case R.id.signature2:
+			if (isSig2) {
+				Intent intent = new Intent(this, CreateSignature.class);
+				intent.putExtra("sig", 2);
+
+				startActivity(intent);
+			}
+			break;
+		case R.id.signature3:
+			if (isSig3) {
+				Intent intent = new Intent(this, CreateSignature.class);
+				intent.putExtra("sig", 3);
+
+				startActivity(intent);
+			}
+			break;
+		case R.id.signature4:
+			if (isSig4) {
+				Intent intent = new Intent(this, CreateSignature.class);
+				intent.putExtra("sig", 4);
+
+				startActivity(intent);
+			}
+			break;
+		case R.id.btStandarSave:// Clicked save button
+			if (callFromReview) {
+				Intent intent = new Intent(this, ReviewRunlog.class);
+				if (position != -1) {
+					intent.putExtra("position", position);
+				}
+				setResult(Activity.RESULT_OK, intent);
+				StandarTicket.this.finish();
+
+			} else {
+				if (callFromArchivedTicketSet) {
+					StandarTicket.this.finish();
+				} else {
+					if (callFromArchivedTicketSetForPrint) {
+						if (BluetoothConnectMenu.isConnected()) {
+							try {
+								new PrintTask().execute();
+							} catch (NumberFormatException e) {
+								Log.d("NumberFormatException",
+										"Invalid Input Number.");
+							} catch (Exception e) {
+								Log.d("Exception", "Unknown Exception.");
+							}
+						} else {
+							Intent intent = new Intent(StandarTicket.this,
+									BluetoothConnectMenu.class);
+							startActivityForResult(intent,
+									REQUEST_CODE_TO_BLUETOOTH_CONNECT);
+						}
+					} else {
+						Log.d("KUNLQT", "GETDATA");
+						new postTicketTask().execute();
+					}
+				}
+			}
+
+			break;
+		case R.id.edTicketTurnedOnTime:
+			isTimeTurnOn = true;
+			showDialog(TIME_DIALOG_ID);
+			break;
+		case R.id.edTicketShupOffTime:
+			isTimeTurnOn = false;
+			showDialog(TIME_DIALOG_ID);
+			break;
+		default:
+			break;
+		}
+	}
+
+	// Show Time Picker
+	@Override
+	protected Dialog onCreateDialog(int id) {
+		switch (id) {
+		case TIME_DIALOG_ID:
+
+			final Calendar c = Calendar.getInstance();
+			int hourOfDay = c.get(Calendar.HOUR_OF_DAY);
+			int minute = c.get(Calendar.MINUTE);
+
+			return new TimePickerDialog(this, new OnTimeSetListener() {
+
+				@Override
+				public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+					StringBuilder builder = new StringBuilder();
+					builder.append(hourOfDay).append(":").append(minute);
+					if (isTimeTurnOn) {
+						tvTurnOnTime.setText(builder.toString());
+					} else {
+						edShupOffTime.setText(builder.toString());
+					}
+				}
+			}, hourOfDay, minute, true);
+
+		default:
+			break;
+		}
+		return null;
+	}
+
+	// ----------Signature-------------
+	public String executeMultipartPost(ImageView view, int sig, int idTicket)
+			throws Exception {
+		try {
+			view.buildDrawingCache();
+			view.setDrawingCacheEnabled(true);
+			view.buildDrawingCache(true);
+			Bitmap bm = Bitmap.createBitmap(view.getDrawingCache());
+			ByteArrayOutputStream bos = new ByteArrayOutputStream();
+			bm.compress(Bitmap.CompressFormat.JPEG, 50, bos);
+			byte[] data = bos.toByteArray();
+			HttpClient httpClient = new DefaultHttpClient();
+			String url123 = "";
+			switch (sig) {
+			case 1:
+				url123 = Domain.SERVICES_URL + "save_sig_ticket1/";
+				break;
+			case 2:
+				url123 = Domain.SERVICES_URL + "save_sig_ticket2/";
+
+				break;
+			case 3:
+				url123 = Domain.SERVICES_URL + "save_sig_ticket3/";
+
+				break;
+			case 4:
+				url123 = Domain.SERVICES_URL + "save_sig_ticket4/";
+
+				break;
+
+			default:
+				break;
+			}
+			HttpPost postRequest = new HttpPost(url123 + idTicket);
+			ByteArrayBody bab = new ByteArrayBody(data, "sig" + sig + ""
+					+ idTicket + ".jpg");
+			// File file= new File("/mnt/sdcard/forest.png");
+			// FileBody bin = new FileBody(file);
+			MultipartEntity reqEntity = new MultipartEntity(
+					HttpMultipartMode.BROWSER_COMPATIBLE);
+			reqEntity.addPart("filedata", bab);
+			reqEntity.addPart("photoCaption", new StringBody("sig" + sig + ""
+					+ idTicket));
+			postRequest.setEntity(reqEntity);
+			HttpResponse response = httpClient.execute(postRequest);
+			BufferedReader reader = new BufferedReader(new InputStreamReader(
+					response.getEntity().getContent(), "UTF-8"));
+			String sResponse;
+			StringBuilder s = new StringBuilder();
+			String url = "";
+			while ((sResponse = reader.readLine()) != null) {
+				s = s.append(sResponse);
+				Log.d("KUNLQTttttttttttt", "Response: " + s);
+
+			}
+			JSONObject jsonTKT = new JSONObject(s.toString());
+			if (jsonTKT.has("sig" + sig)) {
+				url = jsonTKT.getString("sig" + sig);
+				Log.d("KUNLQ urllllllllllll", "Response: " + url);
+				return url;
+			}
+			// System.out.println("Response: " + s);
+		} catch (Exception e) {
+			// handle exception here
+			Log.e(e.getClass().getName(), e.getMessage());
+			return null;
+		}
+		return null;
+	}
+
+	private String UpdateRailInRunlog(String sig1, int idTicket) {
+		String dataRL = ServiceRequest.postData("save_ticket",
+				createJsonTicket2(sig1, idTicket), "ticket");
+		return dataRL;
+
+	}
+
+	private JSONObject createJsonTicket2(String sig1, int idTicket) {
+		JSONObject tesoroJson = new JSONObject();
+		try {
+			tesoroJson.put("id", idTicket);
+			tesoroJson.put(sig1, sig1);
+
+			// tesoroJson.put("ticket", createJsonTypeTicket(4));
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return tesoroJson;
+
+	}
+
+	private String UpdateTicketNumber(String sig1, int idTicket) {
+		System.out.println("nhannx1:" + sig1);
+
+		String dataRL = ServiceRequest.postData("save_ticket",
+				createJsonTicketNumber(sig1, idTicket), "ticket");
+		String datas = ServiceRequest.postData("save_ticket_type",
+				createJsonTypeTicketNumber(ticket_id, idTicketType, sig1),
+				"tickettype");
+		System.out.println("nhannx1:" + datas);
+		System.out.println("nhannx1:" + dataRL);
+
+		return dataRL;
+
+	}
+
+	private JSONObject createJsonTicketNumber(String number, int idTicket) {
+		JSONObject tesoroJson = new JSONObject();
+		try {
+			tesoroJson.put("id", idTicket);
+			tesoroJson.put("number", number);
+			// tesoroJson.put("ticket", createJsonTypeTicket(4));
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return tesoroJson;
+
+	}
+
+	private class UploadPhotoTask extends AsyncTask<Void, Void, Void> {
+		private String results;
+
+		private String sig1;
+
+		private String sig2;
+
+		private String sig3;
+
+		private String sig4;
+
+		@Override
+		protected Void doInBackground(Void... params) {
+			try {
+				// sig1 = executeMultipartPost(signature1, 1);
+				// sig2 = executeMultipartPost(signature2, 2);
+				// sig3 = executeMultipartPost(signature3, 3);
+				// sig4 = executeMultipartPost(signature4, 4);
+				// results = UpdateRailInRunlog(sig1, sig2, sig3, sig4);
+
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		@Override
+		protected void onPreExecute() {
+			dialog.setMessage("saving...");
+			dialog.show();
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+
+			if (dialog.isShowing())
+				dialog.dismiss();
+			try {
+				if (results != null && !result.equals("")) {
+					JSONObject jsonOBJ = new JSONObject(results);
+					if (jsonOBJ.getBoolean("status")) {
+
+					}
+
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		}
+	}
+
+	private Drawable LoadImageFromWebOperations(String url) {
+		try {
+			System.out.println("nhannx");
+			InputStream is = (InputStream) new URL(url).getContent();
+			Drawable d = Drawable.createFromStream(is, "src name");
+			return d;
+		} catch (Exception e) {
+			System.out.println("Exc=" + e);
+			return null;
+		}
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		// TODO Auto-generated method stub
+		this.detector.onTouchEvent(event);
+		return super.onTouchEvent(event);
+	}
+
+	@Override
+	public boolean onDown(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+			float velocityY) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void onLongPress(MotionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
+			float distanceY) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void onShowPress(MotionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean onSingleTapUp(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onDoubleTap(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onDoubleTapEvent(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onSingleTapConfirmed(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	private class PrintTask extends AsyncTask<Void, Void, Void> {
+		@Override
+		protected Void doInBackground(Void... params) {
+			try {
+				getValueForPrint();
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		@Override
+		protected void onPreExecute() {
+			dialog.setMessage("Preparing...");
+			dialog.show();
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+			if (dialog.isShowing())
+				dialog.dismiss();
+			try {
+				print();
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	private void getValueForPrint() {
+		arrayValue = new ArrayList<String>();
+		arrayValue.add(edTicketNumber.getText().toString());
+		arrayValue.add(edticketOperator.getText().toString());
+		arrayValue.add(edTicketLeaseName.getText().toString());
+		arrayValue.add(edTicketState.getText().toString());
+		arrayValue.add(edTicketCountry.getText().toString());
+
+		arrayValue.add(edLocation141.getText().toString());
+		arrayValue.add(edLocation142.getText().toString());
+		arrayValue.add(edLocationUnitLTR.getText().toString());
+		arrayValue.add(edLocationSection.getText().toString());
+		arrayValue.add(edLocationTowship1.getText().toString() + ","
+				+ edLocationTowship2.getText().toString() + ","
+				+ edLocationTowship3.getText().toString());
+		arrayValue.add(edLocationTowDec.getText().toString());
+		arrayValue.add(edLocationTowDirNS.getText().toString());
+		arrayValue.add(edLocationRange1.getText().toString() + ","
+				+ edLocationRange2.getText().toString() + ","
+				+ edLocationRange3.getText().toString());
+		arrayValue.add(edLocationRanDec.getText().toString());
+		arrayValue.add(edLocationRanDirNS.getText().toString());
+		arrayValue.add(edLocationMeridian1.getText().toString() + ","
+				+ edLocationMeridian2.getText().toString());
+
+		arrayValue.add(edTicketFlacNo.getText().toString());
+		arrayValue.add(edTicketFederalNo.getText().toString());
+		arrayValue.add(tankTypeValue);
+		arrayValue.add(tankSizeValue);
+
+		arrayValue.add(ed1STTemp.getText().toString());
+		arrayValue.add(ed1STBBLS.getText().toString());
+
+		arrayValue.add(ed2STTemp.getText().toString());
+		arrayValue.add(ed2STBBLS.getText().toString());
+		arrayValue.add(edTicketSTEst_Barrels.getText().toString());
+		arrayValue.add(edTicketObservedGty.getText().toString());
+		arrayValue.add(edTicketObservedTemp.getText().toString());
+		arrayValue.add(edTicketBSW.getText().toString());
+		arrayValue.add(edTicketTruckBy.getText().toString());
+		arrayValue.add(edTicketTruckTO.getText().toString());
+		arrayValue.add(edTicketTRuckNumber.getText().toString());
+		arrayValue.add(edTicketTrailerNumber.getText().toString());
+
+		arrayValue.add(tvTurnOnTime.getText().toString());
+		arrayValue.add(edTurnOnOffSeal.getText().toString());
+
+		arrayValue.add(edShupOffTime.getText().toString());
+		arrayValue.add(edShupOffSeal.getText().toString());
+		arrayValue.add(edShupOffDate.getText().toString());
+		arrayValue.add(edTicketNo_UnitType1.getText().toString());
+		arrayValue.add(edTicketHM1.getText().toString());
+		arrayValue.add(edTicketProper1.getText().toString());
+		arrayValue.add(edTicketNetBarrels1.getText().toString());
+		// arrayValue.add(edTicketNo_UnitType2.getText().toString());
+		// arrayValue.add(edTicketHM2.getText().toString());
+		// arrayValue.add(edTicketProper2.getText().toString());
+		// arrayValue.add(edTicketNetBarrels2.getText().toString());
+		arrayValue.add(edTicketGross1.getText().toString() + ","
+				+ edTicketGross2.getText().toString());
+		arrayValue.add(edTicketNet1.getText().toString() + ","
+				+ edTicketNet2.getText().toString());
+		arrayValue.add(edTicketTrueGVT1.getText().toString() + ","
+				+ edTicketTrueGVT2.getText().toString());
+		arrayValue.add(edTicketRemarks.getText().toString());
+	}
+
+	private void print() throws UnsupportedEncodingException {
+		ESCPOSPrinter posPtr = new ESCPOSPrinter();
+		switch (posPtr.status()) {
+		case CMPPrint.CMP_STS_NORMAL: {
+			CitizenPrinter printer = new CitizenPrinter();
+			printer.Print(arrayValue);
+		}
+			break;
+		case CMPPrint.CMP_STS_BUSY:
+			Toast.makeText(StandarTicket.this, "Printer is busy!",
+					Toast.LENGTH_SHORT).show();
+			break;
+		case CMPPrint.CMP_STS_PAPER_EMPTY:
+			Toast.makeText(StandarTicket.this, "Printer is no paper!",
+					Toast.LENGTH_SHORT).show();
+			break;
+		case CMPPrint.CMP_STS_COVER_OPEN:
+			Toast.makeText(StandarTicket.this, "Printer Cover is open!",
+					Toast.LENGTH_SHORT).show();
+			break;
+		case CMPPrint.CMP_STS_CPCL_BATTERY_LOW:
+			Toast.makeText(StandarTicket.this,
+					"Printer battery capacity is low!", Toast.LENGTH_SHORT)
+					.show();
+			break;
+		default:
+			break;
+		}
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		switch (requestCode) {
+		case REQUEST_CODE_TO_BLUETOOTH_CONNECT:
+			if (resultCode == Activity.RESULT_OK) {
+				try {
+					new PrintTask().execute();
+				} catch (NumberFormatException e) {
+					Log.d("NumberFormatException", "Invalid Input Number.");
+				} catch (Exception e) {
+					Log.d("Exception", "Unknown Exception.");
+				}
+			}
+			break;
+		default:
+			break;
+		}
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		try {
+			if (BluetoothConnectMenu.bp != null) {
+				BluetoothConnectMenu.bp.disconnect();
+				BluetoothConnectMenu.setConnected(false);
+				BluetoothConnectMenu.bp = null;
+			}
+		} catch (IOException e) {
+			// Log.e(TAG, e.getMessage(), e);
+		}
+		if ((BluetoothConnectMenu.hThread != null)
+				&& (BluetoothConnectMenu.hThread.isAlive())) {
+			BluetoothConnectMenu.hThread.interrupt();
+			BluetoothConnectMenu.hThread = null;
+		}
+	}
+
+	// Dangnv
+	public void bindOperator() {
+		ArrayAdapter<String> operatorAdapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_dropdown_item_1line, getResources()
+						.getStringArray(R.array.operation));
+		spOperator.setAdapter(operatorAdapter);
+	}
+	
+	public void bindCustomers(){
+		ArrayAdapter<String> customersAdapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_dropdown_item_1line, getResources()
+						.getStringArray(R.array.customer));
+		spCustomer.setAdapter(customersAdapter);
+	}
+}

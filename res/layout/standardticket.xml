@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip" >
+
+        <TextView
+            style="@style/TextHeader"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/run_ticket"
+            android:textColor="#779a3d"
+            android:textSize="32sp" />
+
+        <TextView
+            style="@style/TextHeader"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="@string/ticket_number"
+            android:textStyle="normal"
+            android:visibility="gone" />
+
+        <TextView
+            style="@style/TextHeader"
+            android:layout_gravity="center_horizontal"
+            android:text="0123456789"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            android:visibility="gone" />
+
+        <TextView
+            style="@style/TextTitle"
+            android:text="@string/ticket_date" />
+
+        <EditText
+            android:id="@+id/edTicketDate"
+            style="@style/TextInput" />
+
+        <TextView
+            style="@style/TextTitle"
+            android:layout_marginTop="10dp"
+            android:text="@string/customer" />
+
+        <Spinner
+            android:id="@+id/spCustomer"
+            style="@style/TextInput"
+            android:background="@drawable/spinner"
+            android:prompt="@string/promt" />
+
+        <TextView
+            style="@style/TextTitle"
+            android:layout_marginTop="10dp"
+            android:text="@string/operator" />
+
+        <AutoCompleteTextView
+            android:id="@+id/actOperation"
+            style="@style/TextInput" />
+
+        <TextView
+            style="@style/TextTitle"
+            android:layout_marginTop="10dp"
+            android:text="@string/leasename" />
+
+        <AutoCompleteTextView
+            android:id="@+id/actTicketLeaseName"
+            style="@style/TextInput" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/state" />
+
+                <EditText
+                    android:id="@+id/edTicketState"
+                    style="@style/TextInput"
+                    android:text="ND" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/county" />
+
+                <EditText
+                    android:id="@+id/edTicketCountry"
+                    style="@style/TextInput" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- Location -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bghighlight"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/TextHeader"
+                    android:text="@string/location" />
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/location_examples"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/qtr" />
+
+                    <EditText
+                        android:id="@+id/edLocation142"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/unit_ltr" />
+
+                    <EditText
+                        android:id="@+id/edLocationUnitLTR"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/section" />
+
+                    <EditText
+                        android:id="@+id/edLocationSection"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/meridian" />
+
+                    <EditText
+                        android:id="@+id/edLocationMeridian1"
+                        style="@style/TextInput" >
+                    </EditText>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/township" />
+
+                    <EditText
+                        android:id="@+id/edLocationTowship1"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/dec" />
+
+                    <EditText
+                        android:id="@+id/edLocationTowDec"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/dir_ns" />
+
+                    <EditText
+                        android:id="@+id/edLocationTowDirNS"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:background="@color/gray" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/range" />
+
+                    <EditText
+                        android:id="@+id/edLocationRange1"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/dec" />
+
+                    <EditText
+                        android:id="@+id/edLocationRanDec"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/dir_ew" />
+
+                    <EditText
+                        android:id="@+id/edLocationRanDirNS"
+                        style="@style/TextInput" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Flacno -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:paddingBottom="20dp" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/lease_no" />
+
+                    <EditText
+                        android:id="@+id/edtTicketFlacNo"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/fed_lease_no" />
+
+                    <EditText
+                        android:id="@+id/edTicketFederalNo"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/unq_lease_no" />
+
+                    <EditText
+                        android:id="@+id/edUniqueLeaseNo"
+                        style="@style/TextInput" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/district_no" />
+
+                    <EditText
+                        android:id="@+id/edTicketDistrictNo"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/tank_no" />
+
+                    <EditText
+                        android:id="@+id/edTicketTankNo"
+                        style="@style/TextInput" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/tank_size" />
+
+                    <Spinner
+                        android:id="@+id/spTankSide"
+                        style="@style/TextInput"
+                        android:background="@drawable/spinner"
+                        android:prompt="@string/promt" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <include layout="@layout/tempst" />
+
+        <include layout="@layout/tempsignature" />
+
+        <include layout="@layout/tempend" />
+
+        <Button
+            android:id="@+id/btStandarSave"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:background="@xml/custom_button_orange"
+            android:text="SAVE" />
+    </LinearLayout>
+
+</ScrollView>

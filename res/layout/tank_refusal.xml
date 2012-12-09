@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/bghighlight"
+    android:orientation="vertical" >
+
+    <CheckBox
+        android:id="@+id/cbTankRefusal"
+        style="@style/TextTitle"
+        android:text="@string/tank_refusal" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/llTankRefusalContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TextTitle"
+                    android:text="@string/reason_for_rejection" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/edtReasonRejection"
+                        style="@style/TextInput" />
+
+                    <ImageButton
+                        android:id="@+id/imgReasonRejection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/nut_tam_giac"
+                        android:src="@null" />
+
+                    <Spinner
+                        android:id="@+id/spReasonRejection"
+                        style="@style/TextInput"
+                        android:prompt="@string/promt" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/oil_height" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/edtOilFeets"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@xml/highlight_edittext"
+                            android:hint="@string/feet"
+                            android:imeOptions="actionNext"
+                            android:inputType="number" />
+
+                        <EditText
+                            android:id="@+id/edtOilInchs"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:background="@xml/highlight_edittext"
+                            android:hint="@string/inches"
+                            android:imeOptions="actionNext"
+                            android:inputType="number" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16sp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/conn_height" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/edtConnFeets"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@xml/highlight_edittext"
+                            android:hint="@string/feet"
+                            android:imeOptions="actionNext"
+                            android:inputType="number" />
+
+                        <EditText
+                            android:id="@+id/edtConnInchs"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:background="@xml/highlight_edittext"
+                            android:hint="@string/inches"
+                            android:imeOptions="actionNext"
+                            android:inputType="number" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <CheckBox
+                    android:id="@+id/cbTruck"
+                    style="@style/TextTitle"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/truck" />
+
+                <CheckBox
+                    android:id="@+id/cbPipeLine"
+                    style="@style/TextTitle"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/pipeline" />
+
+                <CheckBox
+                    android:id="@+id/cbOther"
+                    style="@style/TextTitle"
+                    android:text="@string/other" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/total_hours" />
+
+                    <EditText
+                        android:id="@+id/edtTotalHours"
+                        style="@style/TextInput"
+                        android:layout_marginRight="5dp"
+                        android:inputType="number" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:text="@string/billable_hours" />
+
+                    <EditText
+                        android:id="@+id/edtBillableHours"
+                        style="@style/TextInput"
+                        android:inputType="number" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llMask"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/bg_tank_refusal"
+            android:clickable="true" >
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

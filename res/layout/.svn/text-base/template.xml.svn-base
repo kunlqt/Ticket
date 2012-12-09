@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="fill_parent"
+	android:layout_width="fill_parent"
+	android:orientation="vertical">
+	<TextView
+		android:id="@+id/fileListTitle_label"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:gravity="center"
+		android:text="Transfer"
+	/>
+	<TableLayout
+		android:id="@+id/TableLayout02"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:stretchColumns="0">
+		<TableRow
+			android:id="@+id/TableRow02"
+			android:layout_height="wrap_content"
+			android:stretchColumns="0"
+			android:layout_width="fill_parent">
+			<TextView
+				android:id="@+id/templateFile_id"
+				android:layout_width="wrap_content"
+				android:text="@string/selectedFile_label"
+				android:singleLine="false"
+				android:maxEms="15"
+				android:layout_height="wrap_content"/>
+			<Button
+				android:id="@+id/templateSelectButton_id"
+				android:layout_height="wrap_content"
+				android:text="@string/fileSelectButton_label"
+				android:layout_width="fill_parent" 
+				android:layout_margin="5px" 
+				android:onClick="templateSelectButton_click"/>
+		</TableRow>
+	</TableLayout>
+	<Button android:text="Transfer" android:id="@+id/button2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:onClick="transferButton_click"></Button>
+	<TextView
+		android:id="@+id/space_label"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:gravity="center"
+		android:text=""
+	/>
+	<TextView
+		android:id="@+id/fileListTitle_label"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:gravity="center"
+		android:text="Template Print"
+	/>
+	<TableLayout
+		android:id="@+id/TableLayout01"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:stretchColumns="0">
+		<TableRow
+			android:id="@+id/TableRow01"
+			android:layout_height="wrap_content"
+			android:stretchColumns="0"
+			android:layout_width="fill_parent">
+			<TextView android:layout_height="wrap_content" android:id="@+id/Label1_id" android:text="Template Number" android:layout_width="wrap_content"></TextView>
+			<EditText android:text="1" android:id="@+id/editText1" android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+		</TableRow>
+	</TableLayout>
+	<TextView android:text="Text" android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+	<EditText android:id="@+id/editText2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text=""></EditText>
+	<TableLayout
+		android:id="@+id/TableLayout02"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:stretchColumns="0">
+		<TableRow
+			android:id="@+id/TableRow01"
+			android:layout_height="wrap_content"
+			android:stretchColumns="0"
+			android:layout_width="fill_parent">
+			<TextView android:layout_height="wrap_content" android:id="@+id/textView2" android:text="Index" android:layout_width="wrap_content"></TextView>
+			<EditText android:text="1" android:id="@+id/editText3" android:numeric="integer" android:maxLength="4" android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+		</TableRow>
+	</TableLayout>
+	<LinearLayout android:id="@+id/LinearLayout01" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+		<Button android:text="ReplaceText" android:id="@+id/button1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="33" android:onClick="printButton_click1"></Button>
+		<Button android:text="ReplaceText Index" android:id="@+id/button3" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="33" android:onClick="printButton_click2"></Button>
+		<Button android:text="ReplaceText ObjectName" android:id="@+id/button4" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="34" android:onClick="printButton_click3"></Button>
+	</LinearLayout>	
+</LinearLayout>

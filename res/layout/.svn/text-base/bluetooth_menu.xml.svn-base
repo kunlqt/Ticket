@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+<LinearLayout android:id="@+id/LinearLayout03" android:layout_width="fill_parent" android:layout_height="wrap_content">
+	<!--
+		Divide | EditText | Button | -->
+		<!-- 	
+		<LinearLayout android:id="@+id/LinearLayout04" android:layout_width="wrap_content" android:layout_height="wrap_content">
+		</LinearLayout> 
+	-->
+</LinearLayout>
+<LinearLayout android:id="@+id/LinearLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content"  android:background="#fff">
+	<Button android:text="Search Device" android:id="@+id/Button01" android:layout_width="fill_parent" android:layout_height="50dp"
+	 android:background="@xml/custom_button_orange" android:textColor="#f47320" android:padding="5dp"
+	 android:textStyle="bold"
+	 android:textSize="18sp">
+	</Button>
+</LinearLayout>
+
+<LinearLayout android:id="@+id/LinearLayout02" android:layout_width="fill_parent" android:layout_height="wrap_content">
+	<ListView android:id="@+id/ListView01" android:layout_width="fill_parent" android:layout_height="wrap_content">
+	</ListView>
+</LinearLayout>
+</LinearLayout>

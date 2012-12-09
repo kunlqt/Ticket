@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <string-array name="sizes">
+        <item>Normal</item>
+        <item>Double-width</item>
+        <item>Double-height</item>
+        <item>Quadruple</item>
+    </string-array>
+    <string-array name="aligns">
+        <item>LEFT</item>
+        <item>CENTER</item>
+        <item>RIGHT</item>
+    </string-array>
+    <string-array name="msr_track">
+        <item>Track 1</item>
+        <item>Track 2</item>
+        <item>Track 1,2</item>
+        <item>Track 3</item>
+        <item>Track 2,3</item>
+    </string-array>
+    <string-array name="customer">
+        <item>EOG Marketing</item>
+        <item>Plains Marketing</item>
+    </string-array>
+    <string-array name="common_remarks">
+        <item>Example 1</item>
+        <item>Example 2</item>
+        <item>Example 3</item>
+    </string-array>
+    <string-array name="reason_rejections">
+        <item>Too Much Oil in Tank</item>
+        <item>High Bottom</item>
+        <item>BS &amp; W</item>
+        <item>Oil too Hot</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="trucked_to_list">
+        <item>Shell Creek SWD</item>
+        <item>Short Prairie SWD</item>
+        <item>Sidonia SWD</item>
+        <item>Wayzetta SWD</item>
+        <item>Clearwater SWD</item>
+        <item>Fertile SWD</item>
+        <item>Grail SWD</item>
+        <item>EOG RAIL</item>
+        <item>4 MILE FALCO/ENSERCO</item>
+        <item>4 MILE HIGH SIERRA</item>
+        <item>CONCORD TRENTON</item>
+        <item>ENSERCO TRENTON</item>
+        <item>HIGH SIERRA WILLISTON</item>
+        <item>ST PAUL PARK</item>
+        <item>TEXPAR</item>
+        <item>ALEXANDER, ND</item>
+        <item>BEULAH</item>
+        <item>BEAVER LODGE</item>
+        <item>DORE, ND</item>
+        <item>NDPS-MINOT</item>
+        <item>NEW TOWN</item>
+        <item>CARR RAIL FACILITY </item>
+    </string-array>
+    
+    
+    <!-- Water ticket -->
+    <string-array name="commodity">
+        <item>Production Water</item>
+        <item>Pit Water</item>
+        <item>Fresh Water</item>
+        <item>Rig Work</item>
+        <item>Service Work</item>
+        <item>Vac Work</item>
+        <item>Frac Water</item>
+    </string-array>
+</resources>

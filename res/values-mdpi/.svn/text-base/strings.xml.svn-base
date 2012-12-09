@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="hello">Hello World, TicketActivity!</string>
+    <string name="app_name">Ticket</string>
+    <string name="print_text">Print Text</string>
+    <string name="print_image">Print Image</string>
+    <string name="print_sample">Print Sample</string>
+	<string name="connect">Connect</string>
+	<string name="send_button">Send</string>
+	<string name="add_esc_button">Add ESC sequence</string>
+    <string name="tvLoginwarning">This application can only used on one device per account. Would you like this to be your primary device?</string>
+    <string name="tvwylie_ticket_fail">Please fill out all mandatory fields.</string>
+    <string name="warning_railprompt"> A Rail ticket is required for each ticket. Would you like to create a rail ticket now?</string>
+    <string name="tv_take_rail_ticket"> Use the guides to line up the ticket and press the "Take Photo" button to capture the rail ticket.</string>
+    <string name="warning_correction_prompt">Do you need to create a correction ticket?</string>
+    <string name="tv_archived_ticket_view">You can view archived tickets here. If would you like create a make correction select the "Correction Ticket" button to create a correction ticket. </string>
+    <string name="tv_archived_billing_view">If would you like create a make correction select the "Correction Ticket" button to create a correction ticket. </string>
+    <string name="_____tv_archived_billing_view">You can view the archived billing slip here. If would you like create a make correction select the "Correction Ticket" button to create a correction ticket. </string>
+    <string name="tv_review_runlogs">Please review each ticket before submitting this runlog.</string>
+    <string name="dateSliderTitle">Selected date</string>
+    <string name="setting_printer">Set Printer</string>
+    <string name="setting_graphic">Set Graphic</string>
+    <string name="setting_alignment">Set Alignment</string>
+    <string name="setting_PJ">Set PocketJet Parameter</string>
+    <string name="setting_CustomInfo">Set RJ</string>
+    <string name="mainMenuTitle_label">Main menu</string>
+    <string name="bluetoothSettingsButton_label">Bluetooth settings</string>
+    <string name="printerSettingsButton_label">Printer settings</string>
+    <string name="selectedFile_label">Select a file. </string>
+    <string name="fileSelectButton_label">Select</string>
+    <string name="printButton_label">Print</string>
+    <string name="exitButton_label">Exit</string>
+    <string name="destinationName_title">Printer</string>
+    <string name="destinationName_text">Select a destination printer. </string>
+    <string name="destinationName_default">Select a destination printer. </string>
+    <string name="setting_label">Settings</string>
+    <string name="about_label">About</string>
+    <string name="about_title">Brother Print Sdk Demo</string>
+    <string name="about_text">Ver.2.0.1\nÂ© 2012 Brother Industries, Ltd.\n</string>
+    <string name="ok_label">OK</string>
+    <string name="fileListTitle_label">File list</string>
+    <string name="netPrinterListTitle_label">Net Printer</string>
+    <string name="progressDialogTitle_printing">Printing...</string>
+    <string name="progressDialogMessage_printing">Wait for a moment...</string>
+    <string name="progressDialogMessage_preparingConnection">Preparing the connection...</string>
+    <string name="progressDialogMessage_specifyingPrinter">Specifying the printer...</string>
+    <string name="progressDialogMessage_processingImage">Processing the image...</string>
+    <string name="progressDialogMessage_createData">Creating the data</string>
+    <string name="progressDialogMessage_sendingData">Sending the data...</string>
+    <string name="progressDialogMessage_startPrint">Printing the data. </string>
+    <string name="progressDialogMessage_dataSent">The data was sent. </string>
+    <string name="progressDialogMessage_printed">The printing process was completed. </string>
+    <string name="progressDialogMessage_CreateSocketFailed">Creating socket failed. </string>
+    <string name="progressDialogMessage_ConnectSocketFailed">Connecting socket failed. </string>
+    <string name="progressDialogMessage_GetOutputStreamFailed">Getting output stream failed. </string>
+    <string name="progressDialogMessage_GetInputStreamFailed">Getting input stream failed. </string>
+    <string name="progressDialogMessage_CloseSocketFailed">Closing socket failed. </string>
+    <string name="progressDialogMessage_CloseConnection">Closing the connection.</string>
+    <string name="progressDialogMessage_SetPaper">Please Set Paper.</string>
+    <string name="progressDialogMessage_CoolingStart">Printer cooling start.</string>
+    <string name="progressDialogMessage_CoolingEnd">Printer cooling end.</string>
+    <string name="progressDialogMessage_sendingTemplateData">file Transferring.</string>
+    <string name="ErrorMessage_ERROR_NONE">Succeeded.</string>
+    <string name="alertDialogTitle_Error">Error</string>
+    <string name="alertDialogMessage_printFailed">Print failed. </string>
+    <string name="alertDialogMessage_runtimeError">Runtime error occurred. </string>
+    <string name="printer_title">PrinterModel</string>
+    <string name="printer_value">Select the printer model. </string>
+
+    <string-array name="printer">
+        <item>MW-140BT</item>
+        <item>MW-145BT</item>
+        <item>MW-260</item>
+        <item>PJ-560</item>
+        <item>PJ-562</item>
+        <item>PJ-563</item>
+        <item>PJ-662</item>
+        <item>PJ-663</item>
+        <item>RJ-4030</item>
+        <item>RJ-4040</item>
+    </string-array>
+    <string-array name="printerValues">
+        <item>MW_140BT</item>
+        <item>MW_145BT</item>
+        <item>MW_260</item>
+        <item>PJ_560</item>
+        <item>PJ_562</item>
+        <item>PJ_563</item>
+        <item>PJ_662</item>
+        <item>PJ_663</item>
+        <item>RJ_4030</item>
+        <item>RJ_4040</item>
+    </string-array>
+
+    <string name="port_title">Port</string>
+    <string name="port_value">Select the port. </string>
+
+    <string-array name="port">
+        <item>Bluetooth</item>
+    </string-array>
+    <string-array name="portValues">
+        <item>BLUETOOTH</item>
+    </string-array>
+    <string-array name="port_NET">
+        <item>WiFi</item>
+    </string-array>
+    <string-array name="portValues_NET">
+        <item>NET</item>
+    </string-array>
+
+    <string name="address_title">IP address</string>
+    <string name="address_value">Set the number of address. </string>
+    <string name="macAddress_title">MAC address</string>
+    <string name="macAddress_value">Set the number of mac address. </string>
+    <string name="paperSize_title">Paper size</string>
+    <string name="paperSize_value">Select the paper size. </string>
+
+    <string-array name="paperSize_MW">
+        <item>A7</item>
+    </string-array>
+    <string-array name="paperSizeValues_MW">
+        <item>A7</item>
+    </string-array>
+    <string-array name="paperSize_MW145BT">
+        <item>A7</item>
+    </string-array>
+    <string-array name="paperSizeValues_MW145BT">
+        <item>A7</item>
+    </string-array>
+    <string-array name="paperSize_MW260">
+        <item>A6</item>
+    </string-array>
+    <string-array name="paperSizeValues_MW260">
+        <item>A6</item>
+    </string-array>
+    <string-array name="paperSize_PJ">
+        <item>A4</item>
+        <item>Letter</item>
+        <item>Legal</item>
+        <item>Custom</item>
+    </string-array>
+    <string-array name="paperSizeValues_PJ">
+        <item>A4</item>
+        <item>LETTER</item>
+        <item>LEGAL</item>
+        <item>CUSTOM</item>
+    </string-array>
+    <string-array name="paperSize_RJ">
+        <item>Custom</item>
+    </string-array>
+    <string-array name="paperSizeValues_RJ">
+        <item>CUSTOM</item>
+    </string-array>
+
+    <string name="orientation_title">Printing orientation</string>
+    <string name="orientation_value">Select the printing orientation. </string>
+
+    <string-array name="orientation">
+        <item>Portrait</item>
+        <item>Landscape</item>
+    </string-array>
+    <string-array name="orientationValues">
+        <item>PORTRAIT</item>
+        <item>LANDSCAPE</item>
+    </string-array>
+
+    <string name="numberOfCopies_title">Number of copies</string>
+    <string name="numberOfCopies_value">Set the number of copies. </string>
+    <string name="halfToning_title">Half toning</string>
+    <string name="halfToning_value">Select the half toning method. </string>
+
+    <string-array name="halfToning">
+        <item>Threshold</item>
+        <item>Pattern dithering</item>
+        <item>Error diffusion</item>
+    </string-array>
+    <string-array name="halfToningValues">
+        <item>THRESHOLD</item>
+        <item>PATTERNDITHER</item>
+        <item>ERRORDIFFUSION</item>
+    </string-array>
+
+    <string name="fitToPage_title">Fit to page</string>
+    <string name="fitToPage_value">Select if fitting to page. </string>
+
+    <string-array name="fitToPage">
+        <item>ORIGINAL</item>
+        <item>FIT_TO_PAGE</item>
+    </string-array>
+    <string-array name="fitToPageValues">
+        <item>ORIGINAL</item>
+        <item>FIT_TO_PAGE</item>
+    </string-array>
+    <string-array name="isCarbon">
+        <item>yes</item>
+        <item>no</item>
+    </string-array>
+    <string-array name="isCarbonValues">
+        <item>true</item>
+        <item>false</item>
+    </string-array>
+
+    <string name="isCarbon_title">Carbon</string>
+    <string name="isCarbon_value">Select the carbon</string>
+    <string name="pjDensity_title">PJ Density</string>
+    <string name="pjDensity_value">Select the PJ density</string>
+
+    <string-array name="pjDensityValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string name="feedMode_title">Feed mode</string>
+    <string name="feedMode_value">Select how to feed paper</string>
+
+    <string-array name="feedMode">
+        <item>no feedï¼ˆrollï¼‰</item>
+        <item>fixed page size feedï¼ˆrollï¼‰</item>
+        <item>one page feedï¼ˆcut paperï¼‰</item>
+        <item>one page feedï¼ˆroll with markï¼‰</item>
+    </string-array>
+    <string-array name="feedModeValues">
+        <item>PJ_FEED_MODE_FREE</item>
+        <item>PJ_FEED_MODE_FIXEDPAGE</item>
+        <item>PJ_FEED_MODE_ENDOFPAGE</item>
+        <item>PJ_FEED_MODE_ENDOFPAGERETRACT</item>
+    </string-array>
+
+    <string name="align_title">Align</string>
+    <string name="align_value">Select the align.</string>
+
+    <string-array name="align">
+        <item>LEFT</item>
+        <item>CENTER</item>
+        <item>RIGHT</item>
+    </string-array>
+    <string-array name="alignValues">
+        <item>LEFT</item>
+        <item>CENTER</item>
+        <item>RIGHT</item>
+    </string-array>
+
+    <string name="valign_title">Valign</string>
+    <string name="valign_value">Select the valign.</string>
+
+    <string-array name="valign">
+        <item>TOP</item>
+        <item>MIDDLE</item>
+        <item>BOTTOM</item>
+    </string-array>
+    <string-array name="valignValues">
+        <item>TOP</item>
+        <item>MIDDLE</item>
+        <item>BOTTOM</item>
+    </string-array>
+
+    <string name="leftMargin_title">Left margin</string>
+    <string name="leftMargin_value">Set the left margin. </string>
+    <string name="topMargin_title">Top margin</string>
+    <string name="topMargin_value">Set the top margin. </string>
+    <string name="customPaperWidth_title">Custom Paper Width</string>
+    <string name="customPaperWidth_value">Set the Width of custom Paper. </string>
+    <string name="customPaperLength_title">Custom Paper Length</string>
+    <string name="customPaperLength_value">Set the Length of custom Paper. </string>
+    <string name="customSetting_title">RJ custom Setting</string>
+    <string name="customSetting_value">Select custom Setting File.</string>
+    <string name="customFeed_title">Feed Paper Setting</string>
+    <string name="customFeed_value">Set Length of Feeding Paper.</string>
+    <string name="rjDensity_title">RJ density</string>
+    <string name="rjDensity_value">Select the RJ density.</string>
+    <string name="bsw">BS&amp;W</string>
+    <string-array name="rjDensityValues">
+        <item>-5</item>
+        <item>-4</item>
+        <item>-3</item>
+        <item>-2</item>
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="tanktype">
+        <item>Round Bottom Tank</item>
+        <item>Cone Bottom Tank</item>
+    </string-array>
+    <string-array name="tanksize">
+        <item>210 Barrel</item>
+        <item>300 Barrel</item>
+        <item>400 Barrel</item>
+        <item>500 Barrel</item>
+    </string-array>
+    <string-array name="tanksize2">
+        <item></item>
+        
+    </string-array>
+
+    <string name="promt"></string>
+    
+    <string-array name="operation">
+	<item>addition</item>
+	<item>subtraction</item>
+	<item>multiplication</item>
+	<item>divide</item>
+    </string-array>
+	<string-array name="customer">
+	    <item>EOG Marketting</item>
+	    <item>Plains Marketting</item>
+	</string-array>
+</resources>

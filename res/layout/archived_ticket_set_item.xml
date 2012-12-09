@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@xml/rectange"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/tvUnfinishNumber"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:paddingLeft="5px"
+            android:paddingRight="5px"
+            android:text="number"
+            android:textColor="#a39e9e" />
+
+        <TextView
+            android:id="@+id/tvUnfinishDate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:paddingLeft="5px"
+            android:paddingRight="5px"
+            android:text="date"
+            android:textColor="#a39e9e" />
+
+        <TextView
+            android:id="@+id/tvUnfinishDate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:paddingLeft="5px"
+            android:paddingRight="5px"
+            android:text="options"
+            android:textColor="#a39e9e" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@xml/rectange"
+        android:layout_weight="2" >
+
+        <Button
+            android:id="@+id/btUnfinishEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="C"
+            android:textColor="#E69201" />
+
+        <Button
+            android:id="@+id/btUnfinishDelete"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="R"
+            android:textColor="#E69201" />
+        
+    </LinearLayout>
+
+</LinearLayout>

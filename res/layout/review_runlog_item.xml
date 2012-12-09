@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip">
+	
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:orientation="horizontal"
+        android:background="#fff" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textSize="18sp"
+                android:background="@xml/rectangle_solid"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dip"
+                android:text="Name/Number"
+                android:textColor="#fff" />        
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@xml/rectangle_solid"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="Review"
+                    android:textColor="#fff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" 
+                 android:background="@xml/rectangle_solid"
+                 android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"     
+                    android:text="Confirmed"
+                    android:textColor="#fff"
+                    android:textSize="18sp"           
+                    android:background="@null"
+                    android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:orientation="horizontal"
+        android:background="#fff" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/tvReviewRunlogNumber"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textSize="18sp"
+                android:background="@xml/rectange"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dip"
+                android:text=""
+                android:textColor="#6c6c6c" />        
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/btReviewRunlogTicket"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@xml/rectange"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="Review"
+                    android:textColor="#f47320" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" 
+                 android:background="@xml/rectange"
+                 android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/imgBtRivewConfirmedTicket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"                
+                    android:background="@null"
+                    android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+	
+    <LinearLayout
+        android:id="@+id/llReviewRunlogRail"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:orientation="horizontal"
+        android:background="#fff" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/tvReviewRunlogRail"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textSize="18sp"
+                android:background="@xml/rectange"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dip"
+                android:text="Rail Ticket"
+                android:textColor="#6c6c6c" />        
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/btReviewRunlogRail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@xml/rectange"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="Review"
+                    android:textColor="#f47320" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" 
+                 android:background="@xml/rectange"
+                 android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/imgBtRivewConfirmedRail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"                
+                    android:background="@null"
+                    android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/llReviewRunlogCorrect"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:orientation="horizontal"
+        android:background="#fff" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/tvReviewRunlogCorrect"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textSize="18sp"
+                android:background="@xml/rectange"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dip"
+                android:text="Correction Ticket"
+                android:textColor="#6c6c6c" />        
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/btReviewRunlogCorrect"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@xml/rectange"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="Review"
+                    android:textColor="#f47320" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" 
+                 android:background="@xml/rectange"
+                 android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/imgBtRivewConfirmedCorrect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"                
+                    android:background="@null"
+                    android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

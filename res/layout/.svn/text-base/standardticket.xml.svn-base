@@ -1,0 +1,1199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llPlainMarketing"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <!-- Header -->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="RUN TICKET"
+                        android:textColor="#779a3d"
+                        android:textSize="35dip"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="TICKET NUMBER"
+                        android:textColor="#f47320"
+                        android:textSize="20dip"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/edTicketNumber"
+                        android:layout_width="200dp"
+                        android:layout_height="50dp"
+                        android:background="@xml/highlight_edittext"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@+id/edother1"
+                        android:paddingLeft="3dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="TICKET DATE"
+                        android:textColor="#f47320"
+                        android:textSize="20dip" />
+
+                    <EditText
+                        android:id="@+id/edTicketDate"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:background="@xml/highlight_edittext"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@+id/edother1"
+                        android:paddingLeft="3dip" />
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="CUSTOMER"
+                        android:textColor="#f47320"
+                        android:textSize="20dip" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/edtCustomer"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@null"
+                            android:focusable="false"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+
+                        <ImageButton
+                            android:id="@+id/imgCustomer"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="right"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="210dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/nut_tam_giac"
+                            android:src="@null" />
+
+                        <Spinner
+                            android:id="@+id/spCustomer"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:prompt="@string/promt" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="OPERATOR"
+                        android:textColor="#f47320"
+                        android:textSize="20dip" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/edticketOperator"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@null"
+                            android:focusable="false"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+
+                        <ImageButton
+                            android:id="@+id/imgOperation"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="right"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="210dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/nut_tam_giac"
+                            android:src="@null" />
+
+                        <Spinner
+                            android:id="@+id/spOperation"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:prompt="@string/promt" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="LEASE NAME"
+                        android:textColor="#f47320"
+                        android:textSize="20dip" />
+
+                    <EditText
+                        android:id="@+id/edTicketLeaseName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:background="@xml/highlight_edittext"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@+id/edother1"
+                        android:paddingLeft="3dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="STATE"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edTicketState"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="COUNTY"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edTicketCountry"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- Location -->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bghighlight"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="LOCATION"
+                    android:textColor="#f47320"
+                    android:textSize="25dip"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="1/4"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edLocation141"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="1/4"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edLocation142"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="UNIT LTR"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edLocationUnitLTR"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="SECTION"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edLocationSection"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="TOWNSHIP"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edLocationTowship1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical" >
+
+                        <EditText
+                            android:id="@+id/edLocationTowship2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="25dip"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <EditText
+                            android:id="@+id/edLocationTowship3"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="25dip"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="DEC"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edLocationTowDec"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="DIR N/S"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edLocationTowDirNS"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible" >
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="RANGE"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edLocationRange1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical" >
+
+                        <EditText
+                            android:id="@+id/edLocationRange2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="25dip"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <EditText
+                            android:id="@+id/edLocationRange3"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="25dip"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="DEC"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edLocationRanDec"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="DIR N/S"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edLocationRanDirNS"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible" >
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="MERIDIAN"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edLocationMeridian1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" >
+
+                            <requestFocus />
+                        </EditText>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="vertical" >
+
+                        <EditText
+                            android:id="@+id/edLocationMeridian2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="25dip"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- Flacno -->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:paddingBottom="20dp" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="FLAC NO/LEASE NO"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edTicketFlacNo"
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="DISTRICT NO"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edTicketDistrictNo"
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="FEDERAL/INDIAN LEASE NO"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edTicketFederalNo"
+                            android:layout_width="300dp"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+                </LinearLayout>
+                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="UNIQUE LEASE NO"
+                        android:textColor="#f47320"
+                        android:textSize="12dip" />
+
+                    <EditText
+                        android:id="@+id/edTicketFederalNo"
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:background="@xml/highlight_edittext"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@+id/edother1"
+                        android:paddingLeft="3dip" />
+                </LinearLayout>
+                
+                 <!-- Remove Tank type
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="TANK TYPE"
+                        android:textColor="#f47320"
+                        android:textSize="20dip" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/edTicketTankType"
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:background="@null"
+                            android:focusable="false"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+
+                        <ImageButton
+                            android:id="@+id/imgbtTankType"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="right"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="210dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/nut_tam_giac"
+                            android:src="@null" />
+
+                        <Spinner
+                            android:id="@+id/spTankType"
+                            android:layout_width="250dp"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:prompt="@string/promt" />
+                    </FrameLayout>
+                </LinearLayout>-->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="TANK NO./NG NO"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <EditText
+                            android:id="@+id/edTicketTankNo"
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:background="@xml/highlight_edittext"
+                            android:imeOptions="actionNext"
+                            android:nextFocusDown="@+id/edother1"
+                            android:paddingLeft="3dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="TANK SIZE"
+                            android:textColor="#f47320"
+                            android:textSize="20dip" />
+
+                        <FrameLayout
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <EditText
+                                android:id="@+id/edTicketTankSize"
+                                android:layout_width="200dp"
+                                android:layout_height="50dp"
+                                android:background="@null"
+                                android:focusable="false"
+                                android:imeOptions="actionNext"
+                                android:nextFocusDown="@+id/edother1"
+                                android:paddingLeft="3dip" />
+
+                            <ImageButton
+                                android:id="@+id/imgbtTankSize"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="right"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="210dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/nut_tam_giac"
+                                android:src="@null" />
+
+                            <Spinner
+                                android:id="@+id/spTankSide"
+                                android:layout_width="250dp"
+                                android:layout_height="50dp"
+                                android:background="@xml/highlight_edittext"
+                                android:prompt="@string/promt" />
+                        </FrameLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <include layout="@layout/tempst" />
+
+            <include layout="@layout/tempsignature" />
+
+            <include layout="@layout/tempend" />
+            <!--
+            Botton 
+			
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginTop="5dip"
+                        android:text="REMARKS"
+                        android:textSize="15dip" />
+
+                    <EditText
+                        android:id="@+id/edRemark"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@xml/highlight_edittext"
+                        android:gravity="top"
+                        android:imeOptions="actionNext"
+                        android:inputType="textMultiLine"
+                        android:lines="5"
+                        android:nextFocusDown="@+id/edOpeningTime"
+                        android:paddingLeft="5dip"
+                        android:paddingTop="20dip" >
+                    </EditText>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="120dp"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dip"
+                                android:layout_marginTop="5dip"
+                                android:text="OPENING TIME"
+                                android:textSize="15dip" />
+
+                            <EditText
+                                android:id="@+id/edOpeningTime"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:background="@xml/highlight_edittext"
+                                android:imeOptions="actionNext"
+                                android:nextFocusDown="@+id/edDriverGuager"
+                                android:paddingLeft="5dip"
+                                android:paddingTop="20dip" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dip"
+                                android:layout_marginTop="5dip"
+                                android:text="CLOSING DATE"
+                                android:textSize="15dip" />
+
+                            <EditText
+                                android:id="@+id/edCloseDate"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:background="@xml/highlight_edittext"
+                                android:imeOptions="actionNext"
+                                android:nextFocusDown="@+id/edOparatorWitness"
+                                android:paddingLeft="5dip"
+                                android:paddingTop="20dip" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dip"
+                                android:layout_marginTop="5dip"
+                                android:text="CLOSING TIME"
+                                android:textSize="15dip" />
+
+                            <EditText
+                                android:id="@+id/edCloseTime"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:background="@xml/highlight_edittext"
+                                android:imeOptions="actionNext"
+                                android:nextFocusDown="@+id/edCloseDriverGuager"
+                                android:paddingLeft="5dip"
+                                android:paddingTop="20dip" />
+                        </FrameLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="5"
+                            android:background="@xml/rectange"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:background="@xml/rectange"
+                                android:gravity="center_horizontal"
+                                android:text="OPEN" />
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:background="@xml/rectange"
+                                android:gravity="center_horizontal"
+                                android:text="CLOSE" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical" >
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dip"
+                                    android:layout_marginTop="5dip"
+                                    android:text="DRIVER/GUAGER"
+                                    android:textSize="15dip" />
+
+                                <EditText
+                                    android:id="@+id/edDriverGuager"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@xml/highlight_edittext"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edCloseDate"
+                                    android:paddingLeft="5dip"
+                                    android:paddingTop="20dip" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dip"
+                                    android:layout_marginTop="5dip"
+                                    android:text="OPARATORS WITNESS"
+                                    android:textSize="15dip" />
+
+                                <EditText
+                                    android:id="@+id/edOparatorWitness"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@xml/highlight_edittext"
+                                    android:hint=""
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edCloseTime"
+                                    android:paddingLeft="5dip"
+                                    android:paddingTop="20dip" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dip"
+                                    android:layout_marginTop="5dip"
+                                    android:text="DRIVER/GUAGER"
+                                    android:textSize="15dip" />
+
+                                <EditText
+                                    android:id="@+id/edCloseDriverGuager"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@xml/highlight_edittext"
+                                    android:imeOptions="actionNext"
+                                    android:nextFocusDown="@+id/edCloseOparator"
+                                    android:paddingLeft="5dip"
+                                    android:paddingTop="20dip" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dip"
+                                    android:layout_marginTop="5dip"
+                                    android:text="OPARATORS WITNESS"
+                                    android:textSize="15dip" />
+
+                                <EditText
+                                    android:id="@+id/edCloseOparator"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@xml/highlight_edittext"
+                                    android:hint=""
+                                    android:paddingLeft="5dip"
+                                    android:paddingTop="20dip"
+                                    android:singleLine="true" />
+                            </FrameLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            -->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btStandarSave"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@xml/custom_button_orange"
+                    android:text="SAVE" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

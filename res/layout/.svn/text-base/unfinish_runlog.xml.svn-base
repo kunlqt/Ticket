@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="8"
+        android:background="@drawable/header"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/linearMain"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dip"
+                android:layout_marginTop="5dip"
+                android:text="Unfinish Run Logs"
+                android:textColor="#779a3d"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="#f47320" >
+
+                    <TextView
+                        android:id="@+id/tvUnfinishNumber"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:textSize="18sp"
+                        android:layout_weight="4.5"
+                        android:background="@xml/rectange"
+                        android:paddingLeft="5px"
+                        android:paddingRight="5px"
+                        android:gravity="center_vertical"
+                        android:text="Name"
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/tvUnfinishDate"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:textSize="18sp"
+                        android:layout_weight="4.5"
+                        android:background="@xml/rectange"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5px"
+                        android:paddingRight="5px"
+                        android:text="Date"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:background="#f47320" >
+
+                    <TextView
+                        android:id="@+id/btUnfinishEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:background="@xml/rectange"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:text="edit"
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/btUnfinishDelete"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:textSize="18sp"
+                        android:layout_weight="1"
+                        android:background="@xml/rectange"
+                        android:gravity="center"
+                        android:text="delete"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <ListView
+                    android:id="@+id/listUnfinish"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:divider="@null"
+                    android:fadingEdge="none"
+                    android:scrollbars="none"
+                    android:listSelector="@android:color/transparent"
+                    android:scrollingCache="false"
+                    android:isScrollContainer="true" >
+                </ListView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="8"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btSearchUnfinishedRunlogs"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@xml/custom_button_orange"
+                android:paddingTop="5dp"
+                android:text="Search"
+                android:textColor="#f47320"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="8"
+            android:background="@drawable/footer"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

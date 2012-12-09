@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:padding="10dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@xml/custom_button_orange" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@xml/custom_button_orange"
+            android:text="View Run Ticket"
+            android:textColor="#f47320" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@xml/custom_button_orange"
+            android:text="View Rail Ticket"
+            android:textColor="#f47320" />
+         <Button
+            android:id="@+id/btPrint"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@xml/custom_button_orange"
+            android:text="Print Ticket"
+            android:visibility="gone"
+            android:textColor="#f47320" />
+
+        <!-- <Button
+            android:id="@+id/button3"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@xml/custom_button_orange"
+            android:text="View Correction Ticket"
+            android:textColor="#f47320" /> -->
+        <Button
+            android:id="@+id/btSignature"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:background="@null"
+            android:text="Create Signature"
+            android:textColor="#f47320" />
+    </LinearLayout>
+
+</LinearLayout>

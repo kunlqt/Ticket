@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/service
+END
+LoadCorrectionTicket.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/service/LoadCorrectionTicket.java
+END
+ServiceClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/service/ServiceClient.java
+END
+LoadArchivedTicketSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/service/LoadArchivedTicketSet.java
+END
+JsonUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/service/JsonUtil.java
+END
+LoadArchivedRunLogsSearch.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/service/LoadArchivedRunLogsSearch.java
+END
+ServiceRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/TicketEnd/!svn/ver/3/TicketSVN/src/com/pdg/ticket/service/ServiceRequest.java
+END
+LoadUnfinishedRunLogs.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/service/LoadUnfinishedRunLogs.java
+END
+LoadUnfinishArchivedTicketSearch.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/service/LoadUnfinishArchivedTicketSearch.java
+END
+Domain.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/TicketEnd/!svn/ver/3/TicketSVN/src/com/pdg/ticket/service/Domain.java
+END
+LoadTicket.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/service/LoadTicket.java
+END
+LoadArchivedRunLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/TicketEnd/!svn/ver/2/TicketSVN/src/com/pdg/ticket/service/LoadArchivedRunLog.java
+END

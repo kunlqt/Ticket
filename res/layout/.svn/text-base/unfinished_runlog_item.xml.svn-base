@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+	<LinearLayout
+	    android:id="@+id/linearMainUnfinishedItem"
+	    android:layout_width="fill_parent"
+	    android:layout_height="50dip"
+	    android:orientation="horizontal">
+	    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/tvUnfinishNumber"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textSize="18sp"
+            android:layout_weight="4.5"
+            android:background="@xml/rectange"
+            android:gravity="center_vertical"            
+            android:paddingLeft="5px"
+            android:paddingRight="5px"
+            android:text="Number"
+            android:textColor="#a39e9e" />
+
+        <TextView
+            android:id="@+id/tvUnfinishDate"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_vertical"
+            android:layout_weight="4.5"
+            android:background="@xml/rectange"
+            android:paddingLeft="5px"
+            android:textSize="18sp"
+            android:paddingRight="5px"
+            android:text="Date"
+            android:textColor="#a39e9e" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="2" >
+
+        <Button
+            android:id="@+id/btUnfinishEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@xml/rectange"
+            android:gravity="center"
+            android:text="edit"
+            android:textSize="18sp"
+            android:textColor="#f47320" />
+
+        <Button
+            android:id="@+id/btUnfinishDelete"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:background="@xml/rectange"
+            android:gravity="center"
+            android:text="delete"
+            android:textColor="#f47320" />
+    </LinearLayout>
+	</LinearLayout>
+    
+
+</LinearLayout>

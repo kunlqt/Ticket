@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_dialoguelayout"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/warning_correction_prompt"
+        android:textColor="#9c9c9c"
+        android:textSize="16dip" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btYesCorrectionPrompt"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="5dp"
+            android:background="@xml/custom_button_orange"
+            android:text="Yes"
+            android:textColor="#f47320" />
+
+        <Button
+            android:id="@+id/btNoCorrectionPrompt"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:background="@xml/custom_button_orange"
+            android:text="No"
+            android:textColor="#f47320" />
+    </LinearLayout>
+
+</LinearLayout>

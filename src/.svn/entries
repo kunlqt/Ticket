@@ -1,0 +1,31 @@
+10
+
+dir
+2
+http://192.168.1.106:9880/TicketEnd/TicketSVN/src
+http://192.168.1.106:9880/TicketEnd
+
+
+
+2012-09-25T10:41:41.396681Z
+2
+dangnv
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4d66fdae-4954-44eb-a24f-04273433992f
+
+com
+dir
+

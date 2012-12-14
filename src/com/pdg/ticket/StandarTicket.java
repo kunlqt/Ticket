@@ -1278,6 +1278,9 @@ public class StandarTicket extends Activity implements OnClickListener, OnGestur
             dialog.setMessage("Loading...");
             Log.d("KUNLQT", "LOADING");
             dialog.show();
+
+            //TODO - should check again: Remove all signature
+            removeOldSignatures();
         }
 
         @Override
@@ -1483,6 +1486,23 @@ public class StandarTicket extends Activity implements OnClickListener, OnGestur
         }
     }
 
+    private void removeOldSignatures() {
+        File mediaStorageDir = new File(
+                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
+                "TicketSignature");
+        if (mediaStorageDir.exists()) {
+            if (mediaStorageDir.isDirectory()) {
+                File[] files = mediaStorageDir.listFiles();
+                for (int i = files.length - 1; i >= 0; i--) {
+                    File f = files[i];
+                    f.delete();
+                }
+            } else {
+                mediaStorageDir.delete();
+            }
+        }
+    }
+
     private void generatePathFileSignature(View view, int oder) {
         File mediaStorageDir = new File(
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
@@ -1506,8 +1526,8 @@ public class StandarTicket extends Activity implements OnClickListener, OnGestur
         view.setDrawingCacheEnabled(true);
         view.buildDrawingCache(true);
         Bitmap bm = Bitmap.createBitmap(view.getDrawingCache());
-        //resize bitmap to print (only remaining 50 percents)
-        bm = Bitmap.createScaledBitmap(bm, bm.getWidth() / 2, bm.getHeight() / 2, false);
+        //resize bitmap to print (only remaining 75 percents)
+        bm = Bitmap.createScaledBitmap(bm, bm.getWidth() / 4, bm.getHeight() / 4, false);
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         bm.compress(Bitmap.CompressFormat.JPEG, 90, bos);
         byte[] data = bos.toByteArray();
@@ -2045,6 +2065,7 @@ public class StandarTicket extends Activity implements OnClickListener, OnGestur
         }
     }
 
+    //TODO - should use hashmap instead of arraylist
     private void getValueForPrint() {
         arrayValue = new ArrayList<String>();
         arrayValue.add(getTicketNumber(idTicket + "")); //0
